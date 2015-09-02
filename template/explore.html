@@ -1,12 +1,40 @@
 <template name="explore">
 	
 	<div class="container section-wrapper">
-		<section id="user-list">
-	    	{{> userView}}
-	    	{{> userView}}
-	    	{{> userView}}
-	    	{{> userView}}
-	    </section>
+		<div class="col-lg-8">
+			<section id="user-list">
+		    	{{> userView}}
+		    	{{> userView}}
+		    	{{> userView}}
+		    	{{> userView}}
+		    	{{> userView}}
+		    	{{> userView}}
+		    	{{> userView}}
+		    	{{> userView}}
+		    	{{> userView}}
+		    </section>
+		</div>
+		<div class="col-lg-3 col-lg-offset-1 vertical-container">
+			<div class="vertical-section-wrapper">
+				<section>
+					<h6><STRONG>Hottest</STRONG></h6>
+					<hr>
+			    	{{> smallerUserView}}
+			    	{{> smallerUserView}}
+			    	{{> smallerUserView}}
+			    </section>
+			</div>
+			<div class="vertical-section-wrapper">
+				<section>
+					<h6><STRONG>Radar</STRONG></h6>
+					<hr>
+			    	{{> smallerUserView}}
+			    	{{> smallerUserView}}
+			    	{{> smallerUserView}}
+			    </section>
+			</div>
+		</div>
+		
 	</div>
 
 </template>
