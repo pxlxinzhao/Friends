@@ -6,6 +6,10 @@ Router.route('/', {
     template: 'explore'
 });
 
+Router.route('/profile', {
+    template: 'userProfile'
+});
+
 
 if (Meteor.isClient) {
 
