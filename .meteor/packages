@@ -12,3 +12,5 @@ less
 iron:router
 accounts-ui
 accounts-password
+accounts-facebook
+service-configuration
