@@ -10,52 +10,66 @@ Router.route('/profile', {
     template: 'userProfile'
 });
 
+ServiceConfiguration.configurations.remove({
+    service: 'facebook'
+});
+
+ServiceConfiguration.configurations.insert({
+    service: 'facebook',
+    appId: '899773626737808',
+    secret: 'e6b0bd5198c5544fa4527575b3bec9be'
+});
 
 if (Meteor.isClient) {
 
-  Accounts.ui.config({
-    requestPermissions: {
-      facebook: ['user_likes'],
-      github: ['user', 'repo']
-    },
-    requestOfflineToken: {
-      google: true
-    },
-    passwordSignupFields: 'USERNAME_AND_OPTIONAL_EMAIL'
-  });
+
+    Accounts.ui.config({
+        requestPermissions: {
+            facebook: ['user_likes'],
+            github: ['user', 'repo']
+        },
+        requestOfflineToken: {
+            google: true
+        },
+        passwordSignupFields: 'USERNAME_AND_OPTIONAL_EMAIL'
+    });
+
+    Accounts.onLogin(function(user){
+        console.log(user.user._id);
+    });
 
 
-  Template.explore.helpers({
-      getUsers: function () {
-          var users = Meteor.users.find().fetch();
-          return users;
-      }
-  });
+    // login and logout callback
+    //Meteor.autorun(function () {
+    //    if (Meteor.userId()) {
+    //        var user = getUser();
+    //        //console.log('user ' + user.username + 'just log in');
+    //    } else {
+    //
+    //    }
+    //});
 
-  //-- global helper
-  Template.registerHelper('getUsername', function (){
-      if (Meteor.userId()){
-          var user = Meteor.users.findOne(Meteor.userId());
-          return user ? user.profile.name : null;
-      }
-      return null;
-  });
+    //Avatar.options = {
+    //    defaultImageUrl: "images/user.png"
+    //};
 
-  Template.registerHelper('getUserId', function(){
-      if (Meteor.userId()){
-          var user = Meteor.users.findOne(Meteor.userId());
-          return user._id;
-      }
-      return null;
-  })
+    Template.login.events({
+        'click #facebook-login': function(event) {
+            Meteor.loginWithFacebook({}, function(err){
+                if (err) {
+                    throw new Meteor.Error("Facebook login failed");
+                }
+            });
+        },
 
-  Template.registerHelper('getUser', function(){
-      if (Meteor.userId()){
-          var user = Meteor.users.find({_id: Meteor.userId()});
-          return user;
-      }
-      return null;
-  })
+        'click #logout': function(event) {
+            Meteor.logout(function(err){
+                if (err) {
+                    throw new Meteor.Error("Logout failed");
+                }
+            })
+        }
+    });
 
 }
 
