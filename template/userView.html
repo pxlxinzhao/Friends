@@ -1,7 +1,9 @@
 <template name="userView">
 	<div class="row user-view-container">
 		<div class="col-md-2">
-			<img src="images/user.png" class="img-circle user-icon">
+            <div class="img-holder">
+                {{> avatar user=user size="large" shape="circle"}}
+            </div>
 		</div>
 		<div class="col-md-2">
 			<STRONG>Patrick Pu</STRONG>
@@ -19,9 +21,13 @@
 <template name="smallerUserView">
 	<div class="">
 		<div class="row">
+            {{#each getUser}}
 			<div class="col-md-5">
-				<img src="images/user.png" class="img-circle smaller-user-icon">
+                <div class="img-holder">
+                    {{> avatar user=this shape="circle"}}
+                </div>
 			</div>
+            {{/each}}
 			<div class="col-md-7">
 				<STRONG>Patrick Pu</STRONG>
 				<p>San Francisco, CA, US</p>
@@ -34,9 +40,13 @@
 <template name="smallestUserView">
 	<div class="">
 		<div class="row">
+            {{#each getUser}}
 			<div class="col-md-5">
-				<img src="images/user.png" class="img-circle smaller-user-icon">
+                <div class="img-holder">
+                    {{> avatar user=this shape="circle"}}
+                </div>
 			</div>
+            {{/each}}
 			<div class="col-md-7">
 				<STRONG>Patrick Pu</STRONG>
 			</div>

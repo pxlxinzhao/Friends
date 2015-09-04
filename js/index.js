@@ -25,15 +25,37 @@ if (Meteor.isClient) {
   });
 
 
-  Template.userProfile.helpers({
-    getUsername: function (){
+  Template.explore.helpers({
+      getUsers: function () {
+          var users = Meteor.users.find().fetch();
+          return users;
+      }
+  });
+
+  //-- global helper
+  Template.registerHelper('getUsername', function (){
       if (Meteor.userId()){
-         var user = Meteor.users.findOne(Meteor.userId());
-         return user.username;
+          var user = Meteor.users.findOne(Meteor.userId());
+          return user ? user.profile.name : null;
       }
       return null;
-    }
   });
+
+  Template.registerHelper('getUserId', function(){
+      if (Meteor.userId()){
+          var user = Meteor.users.findOne(Meteor.userId());
+          return user._id;
+      }
+      return null;
+  })
+
+  Template.registerHelper('getUser', function(){
+      if (Meteor.userId()){
+          var user = Meteor.users.find({_id: Meteor.userId()});
+          return user;
+      }
+      return null;
+  })
 
 }
 

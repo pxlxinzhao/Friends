@@ -2,6 +2,10 @@
  * Created by patrickpu on 9/3/2015.
  */
 
+Avatar.options = {
+    defaultImageUrl: "images/user.png"
+};
+
 ServiceConfiguration.configurations.remove({
     service: 'facebook'
 });
