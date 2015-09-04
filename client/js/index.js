@@ -22,7 +22,6 @@ ServiceConfiguration.configurations.insert({
 
 if (Meteor.isClient) {
 
-
     Accounts.ui.config({
         requestPermissions: {
             facebook: ['user_likes'],
@@ -34,24 +33,9 @@ if (Meteor.isClient) {
         passwordSignupFields: 'USERNAME_AND_OPTIONAL_EMAIL'
     });
 
-    Accounts.onLogin(function(user){
-        console.log(user.user._id);
-    });
-
-
-    // login and logout callback
-    //Meteor.autorun(function () {
-    //    if (Meteor.userId()) {
-    //        var user = getUser();
-    //        //console.log('user ' + user.username + 'just log in');
-    //    } else {
-    //
-    //    }
+    //Accounts.onLogin(function(user){
+    //    console.log(user.user._id);
     //});
-
-    //Avatar.options = {
-    //    defaultImageUrl: "images/user.png"
-    //};
 
     Template.login.events({
         'click #facebook-login': function(event) {
