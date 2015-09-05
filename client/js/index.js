@@ -22,21 +22,6 @@ ServiceConfiguration.configurations.insert({
 
 if (Meteor.isClient) {
 
-    Accounts.ui.config({
-        requestPermissions: {
-            facebook: ['user_likes'],
-            github: ['user', 'repo']
-        },
-        requestOfflineToken: {
-            google: true
-        },
-        passwordSignupFields: 'USERNAME_AND_OPTIONAL_EMAIL'
-    });
-
-    //Accounts.onLogin(function(user){
-    //    console.log(user.user._id);
-    //});
-
     Template.login.events({
         'click #facebook-login': function(event) {
             Meteor.loginWithFacebook({}, function(err){

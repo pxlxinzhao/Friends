@@ -21,13 +21,11 @@
 <template name="smallerUserView">
 	<div class="">
 		<div class="row">
-            {{#each getUser}}
 			<div class="col-md-5">
                 <div class="img-holder">
-                    {{> avatar user=this shape="circle"}}
+                    {{> avatar user=getUser shape="circle"}}
                 </div>
 			</div>
-            {{/each}}
 			<div class="col-md-7">
 				<STRONG>Patrick Pu</STRONG>
 				<p>San Francisco, CA, US</p>
@@ -40,13 +38,11 @@
 <template name="smallestUserView">
 	<div class="">
 		<div class="row">
-            {{#each getUser}}
 			<div class="col-md-5">
                 <div class="img-holder">
-                    {{> avatar user=this shape="circle"}}
+                    {{> avatar user=getUser shape="circle"}}
                 </div>
 			</div>
-            {{/each}}
 			<div class="col-md-7">
 				<STRONG>Patrick Pu</STRONG>
 			</div>
