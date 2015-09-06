@@ -10,6 +10,18 @@ Router.route('/profile', {
     template: 'userProfile'
 });
 
+Router.route('/user/:id', {
+    template: 'otherUserProfile',
+    data: function (){
+        var id  = this.params.id;
+        var user = getUserById(id);
+        var templateData = {
+            user: user
+        };
+        return templateData;
+    }
+});
+
 ServiceConfiguration.configurations.remove({
     service: 'facebook'
 });

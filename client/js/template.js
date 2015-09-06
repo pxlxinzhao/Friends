@@ -11,8 +11,6 @@ if (Meteor.isClient){
 
             users.sort(SortByStatus);
 
-            console.log(users);
-
             return users;
         }
     });

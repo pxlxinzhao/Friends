@@ -2,7 +2,7 @@
 	<div class="row user-view-container">
 		<div class="col-md-2">
             <div class="img-holder">
-                {{> avatar user=user size="large" shape="circle"}}
+                <a href="/user/{{user._id}}"> {{> avatar user=user size="large" shape="circle"}} </a>
             </div>
 		</div>
 		<div class="col-md-2">
@@ -23,28 +23,13 @@
 		<div class="row">
 			<div class="col-md-5">
                 <div class="img-holder">
-                    {{> avatar user=getUser shape="circle"}}
+                    <a href="/user/{{user._id}}"> {{> avatar user=user shape="circle"}} </a>
                 </div>
 			</div>
 			<div class="col-md-7">
-				<STRONG>Patrick Pu</STRONG>
-				<p>San Francisco, CA, US</p>
-				<p>online</p>
-			</div>
-		</div>
-	</div>
-</template>
-
-<template name="smallestUserView">
-	<div class="">
-		<div class="row">
-			<div class="col-md-5">
-                <div class="img-holder">
-                    {{> avatar user=getUser shape="circle"}}
-                </div>
-			</div>
-			<div class="col-md-7">
-				<STRONG>Patrick Pu</STRONG>
+                <STRONG>{{getUsername user=user}}</STRONG>
+                <p>{{getCity user=user}}</p>
+                <p>{{getStatus user=user}}</p>
 			</div>
 		</div>
 	</div>

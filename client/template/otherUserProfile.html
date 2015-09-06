@@ -1,8 +1,8 @@
-<template name="userProfile">
+<template name="otherUserProfile">
 	
 	<div class="col-lg-3">
 		<div class="vertical-section-wrapper">
-			{{> smallerUserView user=getCurrentUser}}
+			{{> smallerUserView user=user}}
 		</div>
 	</div>
 	<div class="col-lg-6 col-lg-offset-1">
@@ -10,7 +10,7 @@
 			<form role="form">
 			  <div class="form-group">
 			    <label for="username">Username:</label>
-			    <input type="text" class="form-control" id="username" value="">
+			    <input type="text" class="form-control" id="username" value="{{getUsername user=user}}">
 			  </div>
 			  <div class="form-group">
 			    <label for="email">Email address:</label>

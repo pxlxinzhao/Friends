@@ -4,38 +4,29 @@
 
 // defining global functions
 
-getUser = function(){
-    if (Meteor.userId()){
-        var user = Meteor.users.findOne({_id: Meteor.userId()});
-        return user;
-    }
-    return null;
+getCurrentUser = function(){
+    return Meteor.user();
 }
 
-getUserId = function(){
-    if (Meteor.userId()) {
-        return Meteor.userId();
-    } else {
-        return null;
-    }
+getCurrentUserId = function(){
+    return Meteor.userId();
+}
+
+getUserById = function(id){
+    return Meteor.users.findOne({_id: id});
 }
 
 getUsername = function(user){
+
     user = user.hash.user;
-
-    if (user.profile && user.profile.name){
-        return user.profile.name;
-    }else{
-        return user.username;
+    if (user) {
+        if (user.profile && user.profile.name){
+            return user.profile.name;
+        }else{
+            return user.username;
+        }
     }
-}
 
-getProfile = function(){
-    var profile = getUser().profile;
-    if (!profile) {
-        profile = {};
-    }
-    return profile;
 }
 
 setProfile = function(user, profile){

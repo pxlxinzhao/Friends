@@ -16,8 +16,8 @@ if (Meteor.isClient) {
     });
 
     Accounts.onLogin(function(){
-        var user = getUser();
-        var profile = getProfile();
+        var user = getCurrentUser();
+        var profile = user.profile ? user.profile : {};
 
         //set online
         profile.isOnline = true;
@@ -40,10 +40,11 @@ if (Meteor.isClient) {
 
     var helpers = {
         getUsername: getUsername,
-        getUserId: getUserId,
-        getUser: getUser,
+        getCurrentUserId: getCurrentUserId,
+        getCurrentUser: getCurrentUser,
         getCity: getCity,
-        getStatus: getStatus
+        getStatus: getStatus,
+        getUserById: getUserById
     }
 
     for (var key in helpers){
