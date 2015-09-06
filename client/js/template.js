@@ -16,6 +16,17 @@ if (Meteor.isClient){
 
 
     Template.userProfile.helpers({
+        getSelfIntro: function () {
+            if (!Meteor.userId()) return;
+
+            var user = Meteor.user();
+            if (user && user.profile && user.profile.selfIntro){
+                return Meteor.user().profile.selfIntro.trim();
+            }
+            else{
+                return '';
+            }
+        }
 
     });
 
