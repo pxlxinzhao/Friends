@@ -38,6 +38,12 @@ if (Meteor.isClient) {
 
     });
 
+    Avatar.options = {
+        fallbackType: "initials",
+        defaultImageUrl: "images/user.png",
+        gravatarDefault: "identicon"
+    };
+
     var helpers = {
         getUsername: getUsername,
         getCurrentUserId: getCurrentUserId,
@@ -52,3 +58,5 @@ if (Meteor.isClient) {
     }
 
 }
+
+
