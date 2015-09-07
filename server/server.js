@@ -35,19 +35,32 @@ if (Meteor.isServer) {
                 }
 
             },
+
+
+//TAGS
             insertTagsForCurrentUser: function (tags) {
-                console.log('inserting', tags);
+                //console.log('inserting', tags);
                 TAGS.insert({
                     userId: Meteor.userId(),
                     tags:tags
                 })
             },
             updateTagsForCurrentUser: function (tags) {
-                console.log('inserting', tags);
+                //console.log('inserting', tags);
                 TAGS.update({
                     userId: Meteor.userId()
                 }, {$set: {tags: tags}})
+            },
+
+
+//PHOTO
+            updatePhotoForCurrentUser: function(obj){
+                PHOTOS.insert({
+                    userId: Meteor.userId(),
+                    c:obj
+                })
             }
+
         });
 
     });

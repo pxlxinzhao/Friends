@@ -7,6 +7,7 @@ var tagEditable = false;
 if (Meteor.isClient){
     var files = null;
 
+//EXPLORE RELATED
     Template.explore.helpers({
         getUsers: function () {
             var users = Meteor.users.find().fetch();
@@ -17,6 +18,8 @@ if (Meteor.isClient){
     });
 
 
+
+//-- PROFILE RELATED
     Template.userProfile.helpers({
         getSelfIntro: function () {
             if (!Meteor.userId()) return;
@@ -61,16 +64,6 @@ if (Meteor.isClient){
 
     Template.photoUpdate.events({
 
-        //    Template.yourtemplate.events
-        //"change input[type='file']": (e) ->
-        //files = e.currentTarget.files
-        //
-        //Cloudinary.upload files,ibed in http://cloudinary.com/documentation/upload_images#remote_upload
-        //(err,res) -> #optional callback, you can catch with the Cloudinary collection as well
-        //console.log "Upload Error: #{err}"
-        //    folder:"secret" # optional parameters descr
-        //console.log "Upload Result: #{res}"
-
         'change input[type="file"]': function(e){
             files = e.currentTarget.files;
         },
@@ -78,14 +71,20 @@ if (Meteor.isClient){
             console.log('clicked', files);
 
             if (files){
-                Cloudinary.upload(files, function(err, res){
+                Cloudinary.upload(files, null, function(err, res){
                     console.log('success', res);
-                    console.log('error', error);
+                    console.log('error', err);
+                    if (res){
+                        Meteor.call('updatePhotoForCurrentUser', res);
+                    }
                 });
             }
         }
     })
 
+
+
+//--TAGS RELATED
     Template.userTags.events({
         'click #tag-add': function (event) {
             event.preventDefault();
@@ -145,9 +144,6 @@ if (Meteor.isClient){
                 var result = tagObject ? tagObject.tags : [];
                 return result;
             }
-        },
-        deleteTags: function(){
-
         }
     });
 
@@ -177,10 +173,20 @@ if (Meteor.isClient){
             Meteor.call('updateTagsForCurrentUser', tags);
         }
     });
+
+
+
+//-- PHOTO RELATED
+    Template.photos.helpers({
+        getCurrentUserPhotos: function(){
+            return PHOTOS.find({userId: Meteor.userId()}).fetch();;
+        }
+    })
 }
 
 
 
+//-- FUNCTIONS
 function isEditMode(){
     if(Meteor.user()){
         if(tagEditable){
@@ -192,7 +198,6 @@ function isEditMode(){
         }
     }
 }
-
 
 function SortByLiveness(a, b){
     var aTime = 0;

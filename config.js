@@ -6,6 +6,7 @@
 
 MESSAGES = new Mongo.Collection("messages");
 TAGS = new Mongo.Collection("tags");
+PHOTOS = new Mongo.Collection("photos");
 
 if (Meteor.isClient) {
 

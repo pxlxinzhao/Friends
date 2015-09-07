@@ -14,6 +14,10 @@ Router.route('/tag', {
     template: 'userTags'
 });
 
+Router.route('/photos', {
+    template: 'photos'
+});
+
 Router.route('/user/:id', {
     template: 'otherUserProfile',
     data: function (){
