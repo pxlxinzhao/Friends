@@ -2,6 +2,8 @@
  * Created by Patrick_Pu on 2015-09-05.
  */
 
+
+
 // defining global functions
 
 getCurrentUser = function(){

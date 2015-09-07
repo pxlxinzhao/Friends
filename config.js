@@ -2,6 +2,11 @@
  * Created by Patrick_Pu on 2015-09-05.
  */
 
+// defining collections
+
+MESSAGES = new Mongo.Collection("messages");
+TAGS = new Mongo.Collection("tags");
+
 if (Meteor.isClient) {
 
     Accounts.ui.config({
@@ -58,5 +63,9 @@ if (Meteor.isClient) {
     }
 
 }
+
+
+
+
 
 

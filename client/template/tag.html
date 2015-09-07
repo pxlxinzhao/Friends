@@ -13,15 +13,24 @@
         <div id="tag-edit" class="col-lg-12 btn btn-cta-primary tiny-top-margin">
             Edit
         </div>
+        <div id="delete-btn-wrapper">
+            {{> deleteBtn}}
+        </div>
 	</div>
-	<div class="col-lg-6 col-lg-offset-1">
-		<div class="profile-wrapper">
-            {{#each getTags}}
-                {{> tag value=this}}
-            {{/each}}
-		</div>
+	<div id="tags-holder" class="col-lg-6 col-lg-offset-1">
+        {{> tags}}
 		
 	</div>
+
+</template>
+
+<template name="tags">
+
+    <div class="profile-wrapper">
+        {{#each getTags}}
+            {{> tag value=this}}
+        {{/each}}
+    </div>
 
 </template>
 
@@ -32,4 +41,10 @@
         <input style="display: {{isEditMode}}" type="checkbox"/>
     </a>
 
+</template>
+
+<template name="deleteBtn">
+    <div id="tag-delete" style="display: {{isEditMode}}" class="col-lg-12 btn btn-cta-primary tiny-top-margin">
+        Delete
+    </div>
 </template>

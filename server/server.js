@@ -27,6 +27,19 @@ if (Meteor.isServer) {
                     //setProfile(user, profile);
                 }
 
+            },
+            insertTagsForCurrentUser: function (tags) {
+                console.log('inserting', tags);
+                TAGS.insert({
+                    userId: Meteor.userId(),
+                    tags:tags
+                })
+            },
+            updateTagsForCurrentUser: function (tags) {
+                console.log('inserting', tags);
+                TAGS.update({
+                    userId: Meteor.userId()
+                }, {$set: {tags: tags}})
             }
         });
 

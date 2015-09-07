@@ -2,10 +2,9 @@
  * Created by patrickpu on 9/4/2015.
  */
 
+var tagEditable = false;
 
 if (Meteor.isClient){
-
-    var tagEditable = false;
 
     Template.explore.helpers({
         getUsers: function () {
@@ -59,59 +58,78 @@ if (Meteor.isClient){
         }
     });
 
-    Template.userTags.helpers({
-        getTags: function(){
-            var user = Meteor.user();
-            if (user && user.profile && user.profile.tags){
-                console.log(user.profile.tags);
-                return user.profile.tags;
-            }else{
-                return [];
-            }
-        }
-    });
-
     Template.userTags.events({
-        'click #tag-add': function () {
-            var user = Meteor.user();
-            var profile = getCurrentProfile();
+        'click #tag-add': function (event) {
+            event.preventDefault();
+
             var newTag = $('#new-tag input').val();
 
-            console.log('newTag', newTag);
-
-            //return;
-
             if (newTag.length > 0){
-                var tags = profile.tags ? profile.tags : [];
-                tags.push(newTag);
+                var user = Meteor.user();
+                var profile = getCurrentProfile();
+                var tags = [];
+                var existingTagObject = TAGS.findOne({userId: Meteor.userId()});
 
-                profile.tags = tags;
-
-                setProfile(user, profile);
+                if (existingTagObject){
+                    tags = existingTagObject.tags;
+                    tags.push(newTag);
+                    //console.log('tags', tags);
+                    Meteor.call('updateTagsForCurrentUser', tags);
+                }else{
+                    tags.push(newTag);
+                    Meteor.call('insertTagsForCurrentUser', tags);
+                }
             }
         },
         'click #tag-edit': function (event) {
+            event.preventDefault();
+
             var target = $("#tag-edit");
-            if (tagEditable){
-                tagEditable = false;
+            if (!tagEditable){
+                tagEditable = true;
                 target.text('Cancel Edit');
             }else{
-                tagEditable = true;
+                tagEditable = false;
                 target.text('Edit');
+            }
+            var $tagsHolder = $("#tags-holder");
+            $tagsHolder.empty();
+            Blaze.render(Template.tags, $tagsHolder[0]);
+
+            var $deleteHolder = $("#delete-btn-wrapper");
+            $deleteHolder.empty();
+            Blaze.render(Template.deleteBtn, $deleteHolder[0]);
+        }
+    });
+
+    Template.tags.helpers({
+        getTags: function(){
+            if(Meteor.user()){
+                var tagObject = TAGS.findOne({userId: Meteor.userId()});
+                var result = tagObject ? tagObject.tags : [];
+                return result;
             }
         }
     });
 
     Template.tag.helpers({
-        isEditMode: function(){
-            if(tagEditable){
-                return 'block';
-            }else{
-                return 'none';
-            }
-        }
+        isEditMode: isEditMode
     });
+    Template.deleteBtn.helpers({
+        isEditMode: isEditMode
+    })
+}
 
+function isEditMode(){
+    if(Meteor.user()){
+        if(tagEditable){
+            //console.log('returning block');
+            return 'inline-block';
+        }else{
+            //console.log('none');
+            return 'none';
+        }
+    }
 }
 
 
