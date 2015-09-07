@@ -5,6 +5,8 @@
 
 if (Meteor.isClient){
 
+    var tagEditable = false;
+
     Template.explore.helpers({
         getUsers: function () {
             var users = Meteor.users.find().fetch();
@@ -54,6 +56,59 @@ if (Meteor.isClient){
             setProfile(Meteor.user(), profile);
 
             console.log('Successfully saved!')
+        }
+    });
+
+    Template.userTags.helpers({
+        getTags: function(){
+            var user = Meteor.user();
+            if (user && user.profile && user.profile.tags){
+                console.log(user.profile.tags);
+                return user.profile.tags;
+            }else{
+                return [];
+            }
+        }
+    });
+
+    Template.userTags.events({
+        'click #tag-add': function () {
+            var user = Meteor.user();
+            var profile = getCurrentProfile();
+            var newTag = $('#new-tag input').val();
+
+            console.log('newTag', newTag);
+
+            //return;
+
+            if (newTag.length > 0){
+                var tags = profile.tags ? profile.tags : [];
+                tags.push(newTag);
+
+                profile.tags = tags;
+
+                setProfile(user, profile);
+            }
+        },
+        'click #tag-edit': function (event) {
+            var target = $("#tag-edit");
+            if (tagEditable){
+                tagEditable = false;
+                target.text('Cancel Edit');
+            }else{
+                tagEditable = true;
+                target.text('Edit');
+            }
+        }
+    });
+
+    Template.tag.helpers({
+        isEditMode: function(){
+            if(tagEditable){
+                return 'block';
+            }else{
+                return 'none';
+            }
         }
     });
 

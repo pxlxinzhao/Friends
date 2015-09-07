@@ -10,6 +10,10 @@ Router.route('/profile', {
     template: 'userProfile'
 });
 
+Router.route('/tag', {
+    template: 'userTags'
+});
+
 Router.route('/user/:id', {
     template: 'otherUserProfile',
     data: function (){

@@ -1,0 +1,35 @@
+<template name="userTags">
+	
+	<div class="col-lg-3">
+		<div class="vertical-section-wrapper">
+			{{> smallerUserView user=getCurrentUser}}
+		</div>
+        <div id="new-tag" class="small-top-margin no-padding">
+            <input class="full-width" placeholder="Add a tag" type="text"/>
+        </div>
+        <div id="tag-add" class="col-lg-12 btn btn-cta-primary tiny-top-margin">
+            Add
+        </div>
+        <div id="tag-edit" class="col-lg-12 btn btn-cta-primary tiny-top-margin">
+            Edit
+        </div>
+	</div>
+	<div class="col-lg-6 col-lg-offset-1">
+		<div class="profile-wrapper">
+            {{#each getTags}}
+                {{> tag value=this}}
+            {{/each}}
+		</div>
+		
+	</div>
+
+</template>
+
+<template name="tag">
+
+    <a class="btn tag">
+        {{value}}
+        <input style="display: {{isEditMode}}" type="checkbox"/>
+    </a>
+
+</template>

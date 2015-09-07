@@ -12,6 +12,15 @@ getCurrentUserId = function(){
     return Meteor.userId();
 }
 
+getCurrentProfile = function(){
+    var user = Meteor.user();
+    var profile = {};
+    if(user && user.profile){
+        profile = user.profile;
+    }
+    return profile;
+}
+
 getUserById = function(id){
     return Meteor.users.findOne({_id: id});
 }
