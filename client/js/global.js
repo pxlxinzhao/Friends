@@ -2,7 +2,7 @@
  * Created by Patrick_Pu on 2015-09-05.
  */
 
-
+DIALOG_MESSAGE = 'Default Message';
 
 // defining global functions
 
@@ -81,4 +81,8 @@ getStatus = function(user){
         status = false;
     }
     return status ? 'online' : 'offline';
+}
+
+getDialogMessage = function(){
+    return DIALOG_MESSAGE;
 }

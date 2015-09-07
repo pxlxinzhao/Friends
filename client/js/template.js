@@ -72,6 +72,14 @@ if (Meteor.isClient){
 
                 if (existingTagObject){
                     tags = existingTagObject.tags;
+
+                    if ($.inArray(newTag, tags) > -1){
+                        //Blaze.renderWithData('hint', 'This tag already exists');
+                        //DIALOG_MESSAGE = 'This tag already exists';
+                        //Modal.show('hint');
+                        return;
+                    }
+
                     tags.push(newTag);
                     //console.log('tags', tags);
                     Meteor.call('updateTagsForCurrentUser', tags);
@@ -109,6 +117,9 @@ if (Meteor.isClient){
                 var result = tagObject ? tagObject.tags : [];
                 return result;
             }
+        },
+        deleteTags: function(){
+
         }
     });
 
@@ -117,8 +128,30 @@ if (Meteor.isClient){
     });
     Template.deleteBtn.helpers({
         isEditMode: isEditMode
-    })
+    });
+
+    Template.deleteBtn.events({
+        'click #tag-delete': function(){
+            var tags = TAGS.findOne({userId: Meteor.userId()}).tags;
+
+            var length = $("#tags-holder").find('input:checked').each(function(){
+                var text = $(this).attr('data-tag');
+
+
+                for (var i=0; i<tags.length; i++){
+                    if (text === tags[i]){
+                        tags.splice(i, 1);
+                        i--;
+                    }
+                }
+            });
+
+            Meteor.call('updateTagsForCurrentUser', tags);
+        }
+    });
 }
+
+
 
 function isEditMode(){
     if(Meteor.user()){

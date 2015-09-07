@@ -55,7 +55,8 @@ if (Meteor.isClient) {
         getCurrentUser: getCurrentUser,
         getCity: getCity,
         getStatus: getStatus,
-        getUserById: getUserById
+        getUserById: getUserById,
+        getDialogMessage: getDialogMessage
     }
 
     for (var key in helpers){
