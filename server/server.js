@@ -6,6 +6,13 @@
 if (Meteor.isServer) {
     Meteor.startup(function () {
 
+        Cloudinary.config({
+            cloud_name: 'dfmztowxz',
+            api_key: '757493586489318',
+            api_secret: 'qmMIfRAVtCJ4k3UHpGkbcAfB3yk'
+        });
+
+
         Meteor.methods({
             reverseGeoCode: function(latlng){
                 var geo = new GeoCoder();

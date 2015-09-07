@@ -1,0 +1,81 @@
+<template name="userProfile">
+	
+	<div class="col-lg-3">
+		<div class="vertical-section-wrapper">
+			{{> smallerUserView user=getCurrentUser}}
+		</div>
+
+        {{> photoUpdate}}
+
+	</div>
+	<div class="col-lg-6 col-lg-offset-1">
+		<div class="profile-wrapper">
+			<form role="form" class="profile-form">
+			  <div class="form-group">
+			    <label for="username">Username:</label>
+			    <input type="text" class="form-control" id="username" value="{{getUsername user=getCurrentUser}}">
+			  </div>
+			  <div class="form-group">
+			    <label for="email">Email address:</label>
+			    <input type="email" class="form-control" id="email" value="{{getCurrentUser.profile.email}}">
+			  </div>
+			  <div class="form-group">
+			    <label for="self-intro">Self Intoduction:</label>
+			    <textarea class="form-control vertical-resize" id="selfIntro">{{getSelfIntro}}</textarea>
+			  </div>
+              <button type="submit" class="btn btn-default">Save</button>
+			</form>
+		</div>
+		
+	</div>
+
+</template>
+
+<template name="photoUpdate">
+
+    <div class="photo-update-wrapper top-margin">
+        <input type="file"/>
+        <div id="photo-update-btn" class="col-lg-12 btn btn-cta-primary small-top-margin">
+            Upload
+        </div>
+    </div>
+
+</template>
+
+<template name="otherUserProfile">
+
+    <div class="col-lg-3">
+        <div class="vertical-section-wrapper">
+            {{> smallerUserView user=user}}
+        </div>
+
+        <div class="col-lg-12 btn btn-cta-primary small-top-margin">
+            <!--<a class="">Flirt</a>-->
+            Flirt
+        </div>
+        <div class="col-lg-12 btn btn-cta-primary tiny-top-margin">
+            <!--<a class="">Send Message</a>-->
+            Send Message
+        </div>
+    </div>
+    <div class="col-lg-6 col-lg-offset-1">
+        <div class="profile-wrapper">
+            <form role="form">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" id="username" value="{{getUsername user=user}}">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address:</label>
+                    <input type="email" class="form-control" id="email" value="">
+                </div>
+                <div class="form-group">
+                    <label for="self-intro">Self Intoduction:</label>
+                    <textarea class="form-control vertical-resize" id="self-intro"> </textarea>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</template>

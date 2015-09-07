@@ -49,6 +49,10 @@ if (Meteor.isClient) {
         gravatarDefault: "identicon"
     };
 
+    $.cloudinary.config({
+        cloud_name:"cloud_name"
+    });
+
     var helpers = {
         getUsername: getUsername,
         getCurrentUserId: getCurrentUserId,

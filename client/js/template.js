@@ -5,6 +5,7 @@
 var tagEditable = false;
 
 if (Meteor.isClient){
+    var files = null;
 
     Template.explore.helpers({
         getUsers: function () {
@@ -57,6 +58,33 @@ if (Meteor.isClient){
             console.log('Successfully saved!')
         }
     });
+
+    Template.photoUpdate.events({
+
+        //    Template.yourtemplate.events
+        //"change input[type='file']": (e) ->
+        //files = e.currentTarget.files
+        //
+        //Cloudinary.upload files,ibed in http://cloudinary.com/documentation/upload_images#remote_upload
+        //(err,res) -> #optional callback, you can catch with the Cloudinary collection as well
+        //console.log "Upload Error: #{err}"
+        //    folder:"secret" # optional parameters descr
+        //console.log "Upload Result: #{res}"
+
+        'change input[type="file"]': function(e){
+            files = e.currentTarget.files;
+        },
+        'click #photo-update-btn': function(){
+            console.log('clicked', files);
+
+            if (files){
+                Cloudinary.upload(files, function(err, res){
+                    console.log('success', res);
+                    console.log('error', error);
+                });
+            }
+        }
+    })
 
     Template.userTags.events({
         'click #tag-add': function (event) {
