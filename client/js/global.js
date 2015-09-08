@@ -6,6 +6,13 @@ DIALOG_MESSAGE = 'Default Message';
 
 // defining global functions
 
+getDialogMessage = function(){
+    return DIALOG_MESSAGE;
+}
+
+
+//--user stuff
+
 getCurrentUser = function(){
     return Meteor.user();
 }
@@ -74,15 +81,34 @@ getCity = function(user){
 getStatus = function(user){
     user = user.hash.user;
 
-    var status;
+    //console.log('user', user);
+    //
+    //if (user && user.username === 'Patrick Pu'){
+    //    console.log(user);
+    //}
+    //var status;
+    //try{ status =  user.profile.isOnline;
+    //}catch(err){ status = false; }
     try{
-        status =  user.profile.isOnline;
-    }catch(err){
-        status = false;
+        if (user.status.idle){
+            return "idle";
+        }
+        else if (user.status.online){
+            return "online"
+        }
+        else{
+            return "offline";
+        }
+    }catch (err){
+        return "off"
     }
-    return status ? 'online' : 'offline';
 }
 
-getDialogMessage = function(){
-    return DIALOG_MESSAGE;
+getLoginTime = function(user){
+    user = user.hash.user;
+
+    if (user.status && user.status.online){
+        console.log(user.status.lastLogin);
+    }
 }
+

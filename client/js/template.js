@@ -13,6 +13,7 @@ if (Meteor.isClient){
             var users = Meteor.users.find().fetch();
             users.sort(SortByStatus);
 
+            //console.log('explore users', users);
             return users;
         }
     });

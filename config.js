@@ -9,6 +9,9 @@ TAGS = new Mongo.Collection("tags");
 PHOTOS = new Mongo.Collection("photos");
 
 if (Meteor.isClient) {
+    Tracker.autorun(function(){
+        Meteor.subscribe('allUserData');
+    })
 
     Accounts.ui.config({
         requestPermissions: {
@@ -26,7 +29,7 @@ if (Meteor.isClient) {
         var profile = user.profile ? user.profile : {};
 
         //set online
-        profile.isOnline = true;
+        //profile.isOnline = true;
 
         //set loginTimes
         var times = profile.loginTimes;
@@ -61,7 +64,8 @@ if (Meteor.isClient) {
         getCity: getCity,
         getStatus: getStatus,
         getUserById: getUserById,
-        getDialogMessage: getDialogMessage
+        getDialogMessage: getDialogMessage,
+        getLoginTime: getLoginTime
     }
 
     for (var key in helpers){

@@ -12,6 +12,10 @@ if (Meteor.isServer) {
             api_secret: 'qmMIfRAVtCJ4k3UHpGkbcAfB3yk'
         });
 
+        Meteor.publish('allUserData', function(){
+            return Meteor.users.find({});
+        })
+
 
         Meteor.methods({
             reverseGeoCode: function(latlng){
