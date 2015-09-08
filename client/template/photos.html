@@ -11,9 +11,14 @@
         <div class="photo-wrapper">
              <div class="col-lg-4">
                 {{#each getCurrentUserPhotos}}
-                    <a href="{{this.c.url}}" class="thumbnail">
-                        <img src="{{this.c.url}}" class="img-responsive gallery-item">
-                    </a>
+                    <div class="photo-view gallery-item">
+                        <a href="{{this.c.url}}" class="thumbnail">
+                            <img src="{{this.c.url}}" class="img-responsive">
+                        </a>
+                        <div class="photo-remove-marker">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </div>
+                    </div>
                 {{/each}}
              </div>
         </div>

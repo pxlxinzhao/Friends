@@ -150,6 +150,7 @@ if (Meteor.isClient){
     Template.tag.helpers({
         isEditMode: isEditMode
     });
+
     Template.deleteBtn.helpers({
         isEditMode: isEditMode
     });
@@ -177,11 +178,28 @@ if (Meteor.isClient){
 
 
 //-- PHOTO RELATED
+    var removeMarkerClicked = false;
+
     Template.photos.helpers({
         getCurrentUserPhotos: function(){
             return PHOTOS.find({userId: Meteor.userId()}).fetch();;
         }
     })
+
+    Template.photos.events({
+        'click .gallery-item': function(e){
+            e.preventDefault();
+
+            if (removeMarkerClicked){
+                console.log($(this));
+                removeMarkerClicked = false;
+            }
+        },
+        'click .photo-remove-marker': function(){
+            removeMarkerClicked = true;
+        }
+
+    });
 }
 
 

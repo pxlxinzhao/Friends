@@ -125,7 +125,21 @@
 }
 
 .gallery-item {
-  max-width: 100px;
+  //max-width: 100px;
+  position: relative;
+}
+
+.photo-remove-marker{
+  display:none;
+}
+
+.gallery-item:hover >
+.photo-remove-marker {
+  display:block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  //color: @theme-pink;
 }
 
 //-- footer
