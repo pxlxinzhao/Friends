@@ -10,6 +10,13 @@ getDialogMessage = function(){
     return DIALOG_MESSAGE;
 }
 
+//-- Notification
+
+removeNotification = function(notificationId){
+    Meteor.setTimeout( function () {
+        Notifications.remove({ _id: notificationId });
+    },  3000 );
+}
 
 //--User
 

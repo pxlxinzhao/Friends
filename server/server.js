@@ -12,6 +12,10 @@ if (Meteor.isServer) {
             api_secret: 'qmMIfRAVtCJ4k3UHpGkbcAfB3yk'
         });
 
+        //_.extend(Notifications.defaultOptions, {
+        //    timeout: 5000
+        //});
+
         Meteor.publish('allUserData', function(){
             return Meteor.users.find({});
         })
