@@ -13,6 +13,7 @@ getDialogMessage = function(){
 
 //--User
 
+    //--for current
 getCurrentUser = function(){
     return Meteor.user();
 }
@@ -30,6 +31,7 @@ getCurrentProfile = function(){
     return profile;
 }
 
+    //--needs arguments (getter)
 getUserById = function(id){
     return Meteor.users.findOne({_id: id});
 }
@@ -45,25 +47,6 @@ getUsername = function(user){
         }
     }
 
-}
-
-setProfile = function(user, profile){
-    //console.log('setting profile: ', profile);
-
-    Meteor.users.update({_id: user._id}, {$set: {profile: profile}});
-}
-
-setGeoPosition = function(){
-    navigator.geolocation.getCurrentPosition(function(position) {
-
-        var latlng = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-        }
-
-        //save complete location object
-        Meteor.call('reverseGeoCode', latlng);
-    });
 }
 
 getCity = function(user){
@@ -98,5 +81,25 @@ getLoginTime = function(user){
     if (user && user.status && user.status.lastLogin){
        return moment(user.status.lastLogin.date).fromNow();
     }
+}
+
+    //--setter
+setProfile = function(user, profile){
+    //console.log('setting profile: ', profile);
+
+    Meteor.users.update({_id: user._id}, {$set: {profile: profile}});
+}
+
+setGeoPosition = function(){
+    navigator.geolocation.getCurrentPosition(function(position) {
+
+        var latlng = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        }
+
+        //save complete location object
+        Meteor.call('reverseGeoCode', latlng);
+    });
 }
 

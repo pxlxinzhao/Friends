@@ -30,6 +30,15 @@ Router.route('/user/:id', {
     }
 });
 
+Router.onBeforeAction(function() {
+    if (! Meteor.userId()) {
+        this.render('explore');
+    } else {
+        this.next();
+    }
+});
+
+
 ServiceConfiguration.configurations.remove({
     service: 'facebook'
 });
@@ -61,5 +70,7 @@ if (Meteor.isClient) {
     });
 
 }
+
+
 
 

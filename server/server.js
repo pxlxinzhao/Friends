@@ -16,6 +16,21 @@ if (Meteor.isServer) {
             return Meteor.users.find({});
         })
 
+        Meteor.publish('allMessages', function(){
+            return MESSAGES.find({});
+        })
+
+        Meteor.publish('allTags', function(){
+            return TAGS.find({});
+        })
+
+        Meteor.publish('allPhotos', function(){
+            return PHOTOS.find({});
+        })
+
+        UserStatus.events.on("connectionLogout", function(fields) {
+            //Router.go("/");
+        })
 
         Meteor.methods({
             reverseGeoCode: function(latlng){

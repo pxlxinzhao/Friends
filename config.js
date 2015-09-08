@@ -11,6 +11,9 @@ PHOTOS = new Mongo.Collection("photos");
 if (Meteor.isClient) {
     Tracker.autorun(function(){
         Meteor.subscribe('allUserData');
+        Meteor.subscribe('allMessages');
+        Meteor.subscribe('allTags');
+        Meteor.subscribe('allPhotos');
     })
 
     Accounts.ui.config({
@@ -25,6 +28,8 @@ if (Meteor.isClient) {
     });
 
     Accounts.onLogin(function(){
+
+
         var user = getCurrentUser();
         var profile = user.profile ? user.profile : {};
 
@@ -44,7 +49,6 @@ if (Meteor.isClient) {
 
         //geo location
         setGeoPosition();
-
     });
 
     Avatar.options = {
