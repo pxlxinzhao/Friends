@@ -2,16 +2,16 @@
  * Created by Patrick_Pu on 2015-09-05.
  */
 
-DIALOG_MESSAGE = 'Default Message';
+//-- Dialog
 
-// defining global functions
+DIALOG_MESSAGE = 'Default Message';
 
 getDialogMessage = function(){
     return DIALOG_MESSAGE;
 }
 
 
-//--user stuff
+//--User
 
 getCurrentUser = function(){
     return Meteor.user();
@@ -68,27 +68,15 @@ setGeoPosition = function(){
 
 getCity = function(user){
     user = user.hash.user;
-
-    var city;
-    try{
-        city =  user.profile.location.city;
-    }catch(err){
-        city = '';
+    //console.log(user);
+    if(user && user.profile && user.profile.location){
+        return user.profile.location[0].city;
     }
-    return city;
 }
 
 getStatus = function(user){
     user = user.hash.user;
 
-    //console.log('user', user);
-    //
-    //if (user && user.username === 'Patrick Pu'){
-    //    console.log(user);
-    //}
-    //var status;
-    //try{ status =  user.profile.isOnline;
-    //}catch(err){ status = false; }
     try{
         if (user.status.idle){
             return "idle";
@@ -107,8 +95,8 @@ getStatus = function(user){
 getLoginTime = function(user){
     user = user.hash.user;
 
-    if (user.status && user.status.online){
-        console.log(user.status.lastLogin);
+    if (user && user.status && user.status.lastLogin){
+       return moment(user.status.lastLogin.date).fromNow();
     }
 }
 

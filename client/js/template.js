@@ -11,7 +11,7 @@ if (Meteor.isClient){
     Template.explore.helpers({
         getUsers: function () {
             var users = Meteor.users.find().fetch();
-            users.sort(SortByStatus);
+            users.sort(sortByLastLogin);
 
             //console.log('explore users', users);
             return users;
@@ -218,7 +218,7 @@ function isEditMode(){
     }
 }
 
-function SortByLiveness(a, b){
+function SortByLoginTimes(a, b){
     var aTime = 0;
     if (a.profile && a.profile.loginTimes){
         aTime = a.profile.loginTimes;
@@ -232,16 +232,41 @@ function SortByLiveness(a, b){
     return ((aTime < bTime) ? 1 : ((aTime > bTime) ? -1 : 0));
 }
 
-function SortByStatus(a, b){
-    var aStatus = false;
-    if (a.profile && a.profile.isOnline){
-        aStatus = a.profile.isOnline;
+function sortByLastLogin(a, b){
+
+    function getTime(user){
+        if (user && user.status && user.status.lastLogin && user.status.lastLogin.date){
+            return moment(user.status.lastLogin.date).unix();
+        }else{
+            return 0;
+        }
     }
 
-    var bStatus = false;
-    if (b.profile && b.profile.isOnline){
-        bStatus = b.profile.isOnline;
-    }
+    return getTime(b) - getTime(a);
 
-    return aStatus === bStatus ? 0 : aStatus === true ? -1 : 1;
 }
+
+function SortByStatus(a, b){
+
+    function checkUserStatus(user){
+        if (user && user.status){
+            if (user.status.idle){
+                return 1;
+            }
+            else if (user.status.online){
+                return 0;
+            }
+            else{
+                return 2;
+            }
+        }else{
+            return 3;
+        }
+    }
+
+    var aStatus = checkUserStatus(a);
+    var bStatus = checkUserStatus(b);
+
+    return aStatus - bStatus;
+}
+
