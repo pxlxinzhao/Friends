@@ -83,6 +83,19 @@ if (Meteor.isClient){
         }
     })
 
+    Template.otherUserProfile.events({
+        "click #send-message": function(){
+            var $input = $("#message-input");
+            var receiverId = $input.attr('data-userId');
+            var message = $input.val();
+
+            if (receiverId && message.length > 0){
+                Meteor.call('insertMessageForCurrentUser', receiverId, message);
+                $input.val('');
+            }
+        }
+    });
+
 
 
 //--TAGS RELATED
@@ -201,6 +214,15 @@ if (Meteor.isClient){
         }
 
     });
+
+
+//-- MESSAGES
+    Template.messages.helpers({
+        getMessage: function(){
+            //console.log();
+            return MESSAGES.find({receiverId: Meteor.userId()}).fetch();
+        }
+    })
 }
 
 

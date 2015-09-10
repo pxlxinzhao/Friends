@@ -18,6 +18,10 @@ Router.route('/photos', {
     template: 'photos'
 });
 
+Router.route('/messages', {
+    template: 'messages'
+});
+
 Router.route('/user/:id', {
     template: 'otherUserProfile',
     data: function (){

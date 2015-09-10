@@ -2,11 +2,6 @@
  * Created by Patrick_Pu on 2015-09-05.
  */
 
-// defining collections
-
-MESSAGES = new Mongo.Collection("messages");
-TAGS = new Mongo.Collection("tags");
-PHOTOS = new Mongo.Collection("photos");
 
 if (Meteor.isClient) {
     Tracker.autorun(function(){

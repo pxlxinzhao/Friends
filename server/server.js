@@ -82,6 +82,16 @@ if (Meteor.isServer) {
                     userId: Meteor.userId(),
                     c:obj
                 })
+            },
+
+
+//MESSAGES
+            insertMessageForCurrentUser: function(receiverId, message){
+                MESSAGES.insert({
+                    senderId: Meteor.userId(),
+                    receiverId: receiverId,
+                    createdTime: moment().toString()
+                });
             }
 
         });

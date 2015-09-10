@@ -1,0 +1,24 @@
+<template name="messages">
+
+    {{#each getMessage}}
+    <div class="row user-view-container">
+        <div class="col-md-2">
+            <div class="img-holder">
+                <a href="/user/{{this.senderId}}">
+                    {{> avatar userId=this.senderId size="large" shape="circle"}}
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            {{> userInfo}}
+        </div>
+        <div class="col-md-7">
+
+
+
+        </div>
+    </div>
+    <hr>
+    {{/each}}
+
+</template>
