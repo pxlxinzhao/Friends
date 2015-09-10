@@ -1,10 +1,16 @@
 <template name="messages">
 
-    <div class="col-md-3">
-
+    <div class="col-md-3 col-lg-2">
+    {{#each getMessageSendersForCurrentUser}}
+        <div class="img-holder-left-block top-margin">
+            <a id="message-user-link" data-id="{{this}}" href="#">
+                {{> avatar userId=this size="large" shape="circle"}}
+            </a>
+        </div>
+    {{/each}}
     </div>
 
-    <div class="col-md-9">
+    <div class="col-md-9 col-lg-10">
 
         {{#each getMessage}}
             {{> messageEntry message=this}}
@@ -26,9 +32,9 @@
         <div class="col-md-3">
             {{> userInfoById userId=message.senderId}}
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 message-holder">
             <small>{{formatTime message.createdTime}}:</small>
-            {{message.message}}
+            <p>{{message.message}}</p>
         </div>
     </div>
     <hr>

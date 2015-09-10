@@ -221,8 +221,25 @@ if (Meteor.isClient){
         getMessage: function(){
             //console.log();
             return MESSAGES.find({receiverId: Meteor.userId()}).fetch();
+        },
+        getMessageSendersForCurrentUser: function(){
+            var result = MESSAGES.find({receiverId: Meteor.userId()}, {sort: {createdTime: -1}, fields: {"senderId": 1}}).fetch();
+            var uniqueResult =  _.uniq(result.map(function(x) {
+                return x.senderId;
+            }), true)
+
+            console.log('uniqueResult',uniqueResult);
+            return uniqueResult;
         }
     })
+
+    Template.messages.events({
+        "click #message-user-link": function(e){
+            e.preventDefault();
+            Session.set('MessageSender', $("#message-user-link").attr("data-id"));
+            console.log('Session: ', Session.get('MessageSender'));
+        }
+    });
 
     Template.messageEntry.helpers({
         formatTime: function(str){
