@@ -10,12 +10,11 @@
             </div>
         </div>
         <div class="col-md-3">
-            {{> userInfo}}
+            {{> userInfoById userId=this.senderId}}
         </div>
         <div class="col-md-7">
-
-
-
+            <small>{{formatTime this.createdTime}}:</small>
+            {{this.message}}
         </div>
     </div>
     <hr>

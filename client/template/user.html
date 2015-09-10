@@ -39,3 +39,12 @@
     <span class="tiny-top-margin">{{getCity user=user}}</span>
     <p class="small tiny-top-margin">{{getLoginTime user=user}}</p>
 </template>
+
+<template name="userInfoById">
+    <p class="tiny-bot-margin">
+        <STRONG>{{getUsername userId=userId}}</STRONG>
+        <span class="glyphicon glyphicon-tint {{getStatus userId=userId}}"></span>
+    </p>
+    <span class="tiny-top-margin">{{getCity userId=userId}}</span>
+    <p class="small tiny-top-margin">{{getLoginTime userId=userId}}</p>
+</template>

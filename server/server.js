@@ -90,7 +90,8 @@ if (Meteor.isServer) {
                 MESSAGES.insert({
                     senderId: Meteor.userId(),
                     receiverId: receiverId,
-                    createdTime: moment().toString()
+                    message: message,
+                    createdTime: moment().unix()
                 });
             }
 
