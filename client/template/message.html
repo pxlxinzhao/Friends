@@ -1,23 +1,36 @@
 <template name="messages">
 
-    {{#each getMessage}}
+    <div class="col-md-3">
+
+    </div>
+
+    <div class="col-md-9">
+
+        {{#each getMessage}}
+            {{> messageEntry message=this}}
+        {{/each}}
+
+    </div>
+</template>
+
+<template name="messageEntry">
+
     <div class="row user-view-container">
         <div class="col-md-2">
             <div class="img-holder">
-                <a href="/user/{{this.senderId}}">
-                    {{> avatar userId=this.senderId size="large" shape="circle"}}
+                <a href="/user/{{message.senderId}}">
+                    {{> avatar userId=message.senderId shape="circle"}}
                 </a>
             </div>
         </div>
         <div class="col-md-3">
-            {{> userInfoById userId=this.senderId}}
+            {{> userInfoById userId=message.senderId}}
         </div>
         <div class="col-md-7">
-            <small>{{formatTime this.createdTime}}:</small>
-            {{this.message}}
+            <small>{{formatTime message.createdTime}}:</small>
+            {{message.message}}
         </div>
     </div>
     <hr>
-    {{/each}}
 
 </template>

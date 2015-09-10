@@ -221,11 +221,14 @@ if (Meteor.isClient){
         getMessage: function(){
             //console.log();
             return MESSAGES.find({receiverId: Meteor.userId()}).fetch();
-        },
+        }
+    })
+
+    Template.messageEntry.helpers({
         formatTime: function(str){
             return moment(str).format('hh:mm');
         }
-    })
+    });
 }
 
 
