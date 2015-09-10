@@ -9,6 +9,7 @@ if (Meteor.isClient) {
         Meteor.subscribe('allMessages');
         Meteor.subscribe('allTags');
         Meteor.subscribe('allPhotos');
+        Meteor.subscribe('allRelationships')
     })
 
     Accounts.ui.config({

@@ -32,6 +32,10 @@ if (Meteor.isServer) {
             return PHOTOS.find({});
         })
 
+        Meteor.publish('allRelationships', function(){
+            return RELATIONSHIPS.find({});
+        })
+
         UserStatus.events.on("connectionLogout", function(fields) {
             //Router.go("/");
         })
