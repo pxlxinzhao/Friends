@@ -95,7 +95,7 @@ if (Meteor.isServer) {
                     senderId: Meteor.userId(),
                     receiverId: receiverId,
                     message: message,
-                    createdTime: moment().unix()
+                    createdTime: moment().valueOf()
                 });
             }
 

@@ -20,6 +20,7 @@
                     </div>
                     <div id="navbar-collapse" class="navbar-collapse collapse navbar-right">
                         <ul class="nav navbar-nav">
+                            {{#if currentUser}}
                             <li class="nav-item"><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
                             <!--<li class="nav-item"><a href="/profile"><span class="glyphicon glyphicon-user"></span></a></li>-->
                             <li class="nav-item"><a href="/messages"><span class="glyphicon glyphicon-envelope"></span></a></li>
@@ -36,6 +37,7 @@
                                     <!--<li><a href="blog-post.html">Single Blog Post</a></li>-->
                                 </ul>
                             </li>
+                            {{/if}}
                             <li class="nav-item">
                                 <div class="login-wrapper">
                                     {{> loginButtons}}

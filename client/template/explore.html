@@ -3,7 +3,7 @@
 	
 		<div class="col-lg-8">
 			<section id="user-list">
-		    	{{#each getUsers}}
+		    	{{#each getUsersByLastLogin}}
                     {{> userView user=this}}
                 {{/each}}
 		    </section>
@@ -13,14 +13,21 @@
 				<section>
 					<h6><STRONG>Hottest</STRONG></h6>
 					<hr>
-			    	{{> smallerUserView user=getCurrentUser}}
+
+                    <!--//getUsersByLoginTimes-->
+                    {{#each getUsersByLoginTimes}}
+                        {{> smallerUserView user=this}}
+                    {{/each}}
+
 			    </section>
 			</div>
 			<div class="vertical-section-wrapper">
 				<section>
 					<h6><STRONG>Radar</STRONG></h6>
 					<hr>
-			    	{{> smallerUserView user=getCurrentUser}}
+                    {{#each getUsersByStatus}}
+                        {{> smallerUserView user=this}}
+                    {{/each}}
 			    </section>
 			</div>
 		</div>

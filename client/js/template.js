@@ -9,9 +9,24 @@ if (Meteor.isClient){
 
 //EXPLORE RELATED
     Template.explore.helpers({
-        getUsers: function () {
-            var users = Meteor.users.find().fetch();
+        getUsersByLastLogin: function () {
+            var users = Meteor.users.find({}, {profile: 1, limit: 1000}).fetch();
             users.sort(sortByLastLogin);
+
+            //console.log('explore users', users);
+            return users;
+        },
+        getUsersByLoginTimes: function () {
+            var users = Meteor.users.find({}, {profile: 1, limit: 3}).fetch();
+            users.sort(SortByLoginTimes);
+
+            //console.log('explore users', users);
+            return users;
+        },
+        getUsersByStatus: function(){
+            //SortByStatus
+            var users = Meteor.users.find({}, {status: 1, limit: 3}).fetch();
+            users.sort(SortByStatus);
 
             //console.log('explore users', users);
             return users;
@@ -219,8 +234,8 @@ if (Meteor.isClient){
 //-- MESSAGES
     Template.messages.helpers({
         getMessage: function(){
-            //console.log();
-            return MESSAGES.find({receiverId: Meteor.userId()}).fetch();
+            //console.log('Session messaggSender: ',Session.get('MessageSender'));
+            return MESSAGES.find({receiverId: Meteor.userId(), senderId: Session.get('MessageSender')}, {sort: {createdTime: -1}}).fetch();
         },
         getMessageSendersForCurrentUser: function(){
             var result = MESSAGES.find({receiverId: Meteor.userId()}, {sort: {createdTime: -1}, fields: {"senderId": 1}}).fetch();
@@ -228,22 +243,37 @@ if (Meteor.isClient){
                 return x.senderId;
             }), true)
 
-            console.log('uniqueResult',uniqueResult);
+            //console.log('uniqueResult',uniqueResult);
             return uniqueResult;
         }
     })
 
     Template.messages.events({
-        "click #message-user-link": function(e){
+        "click .message-user-link": function(e){
             e.preventDefault();
-            Session.set('MessageSender', $("#message-user-link").attr("data-id"));
-            console.log('Session: ', Session.get('MessageSender'));
+            //console.log(e.target);
+
+            //this is really weird..
+            var userId = e.target.parentNode.parentNode.getAttribute('data-id');
+            if (!userId){
+                userId = e.target.parentNode.getAttribute('data-id');
+            }
+            if (!userId){
+                userId = e.target.getAttribute('data-id');
+            }
+            if(!userId){
+                console.error('error trying to get user id');
+            }
+
+            Session.set('MessageSender', userId);
         }
     });
 
     Template.messageEntry.helpers({
         formatTime: function(str){
-            return moment(str).format('hh:mm');
+            var result = moment(str).format('YYYY-MM-DD HH:mm:ss');
+            //console.log('resutl', str);
+            return result;
         }
     });
 }
@@ -313,5 +343,18 @@ function SortByStatus(a, b){
     var bStatus = checkUserStatus(b);
 
     return aStatus - bStatus;
+}
+
+function SortByLoginTimes(a, b){
+
+    var aT = a.profile.loginTimes;
+    var bT = b.profile.loginTimes;
+
+    if (aT && bT){
+        return bT - aT;
+    }else{
+        return 1;
+    }
+
 }
 
