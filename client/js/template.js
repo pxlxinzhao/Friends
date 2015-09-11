@@ -3,30 +3,27 @@
  */
 
 var tagEditable = false;
+var files = null;
 
 if (Meteor.isClient){
-    var files = null;
 
 //-- Register global helpers
 
-    if (Meteor.isClient){
-
-        var helpers = {
-            getUsername: getUsername,
-            getCurrentUserId: getCurrentUserId,
-            getCurrentUser: getCurrentUser,
-            getCity: getCity,
-            getStatus: getStatus,
-            getUserById: getUserById,
-            getDialogMessage: getDialogMessage,
-            getLoginTime: getLoginTime
-        }
-
-        for (var key in helpers){
-            Template.registerHelper(key, helpers[key]);
-        }
-
+    var helpers = {
+        getUsername: getUsername,
+        getCurrentUserId: getCurrentUserId,
+        getCurrentUser: getCurrentUser,
+        getCity: getCity,
+        getStatus: getStatus,
+        getUserById: getUserById,
+        getDialogMessage: getDialogMessage,
+        getLoginTime: getLoginTime
     }
+
+    for (var key in helpers){
+        Template.registerHelper(key, helpers[key]);
+    }
+
 
 //LOGIN
     Template.login.events({
