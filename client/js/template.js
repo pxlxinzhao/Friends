@@ -7,6 +7,46 @@ var tagEditable = false;
 if (Meteor.isClient){
     var files = null;
 
+//-- Register global helpers
+
+    if (Meteor.isClient){
+
+        var helpers = {
+            getUsername: getUsername,
+            getCurrentUserId: getCurrentUserId,
+            getCurrentUser: getCurrentUser,
+            getCity: getCity,
+            getStatus: getStatus,
+            getUserById: getUserById,
+            getDialogMessage: getDialogMessage,
+            getLoginTime: getLoginTime
+        }
+
+        for (var key in helpers){
+            Template.registerHelper(key, helpers[key]);
+        }
+
+    }
+
+//LOGIN
+    Template.login.events({
+        'click #facebook-login': function(event) {
+            Meteor.loginWithFacebook({}, function(err){
+                if (err) {
+                    throw new Meteor.Error("Facebook login failed");
+                }
+            });
+        },
+
+        'click #logout': function(event) {
+            Meteor.logout(function(err){
+                if (err) {
+                    throw new Meteor.Error("Logout failed");
+                }
+            })
+        }
+    });
+
 //EXPLORE RELATED
     Template.explore.helpers({
         getUsersByLastLogin: function () {

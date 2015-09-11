@@ -1,16 +1,5 @@
-/**
- * Created by Patrick_Pu on 2015-09-05.
- */
-
 
 if (Meteor.isClient) {
-    Tracker.autorun(function(){
-        Meteor.subscribe('allUserData');
-        Meteor.subscribe('allMessages');
-        Meteor.subscribe('allTags');
-        Meteor.subscribe('allPhotos');
-        Meteor.subscribe('allRelationships')
-    })
 
     Accounts.ui.config({
         requestPermissions: {
@@ -25,25 +14,10 @@ if (Meteor.isClient) {
 
     Accounts.onLogin(function(){
 
-
         var user = getCurrentUser();
-        var profile = user.profile ? user.profile : {};
 
-        //set online
-        //profile.isOnline = true;
+        Meteor.call('addLoginTimes');
 
-        //set loginTimes
-        var times = profile.loginTimes;
-        if (!times) {
-            times = 0;
-        }
-        times ++;
-        profile.loginTimes = times;
-
-        //saving profile
-        setProfile(user, profile);
-
-        //geo location
         setGeoPosition();
     });
 
@@ -57,23 +31,19 @@ if (Meteor.isClient) {
         cloud_name:"cloud_name"
     });
 
-    var helpers = {
-        getUsername: getUsername,
-        getCurrentUserId: getCurrentUserId,
-        getCurrentUser: getCurrentUser,
-        getCity: getCity,
-        getStatus: getStatus,
-        getUserById: getUserById,
-        getDialogMessage: getDialogMessage,
-        getLoginTime: getLoginTime
-    }
-
-    for (var key in helpers){
-        Template.registerHelper(key, helpers[key]);
-    }
-
 }
 
+
+
+ServiceConfiguration.configurations.remove({
+    service: 'facebook'
+});
+
+ServiceConfiguration.configurations.insert({
+    service: 'facebook',
+    appId: '899773626737808',
+    secret: 'e6b0bd5198c5544fa4527575b3bec9be'
+});
 
 
 

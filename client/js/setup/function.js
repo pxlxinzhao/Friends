@@ -2,16 +2,8 @@
  * Created by Patrick_Pu on 2015-09-05.
  */
 
-//-- Collections
-
-MESSAGES = new Mongo.Collection("messages");
-TAGS = new Mongo.Collection("tags");
-PHOTOS = new Mongo.Collection("photos");
-RELATIONSHIPS = new Mongo.Collection("relationships");
 
 //-- Dialog
-
-DIALOG_MESSAGE = 'Default Message';
 
 getDialogMessage = function(){
     return DIALOG_MESSAGE;
@@ -25,6 +17,19 @@ removeNotification = function(notificationId){
     },  3000 );
 }
 
+//-- Locations
+setGeoPosition = function(){
+    navigator.geolocation.getCurrentPosition(function(position) {
+
+        var latlng = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        }
+
+        //save complete location object
+        Meteor.call('reverseGeoCode', latlng);
+    });
+}
 
 //-- User
 
@@ -109,20 +114,8 @@ getLoginTime = function(obj){
     //--setter
 setProfile = function(user, profile){
     //console.log('setting profile: ', profile);
-
     Meteor.users.update({_id: user._id}, {$set: {profile: profile}});
 }
 
-setGeoPosition = function(){
-    navigator.geolocation.getCurrentPosition(function(position) {
 
-        var latlng = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-        }
-
-        //save complete location object
-        Meteor.call('reverseGeoCode', latlng);
-    });
-}
 

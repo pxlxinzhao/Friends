@@ -16,29 +16,10 @@ if (Meteor.isServer) {
         //    timeout: 5000
         //});
 
-        Meteor.publish('allUserData', function(){
-            return Meteor.users.find({});
-        })
 
-        Meteor.publish('allMessages', function(){
-            return MESSAGES.find({});
-        })
-
-        Meteor.publish('allTags', function(){
-            return TAGS.find({});
-        })
-
-        Meteor.publish('allPhotos', function(){
-            return PHOTOS.find({});
-        })
-
-        Meteor.publish('allRelationships', function(){
-            return RELATIONSHIPS.find({});
-        })
-
-        UserStatus.events.on("connectionLogout", function(fields) {
-            //Router.go("/");
-        })
+        //UserStatus.events.on("connectionLogout", function(fields) {
+        //    //Router.go("/");
+        //})
 
         Meteor.methods({
             reverseGeoCode: function(latlng){
@@ -61,6 +42,12 @@ if (Meteor.isServer) {
                     //setProfile(user, profile);
                 }
 
+            },
+//USER
+            addLoginTimes: function(){
+                var times = Meteor.user().loginTimes;
+                var logintTimes = times ? times + 1 : 1;
+                Meteor.users.upsert({_id: Meteor.userId()}, {$set: {loginTimes: logintTimes}});
             },
 
 
