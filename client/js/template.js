@@ -45,6 +45,14 @@ if (Meteor.isClient){
     });
 
 //EXPLORE RELATED
+    Template.explore.created = function(){
+        Session.set('userOffset', 10);
+
+        Deps.autorun(function(){
+            Meteor.subscribe('userData', Session.get('userOffset'));
+        });
+    }
+
     Template.explore.helpers({
         getUsersByLastLogin: function () {
             var users = Meteor.users.find({}, {profile: 1, limit: 1000}).fetch();
@@ -69,6 +77,27 @@ if (Meteor.isClient){
             return users;
         }
     });
+
+    Template.explore.rendered = function() {
+
+        var max = Meteor.users.find({}).count();
+        console.log('max', max);
+        // is triggered every time we scroll
+        $(window).scroll(function() {
+            if ($(window).scrollTop() + $(window).height() > $(document).height() - 10) {
+
+                var uo = Session.get('userOffset');
+                if (uo < USER_NUMBER){
+                    uo += 5;
+                    Session.set('userOffset', uo);
+                }else{
+                    $(window).off('scroll');
+                }
+
+            }
+        });
+    }
+
 
 
 

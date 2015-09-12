@@ -10,4 +10,20 @@ Meteor.startup(function () {
         api_secret: 'qmMIfRAVtCJ4k3UHpGkbcAfB3yk'
     });
 
+
+    //fakeUser(10);
 });
+
+
+
+function fakeUser(quantity){
+
+    for (var i=0; i<quantity; i++){
+        console.log('faking user');
+        var user = Fake.user({
+            fields: ['name', 'username', 'emails.address', 'profile.name'],
+        });
+        Meteor.users.insert(user);
+    }
+
+}

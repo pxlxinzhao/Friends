@@ -5,7 +5,7 @@
 if (Meteor.isClient){
 
     Tracker.autorun(function(){
-        Meteor.subscribe('allUserData');
+        //Meteor.subscribe('allUserData');
         Meteor.subscribe('allMessages');
         Meteor.subscribe('allTags');
         Meteor.subscribe('allPhotos');

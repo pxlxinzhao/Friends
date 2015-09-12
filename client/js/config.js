@@ -1,6 +1,14 @@
 
 if (Meteor.isClient) {
 
+    Meteor.call('countUser', function(err, result){
+        if (err){
+            console.log(err);
+        }else{
+            USER_NUMBER = result;
+        }
+    });
+
     Accounts.ui.config({
         requestPermissions: {
             facebook: ['user_likes'],

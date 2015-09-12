@@ -7,6 +7,11 @@ Meteor.startup(function () {
 
 
     Meteor.methods({
+
+        countUser: function(){
+          return Meteor.users.find().count();
+        },
+
         reverseGeoCode: function(latlng){
             var geo = new GeoCoder();
             var location = geo.reverse(latlng.lat, latlng.lng);
