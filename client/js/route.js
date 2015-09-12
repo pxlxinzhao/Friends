@@ -40,7 +40,7 @@ Router.route('/user/:id', {
 
 Router.onBeforeAction(function() {
     if (! Meteor.userId()) {
-        var notificationId = Notifications.warn('Notice', 'Please login first');
+        var notificationId = Notifications.warn('Please login first');
         removeNotification(notificationId);
         this.render('explore');
     } else {

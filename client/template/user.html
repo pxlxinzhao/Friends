@@ -2,7 +2,16 @@
 	<div class="row user-view-container">
 		<div class="col-md-2">
             <div class="img-holder">
-                <a href="/user/{{user._id}}"> {{> avatar user=user size="large" shape="circle"}} </a>
+                <a href="/user/{{user._id}}">
+
+                    <div class="avatar avatar-circle avatar-large">
+                        {{#if user.photoUrl}}
+                            <img class="avatar-image" src="{{user.photoUrl}}" alt="avatar" width="80" height="80">
+                        {{else}}
+                            <img class="avatar-image" src="{{identicon user._id}}" alt="avatar" width="80" height="80">
+                        {{/if}}
+                    </div>
+                </a>
             </div>
 		</div>
 		<div class="col-md-3">
@@ -21,7 +30,15 @@
 		<div class="row">
 			<div class="col-md-5">
                 <div class="img-holder">
-                    <a href="/user/{{user._id}}"> {{> avatar user=user shape="circle"}} </a>
+                    <a href="/user/{{user._id}}">
+                        <div class="avatar avatar-circle">
+                            {{#if user.photoUrl}}
+                                <img class="avatar-image" src="{{user.photoUrl}}" alt="avatar" width="80" height="80">
+                            {{else}}
+                                <img class="avatar-image" src="{{identicon user._id}}" alt="avatar" width="80" height="80">
+                            {{/if}}
+                        </div>
+                    </a>
                 </div>
 			</div>
 			<div class="col-md-7">
@@ -30,6 +47,9 @@
 		</div>
 	</div>
 </template>
+
+
+<!--user-info-part-->
 
 <template name="userInfo">
     <p class="tiny-bot-margin">

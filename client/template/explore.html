@@ -8,6 +8,7 @@
                 {{/each}}
 		    </section>
 		</div>
+
 		<div class="col-lg-3 col-lg-offset-1 vertical-container">
 			<div class="vertical-section-wrapper">
 				<section>
@@ -16,7 +17,10 @@
 
                     <!--//getUsersByLoginTimes-->
                     {{#each getUsersByLoginTimes}}
-                        {{> smallerUserView user=this}}
+                        <div class="big-top-margin">
+                            {{> smallerUserView user=this}}
+                        </div>
+
                     {{/each}}
 
 			    </section>
@@ -26,7 +30,9 @@
 					<h6><STRONG>Radar</STRONG></h6>
 					<hr>
                     {{#each getUsersByStatus}}
-                        {{> smallerUserView user=this}}
+                        <div class="big-top-margin">
+                            {{> smallerUserView user=this}}
+                        </div>
                     {{/each}}
 			    </section>
 			</div>

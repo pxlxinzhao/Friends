@@ -39,7 +39,8 @@ if (Meteor.isClient) {
     Avatar.options = {
         fallbackType: "initials",
         defaultImageUrl: "images/user.png",
-        gravatarDefault: "identicon"
+        gravatarDefault: "identicon",
+        customImageProperty: ''
     };
 
     $.cloudinary.config({

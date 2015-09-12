@@ -19,13 +19,13 @@ Meteor.startup(function () {
             var logintTimes = times ? times + 1 : 1;
             var time = moment().valueOf();
 
-            console.log('set up time: ', logintTimes, time);
+            //console.log('set up time: ', logintTimes, time);
             Meteor.users.upsert({_id: Meteor.userId()}, {$set: {loginTimes: logintTimes, lastLoginTime: time}});
 
         },
 
         setLocation: function(position){
-            console.log('set up position: ', position);
+            //console.log('set up position: ', position);
 
             LOCATIONS.upsert({_id: Meteor.userId()}, {$set: {position: position}})
 
@@ -55,6 +55,11 @@ Meteor.startup(function () {
                 userId: Meteor.userId(),
                 c:obj
             })
+        },
+
+        updatePhotoUrl: function(photo){
+            //console.log(photo);
+            Meteor.users.upsert({_id: photo.userId}, {$set: {photoUrl: photo.c.url}});
         },
 
 

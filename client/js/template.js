@@ -81,7 +81,7 @@ if (Meteor.isClient){
     Template.explore.rendered = function() {
 
         var max = Meteor.users.find({}).count();
-        console.log('max', max);
+        //console.log('max', max);
         // is triggered every time we scroll
         $(window).scroll(function() {
             if ($(window).scrollTop() + $(window).height() > $(document).height() - 10) {
@@ -136,11 +136,12 @@ if (Meteor.isClient){
             profile.email = email;
             profile.selfIntro = selfIntro;
 
-            console.log(selfIntro);
+            //console.log(selfIntro);
 
             setProfile(Meteor.user(), profile);
 
-            console.log('Successfully saved!')
+            var i = Notifications.success('Successfully saved!')
+            removeNotification(i);
         }
     });
 
@@ -150,7 +151,7 @@ if (Meteor.isClient){
             files = e.currentTarget.files;
         },
         'click #photo-update-btn': function(){
-            console.log('clicked', files);
+            //console.log('clicked', files);
 
             if (files){
                 Cloudinary.upload(files, null, function(err, res){
@@ -286,12 +287,30 @@ if (Meteor.isClient){
             e.preventDefault();
 
             if (removeMarkerClicked){
-                console.log($(this));
+                //console.log($(this));
                 removeMarkerClicked = false;
             }
         },
         'click .photo-remove-marker': function(){
             removeMarkerClicked = true;
+        },
+
+        'dblclick .gallery-item': function(e){
+            e.preventDefault();
+
+            //console.log($(this));
+            var photo = $(this)[0];
+            if (photo){
+                Meteor.call('updatePhotoUrl', photo, function(err){
+                    if (err){
+                        console.error(err);
+                    }else{
+                        var nId = Notifications.success('updated profile picture');
+                        removeNotification(nId);
+                    }
+                });
+            }
+
         }
 
     });
