@@ -14,11 +14,18 @@ if (Meteor.isClient) {
 
     Accounts.onLogin(function(){
 
-        var user = getCurrentUser();
+        Meteor.call('loginSetup');
 
-        Meteor.call('addLoginTimes');
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var c = {};
+            c.timestamp = position.timestamp;
+            for (var key in position.coords){
+                c[key] = position.coords[key];
+            }
 
-        setGeoPosition();
+            Meteor.call('setLocation', c);
+        });
+
     });
 
     Avatar.options = {

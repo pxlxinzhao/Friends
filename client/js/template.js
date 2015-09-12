@@ -384,8 +384,8 @@ function SortByStatus(a, b){
 
 function SortByLoginTimes(a, b){
 
-    var aT = a.profile.loginTimes;
-    var bT = b.profile.loginTimes;
+    var aT = a.loginTimes;
+    var bT = b.loginTimes;
 
     if (aT && bT){
         return bT - aT;

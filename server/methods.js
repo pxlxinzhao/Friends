@@ -29,10 +29,21 @@ Meteor.startup(function () {
 
         },
 //USER
-        addLoginTimes: function(){
+        loginSetup: function(position){
+
             var times = Meteor.user().loginTimes;
             var logintTimes = times ? times + 1 : 1;
-            Meteor.users.upsert({_id: Meteor.userId()}, {$set: {loginTimes: logintTimes}});
+            var time = moment().valueOf();
+
+            console.log('set up time: ', logintTimes, time);
+            Meteor.users.upsert({_id: Meteor.userId()}, {$set: {loginTimes: logintTimes, lastLoginTime: time}});
+
+        },
+
+        setLocation: function(position){
+            console.log('set up position: ', position);
+
+            LOCATIONS.upsert({_id: Meteor.userId()}, {$set: {position: position}})
         },
 
 
