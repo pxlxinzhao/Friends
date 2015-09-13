@@ -4,11 +4,11 @@
             <div class="img-holder">
                 <a href="/user/{{user._id}}">
 
-                    <div class="avatar avatar-circle avatar-large">
+                    <div class="avatar avatar-large">
                         {{#if user.photoUrl}}
-                            <img class="avatar-image" src="{{user.photoUrl}}" alt="avatar" width="80" height="80">
+                            <img class="avatar-image photo-large" src="{{user.photoUrl}}" alt="avatar">
                         {{else}}
-                            <img class="avatar-image" src="{{identicon user._id}}" alt="avatar" width="80" height="80">
+                            <img class="avatar-image photo-large" src="{{identicon user._id}}" alt="avatar">
                         {{/if}}
                     </div>
                 </a>
@@ -31,11 +31,11 @@
 			<div class="col-md-5">
                 <div class="img-holder">
                     <a href="/user/{{user._id}}">
-                        <div class="avatar avatar-circle">
+                        <div class="avatar">
                             {{#if user.photoUrl}}
-                                <img class="avatar-image" src="{{user.photoUrl}}" alt="avatar" width="80" height="80">
+                                <img class="avatar-image photo-normal" src="{{user.photoUrl}}" alt="avatar">
                             {{else}}
-                                <img class="avatar-image" src="{{identicon user._id}}" alt="avatar" width="80" height="80">
+                                <img class="avatar-image photo-normal" src="{{identicon user._id}}" alt="avatar">
                             {{/if}}
                         </div>
                     </a>
