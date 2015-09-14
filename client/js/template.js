@@ -84,6 +84,10 @@ if (Meteor.isClient){
         });
     }
 
+    Template.explore.onRendered(function () {
+        $('.parallax').parallax();
+    });
+
     Template.explore.helpers({
         getUsersByLastLogin: function () {
             var users = Meteor.users.find({}, {profile: 1, limit: 1000}).fetch();
