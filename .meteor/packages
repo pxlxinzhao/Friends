@@ -10,7 +10,6 @@ iron:router
 accounts-password
 accounts-facebook
 service-configuration
-ian:accounts-ui-bootstrap-3
 aldeed:geocoder
 lepozepo:cloudinary
 mizzao:user-status
@@ -22,3 +21,4 @@ bengott:avatar
 hillmark:meteor-identicon
 fourseven:scss
 materialize:materialize
+useraccounts:materialize

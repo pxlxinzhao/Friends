@@ -4,7 +4,6 @@ accounts-oauth@1.1.5
 accounts-password@1.1.1
 aldeed:geocoder@0.3.6
 anti:fake@0.4.1
-anti:i18n@0.4.3
 autoupdate@1.2.1
 base64@1.0.3
 bengott:avatar@0.7.6
@@ -29,7 +28,6 @@ hillmark:meteor-identicon@1.0.0
 html-tools@1.0.4
 htmljs@1.0.4
 http@1.1.0
-ian:accounts-ui-bootstrap-3@1.2.79
 id-map@1.0.3
 iron:controller@1.0.8
 iron:core@1.0.8
@@ -74,6 +72,7 @@ routepolicy@1.0.5
 service-configuration@1.0.4
 session@1.1.0
 sha@1.0.3
+softwarerero:accounts-t9n@1.0.9
 spacebars@1.0.6
 spacebars-compiler@1.0.6
 srp@1.0.3
@@ -83,5 +82,7 @@ tracker@1.0.7
 ui@1.0.6
 underscore@1.0.3
 url@1.0.4
+useraccounts:core@1.12.3
+useraccounts:materialize@1.12.3
 webapp@1.2.0
 webapp-hashing@1.0.3

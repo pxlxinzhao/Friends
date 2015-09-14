@@ -42,6 +42,8 @@ if (Meteor.isClient){
                 belowOrigin: false
             }
         );
+
+        $('.modal-trigger').leanModal();
     });
 
 //LOGIN
