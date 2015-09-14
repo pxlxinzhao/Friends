@@ -24,6 +24,25 @@ if (Meteor.isClient){
         Template.registerHelper(key, helpers[key]);
     }
 
+//NAVIGATION
+
+    Template.navigation.onRendered(function(){
+        $(".button-collapse").sideNav();
+
+        $('.collapsible').collapsible({
+            accordion : true // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
+
+        $('.dropdown-button').dropdown({
+                inDuration: 300,
+                outDuration: 225,
+                constrain_width: true,
+                hover: false,
+                gutter: 0,
+                belowOrigin: false
+            }
+        );
+    });
 
 //LOGIN
     Template.login.events({

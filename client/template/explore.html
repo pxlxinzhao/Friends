@@ -1,42 +1,42 @@
 <template name="explore">
 	
 	
-		<div class="col-lg-8">
-			<section id="user-list">
-		    	{{#each getUsersByLastLogin}}
-                    {{> userView user=this}}
-                {{/each}}
-		    </section>
-		</div>
+		<!--<div class="col-lg-8">-->
+			<!--<section id="user-list">-->
+		    	<!--{{#each getUsersByLastLogin}}-->
+                    <!--{{> userView user=this}}-->
+                <!--{{/each}}-->
+		    <!--</section>-->
+		<!--</div>-->
 
-		<div class="col-lg-3 col-lg-offset-1 vertical-container">
-			<div class="vertical-section-wrapper">
-				<section>
-					<h6><STRONG>Hottest</STRONG></h6>
-					<hr>
+		<!--<div class="col-lg-3 col-lg-offset-1 vertical-container">-->
+			<!--<div class="vertical-section-wrapper">-->
+				<!--<section>-->
+					<!--<h6><STRONG>Hottest</STRONG></h6>-->
+					<!--<hr>-->
 
-                    <!--//getUsersByLoginTimes-->
-                    {{#each getUsersByLoginTimes}}
-                        <div class="big-top-margin">
-                            {{> smallerUserView user=this}}
-                        </div>
+                    <!--&lt;!&ndash;//getUsersByLoginTimes&ndash;&gt;-->
+                    <!--{{#each getUsersByLoginTimes}}-->
+                        <!--<div class="big-top-margin">-->
+                            <!--{{> smallerUserView user=this}}-->
+                        <!--</div>-->
 
-                    {{/each}}
+                    <!--{{/each}}-->
 
-			    </section>
-			</div>
-			<div class="vertical-section-wrapper">
-				<section>
-					<h6><STRONG>Radar</STRONG></h6>
-					<hr>
-                    {{#each getUsersByStatus}}
-                        <div class="big-top-margin">
-                            {{> smallerUserView user=this}}
-                        </div>
-                    {{/each}}
-			    </section>
-			</div>
-		</div>
+			    <!--</section>-->
+			<!--</div>-->
+			<!--<div class="vertical-section-wrapper">-->
+				<!--<section>-->
+					<!--<h6><STRONG>Radar</STRONG></h6>-->
+					<!--<hr>-->
+                    <!--{{#each getUsersByStatus}}-->
+                        <!--<div class="big-top-margin">-->
+                            <!--{{> smallerUserView user=this}}-->
+                        <!--</div>-->
+                    <!--{{/each}}-->
+			    <!--</section>-->
+			<!--</div>-->
+		<!--</div>-->
 		
 	
 

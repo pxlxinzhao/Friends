@@ -1,53 +1,96 @@
 <template name="navigation">
-	<!-- nav bar -->
-	<div class="header-wrapper">
-        <!-- ******HEADER****** --> 
-        <header id="header" class="header navbar-fixed-top customize-header">  
-            <div class="container">
 
-                {{> notifications}}
 
-                <nav class="main-nav" role="navigation">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <h1 class="logo">
-                            <a href="/"><span class="highlight">Friends</span>Studio</a>
-                        </h1><!--//logo-->
-                    </div>
-                    <div id="navbar-collapse" class="navbar-collapse collapse navbar-right">
-                        <ul class="nav navbar-nav">
-                            {{#if currentUser}}
-                            <li class="nav-item"><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
-                            <!--<li class="nav-item"><a href="/profile"><span class="glyphicon glyphicon-user"></span></a></li>-->
-                            <li class="nav-item"><a href="/messages"><span class="glyphicon glyphicon-envelope"></span></a></li>
-                            <li role="presentation" class="nav-item dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <span class="glyphicon glyphicon-user"></span>
-                                    <!--<span class="caret"></span>-->
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="/profile">Profile</a></li>
-                                    <li><a href="/tag">Tags</a></li>
-                                    <li><a href="/photos">Photos</a></li>
-                                    <!--<li><a href="case-study-2.html">Single Case Study 2</a></li>-->
-                                    <!--<li><a href="blog-post.html">Single Blog Post</a></li>-->
-                                </ul>
-                            </li>
-                            {{/if}}
-                            <li class="nav-item">
-                                <div class="login-wrapper">
-                                    {{> loginButtons}}
-                                </div>
-                            </li>
-                        </ul><!--//nav-->
-                    </div><!--//navabr-collapse-->
-                </nav><!--//main-nav-->
 
-            </div><!--//container-->
-        </header><!--//header-->   
-    </div>
+    <nav>
+        <ul id="slide-out" class="side-nav">
+            <li><a href="#!">First Sidebar Link</a></li>
+            <li><a href="#!">Second Sidebar Link</a></li>
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header">Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="#!">First</a></li>
+                                <li><a href="#!">Second</a></li>
+                                <li><a href="#!">Third</a></li>
+                                <li><a href="#!">Fourth</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#!">First Sidebar Link</a></li>
+            <li><a href="#!">Second Sidebar Link</a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+            <ul id='dropdown1' class='dropdown-content'>
+                <li><a href="#!">First</a></li>
+                <li><a href="#!">Second</a></li>
+                <li><a href="#!">Third</a></li>
+                <li><a href="#!">Fourth</a></li>
+            </ul>
+        </ul>
+        <a id="nav-link" href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+
+    </nav>
+
+
+
+
+
+
+	<!--&lt;!&ndash; nav bar &ndash;&gt;-->
+	<!--<div class="header-wrapper">-->
+        <!--&lt;!&ndash; ******HEADER****** &ndash;&gt; -->
+        <!--<header id="header" class="header navbar-fixed-top customize-header">  -->
+            <!--<div class="container">-->
+
+                <!--{{> notifications}}-->
+
+                <!--<nav class="main-nav" role="navigation">-->
+                    <!--<div class="navbar-header">-->
+                        <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">-->
+                            <!--<span class="icon-bar"></span>-->
+                            <!--<span class="icon-bar"></span>-->
+                            <!--<span class="icon-bar"></span>-->
+                        <!--</button>-->
+                        <!--<h1 class="logo">-->
+                            <!--<a href="/"><span class="highlight">Friends</span>Studio</a>-->
+                        <!--</h1>&lt;!&ndash;//logo&ndash;&gt;-->
+                    <!--</div>-->
+                    <!--<div id="navbar-collapse" class="navbar-collapse collapse navbar-right">-->
+                        <!--<ul class="nav navbar-nav">-->
+                            <!--{{#if currentUser}}-->
+                            <!--<li class="nav-item"><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>-->
+                            <!--&lt;!&ndash;<li class="nav-item"><a href="/profile"><span class="glyphicon glyphicon-user"></span></a></li>&ndash;&gt;-->
+                            <!--<li class="nav-item"><a href="/messages"><span class="glyphicon glyphicon-envelope"></span></a></li>-->
+                            <!--<li role="presentation" class="nav-item dropdown">-->
+                                <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">-->
+                                    <!--<span class="glyphicon glyphicon-user"></span>-->
+                                    <!--&lt;!&ndash;<span class="caret"></span>&ndash;&gt;-->
+                                <!--</a>-->
+                                <!--<ul class="dropdown-menu">-->
+                                    <!--<li><a href="/profile">Profile</a></li>-->
+                                    <!--<li><a href="/tag">Tags</a></li>-->
+                                    <!--<li><a href="/photos">Photos</a></li>-->
+                                    <!--&lt;!&ndash;<li><a href="case-study-2.html">Single Case Study 2</a></li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<li><a href="blog-post.html">Single Blog Post</a></li>&ndash;&gt;-->
+                                <!--</ul>-->
+                            <!--</li>-->
+                            <!--{{/if}}-->
+                            <!--<li class="nav-item">-->
+                                <!--<div class="login-wrapper">-->
+                                    <!--{{> loginButtons}}-->
+                                <!--</div>-->
+                            <!--</li>-->
+                        <!--</ul>&lt;!&ndash;//nav&ndash;&gt;-->
+                    <!--</div>&lt;!&ndash;//navabr-collapse&ndash;&gt;-->
+                <!--</nav>&lt;!&ndash;//main-nav&ndash;&gt;-->
+
+            <!--</div>&lt;!&ndash;//container&ndash;&gt;-->
+        <!--</header>&lt;!&ndash;//header&ndash;&gt;   -->
+    <!--</div>-->
 </template>
