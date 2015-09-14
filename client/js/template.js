@@ -43,7 +43,17 @@ if (Meteor.isClient){
             }
         );
 
-        $('.modal-trigger').leanModal();
+        //$('.modal-trigger').leanModal();
+    });
+
+    Template.navigation.events({
+        'click .logout-btn': function(e){
+            //e.preventDefault();
+            AccountsTemplates.logout();
+        },
+        'click .modal-trigger': function () {
+            $('#modal1').openModal();
+        }
     });
 
 //LOGIN

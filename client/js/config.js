@@ -9,6 +9,16 @@ if (Meteor.isClient) {
         }
     });
 
+    AccountsTemplates.configure({
+        onSubmitHook: function(err, state){
+            if(!err) {
+                var $modal = $('#modal1');
+                $modal.closeModal();
+                $modal.find('.at-error').hide();
+            }
+        }
+    });
+
     //Accounts.ui.config({
     //    requestPermissions: {
     //        facebook: ['user_likes'],
