@@ -22,3 +22,4 @@ hillmark:meteor-identicon
 fourseven:scss
 materialize:materialize
 useraccounts:materialize
+percolate:velocityjs
