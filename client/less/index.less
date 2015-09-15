@@ -5,10 +5,34 @@
 .trasparent {
   background-color: transparent;
 }
+.big-top-margin {
+  margin-top: 20px;
+}
+.big-bot-margin {
+  margin-bottom: 20px;
+}
+.top-margin {
+  margin-top: 10px;
+}
+.small-top-margin {
+  margin-top: 5px;
+}
+.tiny-top-margin {
+  margin-top: 3px;
+}
+.bot-margin {
+  margin-bottom: 10px;
+}
+.small-bot-margin {
+  margin-bottom: 5px;
+}
+.tiny-bot-margin {
+  margin-bottom: 3px;
+}
 
 // nav
 .nav {
-  position: fixed;
+  position: absolute;
 }
 .nav-container {
   margin-left: 10%;
@@ -51,27 +75,38 @@
   overflow-y: hidden;
 }
 .explore-img {
-  max-width: 100%;
+  width: 100%;
   object-fit: cover;
-  object-position: 30% 50%;
-  //background-image: url("images/b2.jpg");
+  object-position: 40% 50%;
+  min-height: 350px;
+  max-height: 500px;
+  z-index: -1;
 }
 .explore-img-container {
   width: 100%;
   heigth: 500px;
   z-index: -1;
 }
-//.bg-img {
-//  width: 100%;
-//  height: auto;
-//}
-//.parallax-img {
-//  width: 100%;
-//  object-fit: cover;
-//}
 
-
-
+//user
+.card {
+  height: auto;
+}
+.img-holder {
+  float: left;
+  display:inline-block;
+  padding:5px;
+}
+.text-holder {
+  float: left;
+  display:inline-block;
+  margin: 10px 0px;
+  font-size: 0.9rem;
+}
+.user-info-holder {
+  float: left;
+  padding: 5px;
+}
 
 
 
@@ -168,37 +203,7 @@
 ////}
 //
 ////-- other user profile
-//.big-top-margin {
-//  margin-top: 20px;
-//}
-//
-//.big-bot-margin {
-//  margin-bottom: 20px;
-//}
-//
-//.top-margin {
-//  margin-top: 10px;
-//}
-//
-//.small-top-margin {
-//  margin-top: 5px;
-//}
-//
-//.tiny-top-margin {
-//  margin-top: 3px;
-//}
-//
-//.bot-margin {
-//  margin-bottom: 10px;
-//}
-//
-//.small-bot-margin {
-//  margin-bottom: 5px;
-//}
-//
-//.tiny-bot-margin {
-//  margin-bottom: 3px;
-//}
+
 //
 ////-- tag
 //

@@ -1,29 +1,21 @@
 <template name="explore">
 
-    <!--<div class="parallax-container">-->
-        <!--<div class="parallax"><img src="images/b1.jpg" class=""></div>-->
-    <!--</div>-->
-    <!--<div class="parallax-container">-->
-        <!--<div class="parallax"><img src="images/b2.jpg"></div>-->
-    <!--</div>-->
-
 	<div clas="explore-img-container col l12">
-        <!--<img class="explore-img" src="images/b2.jpg">-->
+        <img class="explore-img" src="images/b2.jpg">
 	</div>
 
-    <!--<div class="parallax-container">-->
-    	<!--<div class="parallax"><img class="explore-img" src="images/b2.jpg"></div>-->
-    <!--</div>-->
+	<div class="container">
+        <div class="col-lg-8">
+            <section id="user-list">
+				<div class="row">
+					{{#each getUsersByLastLogin}}
+						{{> userView user=this}}
+					{{/each}}
+				</div>
 
-    <!--<div class="section">-->
-        <!--<div class="row container" >-->
-            <!--<h2 class="header">Parallax</h2>-->
-            <!--<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>-->
-        <!--</div>-->
-    <!--</div>-->
-
-
-
+            </section>
+        </div>
+	</div>
 
 </template>
 
@@ -37,14 +29,6 @@
 
 </template>
 
-
-<!--<div class="col-lg-8">-->
-<!--<section id="user-list">-->
-        <!--{{#each getUsersByLastLogin}}-->
-<!--{{> userView user=this}}-->
-        <!--{{/each}}-->
-<!--</section>-->
-<!--</div>-->
 
 <!--<div class="col-lg-3 col-lg-offset-1 vertical-container">-->
 <!--<div class="vertical-section-wrapper">-->
