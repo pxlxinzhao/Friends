@@ -1,9 +1,27 @@
 <template name="welcome">
 
-    <video autoplay loop muted id="video-bg">
 
-        <source src="videos/romance.mp4" type="video/mp4">
+    <div id="fullpage">
 
-    </video>
+        <div class="section">
+            <video autoplay loop muted id="video-bg">
+                <source src="videos/king.mp4" type="video/mp4">
+            </video>
+
+            <div class="container">
+                <div class="fullpage-title">
+                    <h1 class="white-text">最远的距离</h1>
+                    <h1 class="white-text">是TA明明在你的身边</h1>
+                    <h1 class="white-text">你却没有察觉</h1>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section">
+            {{> explore}}
+        </div>
+
+    </div>
 
 </template>

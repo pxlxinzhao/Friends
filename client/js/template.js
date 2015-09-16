@@ -75,6 +75,36 @@ if (Meteor.isClient){
         }
     });
 
+//Welcome
+    Template.welcome.onRendered(function () {
+        //$('.parallax').parallax();
+        $('#fullpage').fullpage({
+            verticalCentered: false,
+            scrollOverflow: false,
+            navigationTooltips: ['firstSlide', 'secondSlide'],
+            slidesNavigation: true,
+            onLeave: function(index, nextIndex, direction){
+                var leavingSection = $(this);
+                var $nav = $('.nav');
+
+                if(index == 1 && direction =='down'){
+                    $nav.velocity({
+                        backgroundColorAlpha: 1
+                    });
+                }
+                else if(index == 2 && direction == 'up'){
+                    $nav.velocity({
+                        backgroundColorAlpha: 0
+                    });
+                }
+            }
+        });
+
+        $(".fullpage-title").children()
+            .velocity("transition.slideLeftIn", { stagger: 1800 }, 1000)
+            .delay(750);
+    });
+
 //EXPLORE RELATED
     Template.explore.created = function(){
         Session.set('userOffset', 10);
@@ -83,11 +113,6 @@ if (Meteor.isClient){
             Meteor.subscribe('userData', Session.get('userOffset'));
         });
     }
-
-    Template.explore.onRendered(function () {
-        //$('.parallax').parallax();
-        $('#fullpage').fullpage();
-    });
 
     Template.explore.helpers({
         getUsersByLastLogin: function () {
@@ -479,3 +504,12 @@ function SortByLoginTimes(a, b){
 
 }
 
+function convertHex(hex,opacity){
+    hex = hex.replace('#','');
+    r = parseInt(hex.substring(0,2), 16);
+    g = parseInt(hex.substring(2,4), 16);
+    b = parseInt(hex.substring(4,6), 16);
+
+    result = 'rgba('+r+','+g+','+b+','+opacity/100+')';
+    return result;
+}

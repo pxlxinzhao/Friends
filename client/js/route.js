@@ -3,11 +3,15 @@
  */
 
 Router.configure({
-    //layoutTemplate: 'main'
+    layoutTemplate: 'main'
 });
 
 Router.route('/', {
     template: 'welcome'
+});
+
+Router.route('/explore', {
+    template: 'explore'
 });
 
 Router.route('/profile', {
@@ -42,7 +46,7 @@ Router.onBeforeAction(function() {
     if (! Meteor.userId()) {
         var notificationId = Notifications.warn('Please login first');
         removeNotification(notificationId);
-        this.render('explore');
+        this.render('welcome');
     } else {
         this.next();
     }
