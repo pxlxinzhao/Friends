@@ -3,11 +3,11 @@
  */
 
 Router.configure({
-    layoutTemplate: 'main'
+    //layoutTemplate: 'main'
 });
 
 Router.route('/', {
-    template: 'explore'
+    template: 'welcome'
 });
 
 Router.route('/profile', {
