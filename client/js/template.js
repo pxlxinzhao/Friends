@@ -85,7 +85,8 @@ if (Meteor.isClient){
     }
 
     Template.explore.onRendered(function () {
-        $('.parallax').parallax();
+        //$('.parallax').parallax();
+        $('#fullpage').fullpage();
     });
 
     Template.explore.helpers({

@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfe2a494-02f6-4c22-9fdc-aa2f179693d0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/videos/king.mp4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/videos/romance.mp4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template/welcome.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/template/explore.html" afterPath="$PROJECT_DIR$/client/template/explore.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/less/index.less" afterPath="$PROJECT_DIR$/client/less/index.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/route.js" afterPath="$PROJECT_DIR$/client/js/route.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/packages" afterPath="$PROJECT_DIR$/.meteor/packages" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/template.js" afterPath="$PROJECT_DIR$/client/js/template.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/versions" afterPath="$PROJECT_DIR$/.meteor/versions" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Friends.iws" />
@@ -44,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/client/js/template.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
+              <caret line="88" column="34" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="34" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -52,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="explore.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="explore.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/template/explore.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6153846">
-              <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.5425532">
+              <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -72,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="welcome.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="welcome.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/template/welcome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16565165">
-              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+            <state vertical-scroll-proportion="-1.6666666">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -193,7 +190,6 @@
         <option value="$PROJECT_DIR$/client/js/config.js" />
         <option value="$PROJECT_DIR$/server/methods.js" />
         <option value="$PROJECT_DIR$/server/config.js" />
-        <option value="$PROJECT_DIR$/client/js/template.js" />
         <option value="$PROJECT_DIR$/client/template/main.html" />
         <option value="$PROJECT_DIR$/client/template/user.html" />
         <option value="$PROJECT_DIR$/client/template/nav.html" />
@@ -201,6 +197,7 @@
         <option value="$PROJECT_DIR$/client/less/index.less" />
         <option value="$PROJECT_DIR$/client/js/route.js" />
         <option value="$PROJECT_DIR$/client/template/explore.html" />
+        <option value="$PROJECT_DIR$/client/js/template.js" />
       </list>
     </option>
   </component>
@@ -624,6 +621,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -676,6 +674,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -698,6 +697,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -743,6 +743,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.1923075">
           <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -832,16 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/template.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/template/nav.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -874,18 +865,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/template/explore.html">
+    <entry file="file://$PROJECT_DIR$/client/template/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6153846">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        <state vertical-scroll-proportion="-1.6666666">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/template/welcome.html">
+    <entry file="file://$PROJECT_DIR$/client/js/template.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16565165">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="88" column="34" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/template/explore.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5425532">
+          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
           <folding />
         </state>
       </provider>
