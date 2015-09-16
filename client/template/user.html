@@ -1,8 +1,5 @@
 <template name="userView">
-
-    <div class="col s12 m6 l4">
         <div class="card">
-
             <div class="card-content">
                 <div class="img-holder">
                     <a href="/user/{{user._id}}">
@@ -22,39 +19,8 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                 </div>
             </div>
-
-            <!--<div class="card-action">-->
-                <!--<a href="#">This is a link</a>-->
-                <!--<a href="#">This is a link</a>-->
-            <!--</div>-->
         </div>
-    </div>
-
 </template>
-	<!--<div class="row user-view-container">-->
-		<!--<div class="col-md-2">-->
-            <!--<div class="img-holder">-->
-                <!--<a href="/user/{{user._id}}">-->
-
-                    <!--<div class="avatar avatar-large">-->
-                        <!--{{#if user.photoUrl}}-->
-                            <!--<img class="avatar-image photo-large" src="{{user.photoUrl}}" alt="avatar">-->
-                        <!--{{else}}-->
-                            <!--<img class="avatar-image photo-large" src="{{identicon user._id}}" alt="avatar">-->
-                        <!--{{/if}}-->
-                    <!--</div>-->
-                <!--</a>-->
-            <!--</div>-->
-		<!--</div>-->
-		<!--<div class="col-md-3">-->
-			<!--{{> userInfo}}-->
-		<!--</div>-->
-		<!--<div class="col-md-7">-->
-			<!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>-->
-		<!--</div>-->
-	<!--</div>-->
-	<!--<hr>-->
-	
 
 
 <template name="smallerUserView">
@@ -79,7 +45,6 @@
 		</div>
 	</div>
 </template>
-
 
 <!--user-info-part-->
 
@@ -107,3 +72,29 @@
         <span class="glyphicon glyphicon-tint {{getStatus userId=userId}}"></span>
     </p>
 </template>
+
+
+
+<!--<div class="row user-view-container">-->
+<!--<div class="col-md-2">-->
+<!--<div class="img-holder">-->
+<!--<a href="/user/{{user._id}}">-->
+
+<!--<div class="avatar avatar-large">-->
+        <!--{{#if user.photoUrl}}-->
+<!--<img class="avatar-image photo-large" src="{{user.photoUrl}}" alt="avatar">-->
+        <!--{{else}}-->
+<!--<img class="avatar-image photo-large" src="{{identicon user._id}}" alt="avatar">-->
+        <!--{{/if}}-->
+<!--</div>-->
+<!--</a>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-md-3">-->
+<!--{{> userInfo}}-->
+<!--</div>-->
+<!--<div class="col-md-7">-->
+<!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--<hr>-->

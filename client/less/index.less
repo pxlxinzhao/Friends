@@ -32,7 +32,15 @@
 
 // nav
 .nav {
-  position: absolute;
+  position: fixed;
+  z-index: 5000;
+}
+.nav-wrapper {
+  width:50%;
+  float:left;
+}
+.nav-wrapper label{
+  line-height: 100%;
 }
 .nav-container {
   margin-left: 10%;
@@ -40,6 +48,11 @@
 }
 .nav-container .modal-trigger {
   margin: 0;
+}
+@media  (max-width: 600px) {
+  nav .input-field label{
+    top: 0.8rem;
+  }
 }
 .login-modal {
   heigth: 600px;
@@ -52,7 +65,6 @@
 .modal.login-modal h3{
   font-size: 1.5rem;
 }
-
 
 //jumbotron
 .jumbotron-container {
@@ -69,8 +81,14 @@
   visibility: hidden;
 }
 
-
 //explore
+.main-container {
+  width: 90%;
+  margin: 0px auto 0px auto;
+}
+.explore-container{
+  padding-top: 80px;
+}
 .parallax-container {
   overflow-y: hidden;
 }
@@ -107,7 +125,6 @@
   float: left;
   padding: 5px;
 }
-
 
 
 

@@ -1,19 +1,39 @@
 <template name="explore">
 
-	<div clas="explore-img-container col l12">
-        <img class="explore-img" src="images/b2.jpg">
-	</div>
+	<!--<div clas="explore-img-container col l12">-->
+        <!--<img class="explore-img" src="images/b2.jpg">-->
+	<!--</div>-->
 
-	<div class="container">
-        <div class="col-lg-8">
-            <section id="user-list">
-				<div class="row">
-					{{#each getUsersByLastLogin}}
-						{{> userView user=this}}
-					{{/each}}
-				</div>
+	<div class="main-container">
+        <div class="row explore-container">
+            <div class="col l3">
+                {{> userView user=currentUser}}
+            </div>
 
-            </section>
+            <div class="col l6">
+                <section id="user-list">
+                    <div class="row">
+                        {{#each getUsersByLastLogin}}
+                            {{> userView user=this}}
+                        {{/each}}
+                    </div>
+
+                </section>
+            </div>
+
+            <div class="col l3">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
         </div>
 	</div>
 
@@ -21,13 +41,13 @@
 
 
 
-<template name="jumbotron">
+<!--<template name="jumbotron">-->
 
-    <div class="jumbotron-container">
-        <img class="jumbotron-img" src="images/pic1.jpg"/>
-    </div>
+    <!--<div class="jumbotron-container">-->
+        <!--<img class="jumbotron-img" src="images/pic1.jpg"/>-->
+    <!--</div>-->
 
-</template>
+<!--</template>-->
 
 
 <!--<div class="col-lg-3 col-lg-offset-1 vertical-container">-->

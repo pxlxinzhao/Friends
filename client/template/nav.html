@@ -1,7 +1,18 @@
 <template name="navigation">
 
     <nav class="nav">
-        <div class="container">
+        <div class="main-container">
+
+            <div class="nav-wrapper">
+                <form>
+                    <div class="input-field">
+                        <input id="search" type="search" required>
+                        <label for="search"><i class="fa fa-search"></i></label>
+                        <!--<i class="fa fa-times">close</i>-->
+                    </div>
+                </form>
+            </div>
+
             <ul id="slide-out" class="side-nav">
                 <li><a class="waves-effect waves-light waves-teal" href="/">Home</a></li>
                 <li><a class="waves-effect waves-light waves-teal" href="/">Message</a></li>
@@ -32,6 +43,11 @@
                 </li>
             </ul>
             <ul class="right hide-on-med-and-down">
+                <!--<li><i class="fa fa-search"></i><input type="text"></li>-->
+
+
+
+
                 <li><a class="waves-effect waves-light waves-teal" href="/">Home</a></li>
                 <li><a class="waves-effect waves-light waves-teal" href="/">Message</a></li>
                 <!--<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a></li>-->
@@ -52,8 +68,9 @@
                     {{/if}}
 
                 </li>
+
             </ul>
-            <a id="nav-link" href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            <a id="nav-link" href="#" data-activates="slide-out" class="right button-collapse"><i class="mdi-navigation-menu"></i></a>
         </div>
     </nav>
 
