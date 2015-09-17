@@ -3,7 +3,7 @@
  */
 
 Router.configure({
-    //layoutTemplate: 'main'
+    layoutTemplate: 'main'
 });
 
 Router.route('/', {

@@ -78,109 +78,7 @@ if (Meteor.isClient){
 //Welcome
     Template.welcome.onRendered(function () {
 
-        $(function () {
-            // Velocity demo
-
-            var isWebkit = /Webkit/i.test(navigator.userAgent),
-                isChrome = /Chrome/i.test(navigator.userAgent),
-                isMobile = !!("ontouchstart" in window),
-                isAndroid = /Android/i.test(navigator.userAgent);
-
-            $.fn.velocity.defaults.easing = "easeInOutSine";
-
-            function r (min, max) {
-                return Math.floor(Math.random() * (max - min + 1)) + min;
-            }
-
-            /* Dots
-             */
-
-            var dotsCount = isMobile ? (isAndroid ? 40 : 50) : (isChrome ? 150 : 85),
-                dotsHtml = "",
-                $count = $("#count"),
-                $dots;
-                //randomGalaxy;
-
-            for (var i = 0; i < dotsCount; i++) {
-                //randomGalaxy = "g" + r(1,16);
-                dotsHtml += '<div class="dot"></div>';
-            }
-
-            $dots = $(dotsHtml);
-
-            $count.html(dotsCount);
-
-            /*Animation
-             */
-
-            var $container = $("#container"),
-                $description = $("#description"),
-
-                screenWidth = window.screen.availWidth,
-                screenHeight = window.screen.availHeight,
-                chromeHeight = screenHeight - document.documentElement.clientHeight,
-
-                translateZMin = -725,
-                translateZMax = 600;
-
-            $container.css(
-                {
-                    //"perspective-origin": screenWidth/2 + "px " + ((screenHeight * 0.45) - chromeHeight) + "px"
-                    "perspective-origin": screenWidth * 0.2 + "px " + ((screenHeight * 0.45) - chromeHeight) + "px"
-                }).velocity({
-                    perspective: [350,125],
-                    opacity: [0.85, 0.75]
-                    //rotateZ: [5, 0]
-                },
-                {
-                    duration: 800,
-                    loop: true,
-                    delay: 3250
-                });
-
-
-            $dots.velocity({
-                    translateX: [
-                        function () {
-                            return "+=" + r(-screenWidth/2.5, screenWidth/2.5)
-                        },
-                        function () {
-                            return r(0, screenWidth)
-                        }
-                    ],
-                    translateY: [
-                        function () {
-                            return "+=" + r(-screenWidth/2.5, screenWidth/2.5)
-                        },
-                        function () {
-                            return r(0, screenHeight)
-                        }
-                    ],
-                    translateZ: [
-                        function () {
-                            return "+=" + r(translateZMin, translateZMax)
-                        },
-                        function () {
-                            return r(translateZMin, translateZMax)
-                        }
-                    ],
-                    opacity: [
-                        function () {
-                            return Math.random()
-                        },
-                        function () {
-                            return Math.random() + 0.1
-                        }
-                    ]},
-                {
-                    duration: 10000,
-                    loop: true,
-                    delay: 0
-                })
-                .velocity('reverse')
-                .appendTo($container);
-
-        });
+        //initializeDots();
 
         var $nav = $('.nav');
         $nav.velocity({
@@ -619,4 +517,108 @@ function convertHex(hex,opacity){
 
     result = 'rgba('+r+','+g+','+b+','+opacity/100+')';
     return result;
+}
+
+function initializeDots() {
+    // Velocity demo
+
+    var isWebkit = /Webkit/i.test(navigator.userAgent),
+        isChrome = /Chrome/i.test(navigator.userAgent),
+        isMobile = !!("ontouchstart" in window),
+        isAndroid = /Android/i.test(navigator.userAgent);
+
+    $.fn.velocity.defaults.easing = "easeInOutSine";
+
+    function r (min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    /* Dots
+     */
+
+    var dotsCount = isMobile ? (isAndroid ? 40 : 50) : (isChrome ? 150 : 85),
+        dotsHtml = "",
+        $count = $("#count"),
+        $dots;
+    //randomGalaxy;
+
+    for (var i = 0; i < dotsCount; i++) {
+        //randomGalaxy = "g" + r(1,16);
+        dotsHtml += '<div class="dot"></div>';
+    }
+
+    $dots = $(dotsHtml);
+
+    $count.html(dotsCount);
+
+    /*Animation
+     */
+
+    var $container = $("#container"),
+        $description = $("#description"),
+
+        screenWidth = window.screen.availWidth,
+        screenHeight = window.screen.availHeight,
+        chromeHeight = screenHeight - document.documentElement.clientHeight,
+
+        translateZMin = -725,
+        translateZMax = 600;
+
+    $container.css(
+        {
+            //"perspective-origin": screenWidth/2 + "px " + ((screenHeight * 0.45) - chromeHeight) + "px"
+            "perspective-origin": screenWidth * 0.2 + "px " + ((screenHeight * 0.45) - chromeHeight) + "px"
+        }).velocity({
+            perspective: [350,125],
+            opacity: [0.85, 0.75]
+            //rotateZ: [5, 0]
+        },
+        {
+            duration: 800,
+            loop: true,
+            delay: 3250
+        });
+
+
+    $dots.velocity({
+            translateX: [
+                function () {
+                    return "+=" + r(-screenWidth/2.5, screenWidth/2.5)
+                },
+                function () {
+                    return r(0, screenWidth)
+                }
+            ],
+            translateY: [
+                function () {
+                    return "+=" + r(-screenWidth/2.5, screenWidth/2.5)
+                },
+                function () {
+                    return r(0, screenHeight)
+                }
+            ],
+            translateZ: [
+                function () {
+                    return "+=" + r(translateZMin, translateZMax)
+                },
+                function () {
+                    return r(translateZMin, translateZMax)
+                }
+            ],
+            opacity: [
+                function () {
+                    return Math.random()
+                },
+                function () {
+                    return Math.random() + 0.1
+                }
+            ]},
+        {
+            duration: 10000,
+            loop: true,
+            delay: 0
+        })
+        .velocity('reverse')
+        .appendTo($container);
+
 }
