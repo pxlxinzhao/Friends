@@ -7,7 +7,7 @@ Router.configure({
 });
 
 Router.route('/', {
-    template: 'welcome'
+    template: 'explore'
 });
 
 Router.route('/explore', {
@@ -48,6 +48,10 @@ Router.onBeforeAction(function() {
         removeNotification(notificationId);
         this.render('welcome');
     } else {
+        var $nav = $('.nav');
+        $nav.velocity({
+            backgroundColorAlpha: 1
+        }, 0);
         this.next();
     }
 });

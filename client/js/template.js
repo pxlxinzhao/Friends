@@ -108,6 +108,10 @@ if (Meteor.isClient){
         $(".fullpage-title").children()
             .velocity("transition.slideLeftIn", { stagger: 1800 }, 1000)
             .delay(750);
+
+        $('.fullpage-right .btn').click(function () {
+            $('#modal1').openModal();
+        });
     });
 
 //EXPLORE RELATED
