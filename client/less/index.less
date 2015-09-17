@@ -68,6 +68,18 @@
 }
 
 //welcome
+#video-filter{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  min-width: 130%;
+  height: auto;
+  min-height: 130%;
+  z-index: -900;
+  background-color: black;
+  opacity: 0.6;
+}
 #video-bg {
   position: fixed;
   right: 0;
@@ -76,12 +88,17 @@
   min-width: 130%;
   height: auto;
   min-height: 130%;
-  z-index: -100;
+  z-index: -1000;
   background-color: aquamarine;
   //background-size: cover;
 }
 .header-container{
   margin-top: 15%;
+}
+@media (max-width: 600px) {
+  .header-container{
+    margin-top: 25%;
+  }
 }
 .fullpage-title {
 }
@@ -115,9 +132,6 @@
     top: 0.8rem;
   }
 }
-//.modal {
-//  z-index: 5001;
-//}
 .login-modal {
   heigth: 600px;
   width: 80%;

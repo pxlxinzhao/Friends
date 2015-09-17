@@ -78,7 +78,7 @@ if (Meteor.isClient){
 //Welcome
     Template.welcome.onRendered(function () {
 
-        //initializeDots();
+        initializeDots();
 
         var $nav = $('.nav');
         $nav.velocity({
@@ -540,7 +540,7 @@ function initializeDots() {
     /* Dots
      */
 
-    var dotsCount = isMobile ? (isAndroid ? 40 : 50) : (isChrome ? 150 : 85),
+    var dotsCount = isMobile ? (isAndroid ? 40 : 50) : (isChrome ? 130 : 80),
         dotsHtml = "",
         $count = $("#count"),
         $dots;
@@ -548,7 +548,7 @@ function initializeDots() {
 
     for (var i = 0; i < dotsCount; i++) {
         //randomGalaxy = "g" + r(1,16);
-        dotsHtml += '<div class="dot"></div>';
+        dotsHtml += '<div class="dot"><img src="images/130/' + (i+1) + '.jpg"></div>';
     }
 
     $dots = $(dotsHtml);
@@ -565,22 +565,22 @@ function initializeDots() {
         screenHeight = window.screen.availHeight,
         chromeHeight = screenHeight - document.documentElement.clientHeight,
 
-        translateZMin = -725,
+        translateZMin = -300,
         translateZMax = 600;
 
     $container.css(
         {
             //"perspective-origin": screenWidth/2 + "px " + ((screenHeight * 0.45) - chromeHeight) + "px"
-            "perspective-origin": screenWidth * 0.2 + "px " + ((screenHeight * 0.45) - chromeHeight) + "px"
+            "perspective-origin": screenWidth * 0.33 + "px " + ((screenHeight * 0.5) - chromeHeight) + "px"
         }).velocity({
-            perspective: [350,125],
-            opacity: [0.85, 0.75]
+            perspective: [300,75],
+            opacity: [0.55, 0.35]
             //rotateZ: [5, 0]
         },
         {
-            duration: 800,
+            duration: 1600,
             loop: true,
-            delay: 3250
+            delay: 4000
         });
 
 
@@ -618,7 +618,7 @@ function initializeDots() {
                 }
             ]},
         {
-            duration: 10000,
+            duration: 30000,
             loop: true,
             delay: 0
         })

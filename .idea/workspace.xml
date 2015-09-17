@@ -2,9 +2,138 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfe2a494-02f6-4c22-9fdc-aa2f179693d0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/10.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/100.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/101.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/102.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/103.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/104.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/105.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/106.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/107.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/108.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/109.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/11.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/110.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/111.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/112.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/113.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/114.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/115.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/116.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/117.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/118.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/119.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/12.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/120.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/121.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/122.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/123.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/124.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/125.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/126.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/127.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/128.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/129.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/13.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/130.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/15.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/16.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/18.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/19.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/20.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/21.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/23.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/24.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/25.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/26.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/27.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/29.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/30.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/31.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/32.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/33.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/34.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/35.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/36.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/37.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/38.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/39.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/40.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/41.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/42.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/43.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/44.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/45.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/46.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/47.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/48.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/49.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/50.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/51.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/52.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/53.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/54.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/55.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/56.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/57.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/58.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/59.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/60.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/61.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/62.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/63.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/64.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/65.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/66.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/67.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/68.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/69.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/7.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/70.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/71.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/72.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/73.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/74.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/75.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/76.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/77.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/78.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/79.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/8.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/80.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/81.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/82.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/83.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/84.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/85.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/86.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/87.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/88.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/89.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/90.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/91.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/92.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/93.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/94.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/95.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/96.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/97.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/98.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/130/99.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/less/dots.less" afterPath="$PROJECT_DIR$/client/less/dots.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/less/index.less" afterPath="$PROJECT_DIR$/client/less/index.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/note.ini" afterPath="$PROJECT_DIR$/note.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/route.js" afterPath="$PROJECT_DIR$/client/js/route.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/template.js" afterPath="$PROJECT_DIR$/client/js/template.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/template/welcome.html" afterPath="$PROJECT_DIR$/client/template/welcome.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -28,11 +157,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.less" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.less" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/less/index.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-28.436363">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7262211">
+              <caret line="99" column="17" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -41,18 +170,18 @@
       <file leaf-file-name="welcome.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/template/welcome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.5">
-              <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+            <state vertical-scroll-proportion="-20.26923">
+              <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="note.ini" pinned="false" current-in-tab="true">
+      <file leaf-file-name="note.ini" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/note.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.021464646">
-              <caret line="1" column="55" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
+            <state vertical-scroll-proportion="-6.8">
+              <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -61,8 +190,8 @@
       <file leaf-file-name="template.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/template.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.448276">
-              <caret line="82" column="7" selection-start-line="82" selection-start-column="7" selection-end-line="85" selection-end-column="14" />
+            <state vertical-scroll-proportion="-13.103448">
+              <caret line="570" column="19" selection-start-line="570" selection-start-column="19" selection-end-line="570" selection-end-column="19" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -103,8 +232,8 @@
       <file leaf-file-name="dots.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/less/dots.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.769231">
-              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -191,12 +320,12 @@
         <option value="$PROJECT_DIR$/client/template/explore.html" />
         <option value="$PROJECT_DIR$/client/font/naiyou/NaiYou.css" />
         <option value="$PROJECT_DIR$/public/font/naiyou/NaiYou.css" />
-        <option value="$PROJECT_DIR$/client/less/dots.less" />
-        <option value="$PROJECT_DIR$/client/js/template.js" />
-        <option value="$PROJECT_DIR$/client/less/index.less" />
-        <option value="$PROJECT_DIR$/client/template/welcome.html" />
         <option value="$PROJECT_DIR$/client/js/route.js" />
         <option value="$PROJECT_DIR$/note.ini" />
+        <option value="$PROJECT_DIR$/client/less/dots.less" />
+        <option value="$PROJECT_DIR$/client/js/template.js" />
+        <option value="$PROJECT_DIR$/client/template/welcome.html" />
+        <option value="$PROJECT_DIR$/client/less/index.less" />
       </list>
     </option>
   </component>
@@ -208,10 +337,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="128" />
-    <option name="y" value="8" />
-    <option name="width" value="1213" />
-    <option name="height" value="1010" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1696" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -394,9 +523,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\patrickpu\Desktop\Programming\Friends\public\images" />
       <recent name="C:\Users\patrickpu\Desktop\Programming\Friends\client\font\naiyou" />
       <recent name="C:\Users\patrickpu\Desktop\Programming\Friends\public\videos" />
-      <recent name="C:\Users\patrickpu\Desktop\Programming\Friends\public\images" />
       <recent name="$PROJECT_DIR$/client/template" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -461,14 +590,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="128" y="8" width="1213" height="1010" extended-state="1" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23976608" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17083333" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.063192904" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.062091503" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -816,14 +945,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/less/dots.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/less/notification.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.153846">
@@ -853,37 +974,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/less/index.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.436363">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/template/explore.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.5">
           <caret line="13" column="40" selection-start-line="12" selection-start-column="32" selection-end-line="13" selection-end-column="40" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/template/welcome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.5">
-          <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/template.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.448276">
-          <caret line="82" column="7" selection-start-line="82" selection-start-column="7" selection-end-line="85" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -895,10 +990,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/less/dots.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/note.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.021464646">
-          <caret line="1" column="55" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
+        <state vertical-scroll-proportion="-6.8">
+          <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/template.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.103448">
+          <caret line="570" column="19" selection-start-line="570" selection-start-column="19" selection-end-line="570" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/template/welcome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.26923">
+          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/less/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7262211">
+          <caret line="99" column="17" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
           <folding />
         </state>
       </provider>

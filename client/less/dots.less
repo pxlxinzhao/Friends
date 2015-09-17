@@ -8,7 +8,7 @@
 }
 
 #container{
-  background-color: black;
+  background-color: transparent;
   overflow: hidden;
   position: fixed;
   right: 0;
@@ -18,7 +18,7 @@
   height: auto;
   min-height: 100%;
   z-index: -100;
-  opacity: 0.75;
+  //opacity: 0.75;
 }
 
 #description {
@@ -28,13 +28,17 @@
 
 div.dot, div.test {
   position: fixed;
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: 45px;
   border-radius: 95px;
-  border: 1px solid transparent;
+  border: 0px solid transparent;
   background-color: deepskyblue;
+  overflow: hidden;
 }
-
+.dog img{
+  width: 100%;
+  heigth: auto;
+}
 .galaxies {
   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4579/galaxies.jpg') no-repeat 0 0;
   background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4579/galaxies.jpg');
