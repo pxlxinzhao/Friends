@@ -14,23 +14,22 @@ Router.route('home', {
 Router.route('explore', {
 });
 
-Router.route('/profile', {
+Router.route('profile', {
     template: 'userProfile'
 });
 
-Router.route('/tag', {
+Router.route('tag', {
     template: 'userTags'
 });
 
-Router.route('/photos', {
-    template: 'photos'
+Router.route('photos', {
 });
 
-Router.route('/messages', {
-    template: 'messages'
+Router.route('messages', {
 });
 
-Router.route('/user/:id', {
+Router.route('user', {
+    path: '/user/:id',
     template: 'otherUserProfile',
     data: function (){
         var id  = this.params.id;

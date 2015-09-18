@@ -4,13 +4,14 @@
 	  <title>Friends</title>
 	</head>
 
-	<body>
+	<main>
 		{{> navigation}}
 
-        <!--{{#transitioner}}-->
-            {{> yield}}=
-        <!--{{/transitioner}}-->
-	</body>
+		<div class="page-wrap">
+			{{> yield}}
+		</div>
+
+	</main>
 
     <footer>
 		{{> footer}}

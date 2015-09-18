@@ -1,33 +1,37 @@
 <template name="userProfile">
-	
-	<div class="col-lg-3">
-		<div class="vertical-section-wrapper">
-			{{> smallerUserView user=getCurrentUser}}
-		</div>
 
-        <!--{{> photoUpdate}}-->
+    <div class="container nav-offset">
+        <div class="row">
+            <div class="col l3">
+                <div class="vertical-section-wrapper">
+                    {{> smallerUserView user=getCurrentUser}}
+                </div>
 
-	</div>
-	<div class="col-lg-6 col-lg-offset-1">
-		<div class="profile-wrapper">
-			<form role="form" class="profile-form">
-			  <div class="form-group">
-			    <label for="username">Username:</label>
-			    <input type="text" class="form-control" id="username" value="{{getUsername user=getCurrentUser}}">
-			  </div>
-			  <div class="form-group">
-			    <label for="email">Email address:</label>
-			    <input type="email" class="form-control" id="email" value="{{getCurrentUser.profile.email}}">
-			  </div>
-			  <div class="form-group">
-			    <label for="self-intro">Self Intoduction:</label>
-			    <textarea class="form-control vertical-resize" id="selfIntro">{{getSelfIntro}}</textarea>
-			  </div>
-              <button type="submit" class="btn btn-default">Save</button>
-			</form>
-		</div>
-		
-	</div>
+                <!--{{> photoUpdate}}-->
+
+            </div>
+            <div class="col l6 offset-l1">
+                <div class="profile-wrapper">
+                    <form role="form" class="profile-form">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" value="{{getUsername user=getCurrentUser}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address:</label>
+                            <input type="email" id="email" value="{{getCurrentUser.profile.email}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="self-intro">Self Intoduction:</label>
+                            <textarea id="selfIntro" class="materialize-textarea vertical-resize">{{getSelfIntro}}</textarea>
+                        </div>
+                        <button type="submit" class="btn btn-default">Save</button>
+                    </form>
+                </div>
+             </div>
+        </div>
+    </div>
+
 
 </template>
 

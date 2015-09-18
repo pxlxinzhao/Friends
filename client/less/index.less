@@ -1,4 +1,12 @@
 // general
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
 @font-face {
   font-family: 'naiyou';
   src: url('/font/naiyou/NaiYou.eot');
@@ -109,6 +117,9 @@
 }
 
 // nav
+.nav-offset {
+  padding-top: 90px;
+}
 .nav {
   position: fixed;
   z-index: 1002;
@@ -204,7 +215,10 @@
   padding: 5px;
 }
 
-
+//profile
+.vertical-resize {
+	resize: vertical;
+}
 
 
 //
@@ -277,9 +291,7 @@
 //	margin-top: 20px;
 //}
 //
-//.vertical-resize {
-//	resize: vertical;
-//}
+
 //
 //.no-padding {
 //  padding: 0px;
