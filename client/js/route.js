@@ -6,12 +6,12 @@ Router.configure({
     layoutTemplate: 'main'
 });
 
-Router.route('/', {
+Router.route('home', {
+    path: '/',
     template: 'explore'
 });
 
-Router.route('/explore', {
-    template: 'explore'
+Router.route('explore', {
 });
 
 Router.route('/profile', {
