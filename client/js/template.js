@@ -78,11 +78,17 @@ if (Meteor.isClient){
 //Welcome
     Template.welcome.onRendered(function () {
 
-        initializeDots();
+        try{
+            initializeDots();
+        }catch (e){
+            console.log(e);
+        }
 
-        var $nav = $('.nav');
-        $nav.velocity({
+        $('.nav').velocity({
             backgroundColorAlpha: 0
+        }, 0);
+        $('footer').velocity({
+            opacity: 0
         }, 0);
 
         //$('#fullpage').fullpage({

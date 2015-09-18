@@ -21,11 +21,10 @@ if (Meteor.isClient) {
                     $nav.velocity({
                         backgroundColorAlpha: 1
                     }, 0);
-                    Router.go('explore');
-
+                    //Router.go('explore');
                     //var url = window.location.host;
                     //console.log('redirecting: ','http://'+url);
-                    //window.location.replace('http://'+url);
+                    window.location.replace('http://localhost:3000');
                 }
             }
         }

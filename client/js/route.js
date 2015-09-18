@@ -2,13 +2,25 @@
  * Created by patrickpu on 9/11/2015.
  */
 
+Router.map(function () {
+    this.route('postShow', {
+        path: '/posts/:_id',
+
+        onBeforeAction: function (pause) {
+            if (!Meteor.user()) {
+                // render the login template but keep the url in the browser the same
+                this.render('login');
+            }
+        }
+    }
+
 Router.configure({
     layoutTemplate: 'main'
 });
 
 Router.route('home', {
     path: '/',
-    template: 'explore'
+    template: 'welcome'
 });
 
 Router.route('explore', {
@@ -43,14 +55,16 @@ Router.route('user', {
 
 Router.onBeforeAction(function() {
     if (! Meteor.userId()) {
-        var notificationId = Notifications.warn('Please login first');
-        removeNotification(notificationId);
-        var $nav = $('.nav');
-        $nav.velocity({
-            backgroundColorAlpha: 0
-        }, 0);
+        //var notificationId = Notifications.warn('Please login first');
+        //removeNotification(notificationId);
         this.render('welcome');
     } else {
+        $('.nav').velocity({
+            backgroundColorAlpha: 1
+        }, 0);
+        $('footer').velocity({
+            opacity: 1
+        }, 0);
         this.next();
     }
 });

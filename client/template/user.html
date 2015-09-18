@@ -12,7 +12,7 @@
                         </div>
                     </a>
                 </div>
-                <div clas="user-info-holder">
+                <div class="user-info-holder">
                     {{> userInfo}}
                 </div>
                 <div class="text-holder">
@@ -54,7 +54,7 @@
         <span class="glyphicon glyphicon-tint {{getStatus user=user}}"></span>
     </p>
     <span class="tiny-top-margin">{{getCity user=user}}</span>
-    <p class="small tiny-top-margin">{{getLoginTime user=user}}</p>
+    <p class="tiny-top-margin">{{getLoginTime user=user}}</p>
 </template>
 
 <template name="userInfoById">
@@ -63,7 +63,7 @@
         <span class="glyphicon glyphicon-tint {{getStatus userId=userId}}"></span>
     </p>
     <span class="tiny-top-margin">{{getCity userId=userId}}</span>
-    <p class="small tiny-top-margin">{{getLoginTime userId=userId}}</p>
+    <p class="tiny-top-margin">{{getLoginTime userId=userId}}</p>
 </template>
 
 <template name="simpleUserInfoById">
