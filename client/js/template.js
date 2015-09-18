@@ -57,23 +57,23 @@ if (Meteor.isClient){
     });
 
 //LOGIN
-    Template.login.events({
-        'click #facebook-login': function(event) {
-            Meteor.loginWithFacebook({}, function(err){
-                if (err) {
-                    throw new Meteor.Error("Facebook login failed");
-                }
-            });
-        },
-
-        'click #logout': function(event) {
-            Meteor.logout(function(err){
-                if (err) {
-                    throw new Meteor.Error("Logout failed");
-                }
-            })
-        }
-    });
+//    Template.login.events({
+//        'click #facebook-login': function(event) {
+//            Meteor.loginWithFacebook({}, function(err){
+//                if (err) {
+//                    throw new Meteor.Error("Facebook login failed");
+//                }
+//            });
+//        },
+//
+//        'click #logout': function(event) {
+//            Meteor.logout(function(err){
+//                if (err) {
+//                    throw new Meteor.Error("Logout failed");
+//                }
+//            })
+//        }
+//    });
 
 //Welcome
     Template.welcome.onRendered(function () {
@@ -85,25 +85,25 @@ if (Meteor.isClient){
             backgroundColorAlpha: 0
         }, 0);
 
-        $('#fullpage').fullpage({
-            verticalCentered: false,
-            scrollOverflow: false,
-            navigationTooltips: ['firstSlide', 'secondSlide'],
-            slidesNavigation: true,
-            onLeave: function(index, nextIndex, direction){
-                var leavingSection = $(this);
-                if(index == 1 && direction =='down'){
-                    $nav.velocity({
-                        backgroundColorAlpha: 1
-                    });
-                }
-                else if(index == 2 && direction == 'up'){
-                    $nav.velocity({
-                        backgroundColorAlpha: 0
-                    });
-                }
-            }
-        });
+        //$('#fullpage').fullpage({
+        //    verticalCentered: false,
+        //    scrollOverflow: false,
+        //    navigationTooltips: ['firstSlide', 'secondSlide'],
+        //    slidesNavigation: true,
+        //    onLeave: function(index, nextIndex, direction){
+        //        var leavingSection = $(this);
+        //        if(index == 1 && direction =='down'){
+        //            $nav.velocity({
+        //                backgroundColorAlpha: 1
+        //            });
+        //        }
+        //        else if(index == 2 && direction == 'up'){
+        //            $nav.velocity({
+        //                backgroundColorAlpha: 0
+        //            });
+        //        }
+        //    }
+        //});
 
         $(".fullpage-title").children()
             .velocity("transition.slideLeftIn", { stagger: 1800 }, 1000)

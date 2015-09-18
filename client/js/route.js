@@ -46,12 +46,12 @@ Router.onBeforeAction(function() {
     if (! Meteor.userId()) {
         var notificationId = Notifications.warn('Please login first');
         removeNotification(notificationId);
-        this.render('welcome');
-    } else {
         var $nav = $('.nav');
         $nav.velocity({
-            backgroundColorAlpha: 1
+            backgroundColorAlpha: 0
         }, 0);
+        this.render('welcome');
+    } else {
         this.next();
     }
 });

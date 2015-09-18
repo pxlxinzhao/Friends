@@ -15,6 +15,13 @@ if (Meteor.isClient) {
                 var $modal = $('#modal1');
                 $modal.closeModal();
                 $modal.find('.at-error').hide();
+                //console.log('state', state);
+                if (state === 'signIn'){
+                    //Router.go('explore');
+                    var url = window.location.host;
+                    console.log('redirecting: ','http://'+url);
+                    window.location.replace('http://'+url);
+                }
             }
         }
     });
