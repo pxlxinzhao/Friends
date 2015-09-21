@@ -13,11 +13,11 @@
                     <form role="form" class="profile-form">
                         <div class="form-group">
                             <label for="username">Username:</label>
-                            <input type="text" id="username" value="{{getUsername user=getCurrentUser}}">
+                            <input type="text" id="username" value="{{getUsername user=currentUser}}">
                         </div>
                         <div class="form-group">
                             <label for="email">Email address:</label>
-                            <input type="email" id="email" value="{{getCurrentUser.profile.email}}">
+                            <input type="email" id="email" value="{{getEmail user=currentUser}}">
                         </div>
                         <div class="form-group">
                             <label for="self-intro">Self Intoduction:</label>

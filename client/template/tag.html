@@ -52,10 +52,16 @@
 
 <template name="tag">
 
-    <a class="waves-effect waves-light btn red liggten-2">
-        {{value}}
-        <input style="display: {{isEditMode}}" data-tag="{{value}}" type="checkbox"/>
-    </a>
+    <div class="">
+
+        <form action="#">
+            <p>
+                <input type="checkbox" class="filled-in" id="tag-{{value}}" checked="checked" />
+                <label for="tag-{{value}}">{{value}}</label>
+            </p>
+        </form>
+
+    </div>
 
 </template>
 

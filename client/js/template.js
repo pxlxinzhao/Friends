@@ -12,6 +12,7 @@ if (Meteor.isClient){
     var helpers = {
         getUsername: getUsername,
         getCurrentUserId: getCurrentUserId,
+        getEmail: getEmail,
         //getCurrentUser: getCurrentUser,
         getCity: getCity,
         getStatus: getStatus,
@@ -216,8 +217,9 @@ if (Meteor.isClient){
 
             setProfile(Meteor.user(), profile);
 
-            var i = Notifications.success('Successfully saved!')
-            removeNotification(i);
+            Materialize.toast('Saved', 1500);
+            //var i = Notifications.success('Successfully saved!')
+            //removeNotification(i);
         }
     });
 
