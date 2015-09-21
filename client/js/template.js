@@ -12,7 +12,7 @@ if (Meteor.isClient){
     var helpers = {
         getUsername: getUsername,
         getCurrentUserId: getCurrentUserId,
-        getCurrentUser: getCurrentUser,
+        //getCurrentUser: getCurrentUser,
         getCity: getCity,
         getStatus: getStatus,
         getUserById: getUserById,

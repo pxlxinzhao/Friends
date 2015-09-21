@@ -24,26 +24,44 @@
 
 
 <template name="smallerUserView">
-	<div class="">
-		<div class="row">
-			<div class="col-md-5">
-                <div class="img-holder">
-                    <a href="/user/{{user._id}}">
-                        <div class="avatar">
-                            {{#if user.photoUrl}}
-                                <img class="avatar-image photo-normal" src="{{user.photoUrl}}" alt="avatar">
-                            {{else}}
-                                <img class="avatar-image photo-normal" src="{{identicon user._id}}" alt="avatar">
-                            {{/if}}
-                        </div>
-                    </a>
-                </div>
-			</div>
-			<div class="col-md-7">
-				{{> userInfo}}
-			</div>
-		</div>
-	</div>
+    <div class="card padding-bot">
+        <div class="card-content">
+            <div class="img-holder">
+                <a href="/user/{{user._id}}">
+                    <div class="avatar avatar-circle">
+                        {{#if user.photoUrl}}
+                            <img class="avatar-image" src="{{user.photoUrl}}" alt="avatar">
+                        {{else}}
+                            <img class="avatar-image" src="{{identicon user._id}}" alt="avatar">
+                        {{/if}}
+                    </div>
+                </a>
+            </div>
+            <div class="user-info-holder">
+                {{> userInfo}}
+            </div>
+        </div>
+    </div>
+	<!--<div class="">-->
+		<!--<div class="row">-->
+			<!--<div class="col-md-5">-->
+                <!--<div class="img-holder">-->
+                    <!--<a href="/user/{{user._id}}">-->
+                        <!--<div class="avatar">-->
+                            <!--{{#if user.photoUrl}}-->
+                                <!--<img class="avatar-image photo-normal" src="{{user.photoUrl}}" alt="avatar">-->
+                            <!--{{else}}-->
+                                <!--<img class="avatar-image photo-normal" src="{{identicon user._id}}" alt="avatar">-->
+                            <!--{{/if}}-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</div>-->
+			<!--</div>-->
+			<!--<div class="col-md-7">-->
+				<!--{{> userInfo}}-->
+			<!--</div>-->
+		<!--</div>-->
+	<!--</div>-->
 </template>
 
 <!--user-info-part-->

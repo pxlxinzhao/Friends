@@ -23,7 +23,7 @@ Meteor.startup(function () {
         api_secret: 'qmMIfRAVtCJ4k3UHpGkbcAfB3yk'
     });
 
-    //fakeUser(10);
+    //fakeUser(20);
 });
 
 

@@ -24,7 +24,7 @@ if (Meteor.isClient) {
                     //Router.go('explore');
                     //var url = window.location.host;
                     //console.log('redirecting: ','http://'+url);
-                    window.location.replace('http://localhost:3000');
+                    //window.location.replace('http://localhost:3000');
                 }
             }
         }

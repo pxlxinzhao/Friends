@@ -1,26 +1,42 @@
 <template name="userTags">
-	
-	<div class="col-lg-3">
-		<div class="vertical-section-wrapper">
-			{{> smallerUserView user=getCurrentUser}}
-		</div>
-        <div id="new-tag" class="small-top-margin no-padding">
-            <input class="full-width" placeholder="Add a tag" type="text"/>
+
+    <div class="main-container nav-offset">
+        <div class="row">
+            <div class="col l3">
+                {{> smallerUserView user=currentUser}}
+
+                <div id="new-tag" class="small-top-margin no-padding">
+                    <input class="full-width" placeholder="Add a tag" type="text"/>
+                </div>
+                <!--<div id="tag-add" class="col-lg-12 btn btn-cta-primary tiny-top-margin">-->
+                    <!--Add-->
+                <!--</div>-->
+                <div class="top-margin">
+                    <a id="tag-add" class="waves-effect waves-light btn">Add</a>
+                </div>
+
+
+                <!--<div id="tag-edit" class="col-lg-12 btn btn-cta-primary tiny-top-margin">-->
+                    <!--Edit-->
+                <!--</div>-->
+                <div class="top-margin">
+                    <a id="tag-edit" class="waves-effect waves-light btn">Edit</a>
+                </div>
+
+
+                <div id="delete-btn-wrapper">
+                    {{> deleteBtn}}
+                </div>
+            </div>
+
+            <div id="tags-holder" class="col l6 offset-l1">
+                {{> tags}}
+            </div>
+
         </div>
-        <div id="tag-add" class="col-lg-12 btn btn-cta-primary tiny-top-margin">
-            Add
-        </div>
-        <div id="tag-edit" class="col-lg-12 btn btn-cta-primary tiny-top-margin">
-            Edit
-        </div>
-        <div id="delete-btn-wrapper">
-            {{> deleteBtn}}
-        </div>
-	</div>
-	<div id="tags-holder" class="col-lg-6 col-lg-offset-1">
-        {{> tags}}
-		
-	</div>
+
+    </div>
+
 
 </template>
 
@@ -36,7 +52,7 @@
 
 <template name="tag">
 
-    <a class="btn tag">
+    <a class="waves-effect waves-light btn red liggten-2">
         {{value}}
         <input style="display: {{isEditMode}}" data-tag="{{value}}" type="checkbox"/>
     </a>
@@ -44,7 +60,7 @@
 </template>
 
 <template name="deleteBtn">
-    <div id="tag-delete" style="display: {{isEditMode}}" class="col-lg-12 btn btn-cta-primary tiny-top-margin">
-        Delete
+    <div style="display: {{isEditMode}}" class="top-margin">
+        <a id="tag-delete" class="waves-effect waves-light btn">Delete</a>
     </div>
 </template>
