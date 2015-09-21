@@ -12,7 +12,8 @@ Router.map(function () {
                 this.render('login');
             }
         }
-    }
+    })
+});
 
 Router.configure({
     layoutTemplate: 'main'
