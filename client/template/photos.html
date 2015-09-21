@@ -1,28 +1,31 @@
 <template name="photos">
-
-    <div class="col-lg-3">
-        <div class="vertical-section-wrapper">
-            {{> smallerUserView user=getCurrentUser}}
-        </div>
-
-        {{>photoUpdate }}
-    </div>
-    <div class="col-lg-6 col-lg-offset-1 big-top-margin">
-        <div class="photo-wrapper">
-             <div class="col-lg-4">
-                {{#each getCurrentUserPhotos}}
-                    <div class="photo-view gallery-item">
-                        <a href="{{this.c.url}}" class="thumbnail">
-                            <img src="{{this.c.url}}" class="img-responsive">
-                        </a>
-                        <div class="photo-remove-marker">
-                            <span class="glyphicon glyphicon-remove"></span>
-                        </div>
+    <div class="main-container nav-offset">
+        <div class="row">
+            <div class="col l3">
+                {{> smallerUserView user=currentUser}}
+                {{> photoUpdate }}
+            </div>
+            <div class="col l6 offset-l1">
+                <div class="row">
+                    <div class="flexbox-container">
+                        {{#each getCurrentUserPhotos}}
+                            <!--<div class="col l6">-->
+                            <div class="gallery-item inline">
+                                <a href="{{this.c.url}}" class="thumbnail">
+                                    <img src="{{this.c.url}}" class="img-responsive photo-item">
+                                </a>
+                                <div class="photo-remove-marker">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </div>
+                            </div>
+                            <!--</div>-->
+                        {{/each}}
                     </div>
-                {{/each}}
-             </div>
+                </div>
+            </div>
         </div>
     </div>
+
 
 </template>
 
@@ -32,7 +35,7 @@
 
     <div class="photo-update-wrapper top-margin">
         <input type="file"/>
-        <div id="photo-update-btn" class="col-lg-12 btn btn-cta-primary small-top-margin">
+        <div id="photo-update-btn" class="col l12 btn">
             Upload
         </div>
     </div>
