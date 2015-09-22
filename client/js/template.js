@@ -54,6 +54,14 @@ if (Meteor.isClient){
         },
         'click .modal-trigger': function () {
             $('#modal1').openModal();
+        },
+        'submit #search-form': function (event) {
+            event.preventDefault();
+            var value = $("#search").val();
+            Session.set('userOffset', 10);
+            Session.set('keyword', value);
+            //Meteor.subscribe('filteredUserData', value);
+            //Blaze.render('explore');
         }
     });
 
@@ -124,22 +132,24 @@ if (Meteor.isClient){
 //EXPLORE RELATED
     Template.explore.created = function(){
         Session.set('userOffset', 10);
+        Session.set('keyword', '');
 
         Deps.autorun(function(){
-            Meteor.subscribe('userData', Session.get('userOffset'));
+            console.log('keyword', Session.get('keyword'));
+            Meteor.subscribe('userData', Session.get('userOffset'), Session.get('keyword'));
         });
     }
 
     Template.explore.helpers({
         getUsersByLastLogin: function () {
-            var users = Meteor.users.find({}, {profile: 1, limit: 1000}).fetch();
+            var users = Meteor.users.find({_id: {$ne: Meteor.userId()}}, {profile: 1, limit: 1000}).fetch();
             users.sort(sortByLastLogin);
 
             //console.log('explore users', users);
             return users;
         },
         getUsersByLoginTimes: function () {
-            var users = Meteor.users.find({}, {profile: 1, limit: 3}).fetch();
+            var users = Meteor.users.find({_id: {$ne: Meteor.userId()}}, {profile: 1, limit: 3}).fetch();
             users.sort(SortByLoginTimes);
 
             //console.log('explore users', users);
@@ -147,7 +157,7 @@ if (Meteor.isClient){
         },
         getUsersByStatus: function(){
             //SortByStatus
-            var users = Meteor.users.find({}, {status: 1, limit: 3}).fetch();
+            var users = Meteor.users.find({_id: {$ne: Meteor.userId()}}, {status: 1, limit: 3}).fetch();
             users.sort(SortByStatus);
 
             //console.log('explore users', users);
@@ -253,6 +263,14 @@ if (Meteor.isClient){
                 Meteor.call('insertMessageForCurrentUser', receiverId, message);
                 $input.val('');
             }
+        }
+    });
+
+    Template.userImage.helpers({
+        getPhotoUrlById: function(id){
+            var user =  getUserById(id);
+            if (user)
+            return user;
         }
     });
 
@@ -406,6 +424,9 @@ if (Meteor.isClient){
                 return x.senderId;
             }), true)
 
+            if (uniqueResult.length > 0){
+                Session.set('MessageSender', uniqueResult[0]);
+            }
             //console.log('uniqueResult',uniqueResult);
             return uniqueResult;
         }
@@ -414,20 +435,9 @@ if (Meteor.isClient){
     Template.messages.events({
         "click .message-user-link": function(e){
             e.preventDefault();
-            //console.log(e.target);
+            //console.log(e.target.getAttribute('data-id'));
 
-            //this is really weird..
-            var userId = e.target.parentNode.parentNode.getAttribute('data-id');
-            if (!userId){
-                userId = e.target.parentNode.getAttribute('data-id');
-            }
-            if (!userId){
-                userId = e.target.getAttribute('data-id');
-            }
-            if(!userId){
-                console.error('error trying to get user id');
-            }
-
+            var userId = e.target.getAttribute('data-id');
             Session.set('MessageSender', userId);
         }
     });

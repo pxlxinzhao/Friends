@@ -1,25 +1,47 @@
 <template name="messages">
-    <div id="messages-container">
-        <div class="col-md-3 col-lg-2">
-            {{#each getMessageSendersForCurrentUser}}
-                <div class="img-holder-left-block top-margin">
-                    <a class="message-user-link" data-id="{{this}}" href="#">
-                        {{> avatar userId=this size="large" shape="circle"}}
-                    </a>
-                </div>
-            {{/each}}
-        </div>
 
-        <div class="col-md-9 col-lg-10">
+    <div class="main-container nav-offset">
+        <div class="row">
+            <div class="col m3">
+                {{#each getMessageSendersForCurrentUser}}
+                    <div class="message-user-link" data-id="{{this}}">
+                        {{> userImage userId=this }}
+                    </div>
 
-            {{#each getMessage}}
-                {{> messageEntry message=this}}
-            {{/each}}
+                {{/each}}
+            </div>
 
+            <div class="col m9">
+
+                {{#each getMessage}}
+                    {{> messageEntry message=this}}
+                {{/each}}
+
+            </div>
         </div>
     </div>
 
+
 </template>
+
+
+<template name="userImage">
+    <div class="img-holder" data-id="{{userId}}">
+        <a href="#" data-id="{{userId}}">
+            <div class="avatar avatar-circle" data-id="{{userId}}">
+                {{#if getPhotoUrlById userId}}
+                    <img class="avatar-image" src="{{getPhotoUrlById userId}}" alt="avatar" data-id="{{userId}}">
+                {{else}}
+                    <img class="avatar-image" src="{{identicon userId}}" alt="avatar" data-id="{{userId}}">
+                {{/if}}
+            </div>
+        </a>
+
+        {{> simpleUserInfoById userId}}
+    </div>
+</template>
+
+
 
 <template name="messageEntry">
 
@@ -43,3 +65,10 @@
     <hr>
 
 </template>
+
+
+<!--<div class="img-holder-left-block top-margin">-->
+<!--<a class="message-user-link" data-id="{{this}}" href="#">-->
+<!--{{> avatar userId=this size="large" shape="circle"}}-->
+<!--</a>-->
+<!--</div>-->
