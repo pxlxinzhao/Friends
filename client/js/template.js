@@ -51,6 +51,7 @@ if (Meteor.isClient){
         'click .logout-btn': function(e){
             //e.preventDefault();
             AccountsTemplates.logout();
+            window.location.replace('http://localhost:3000');
         },
         'click .modal-trigger': function () {
             $('#modal1').openModal();
@@ -87,11 +88,11 @@ if (Meteor.isClient){
 //Welcome
     Template.welcome.onRendered(function () {
 
-        try{
-            initializeDots();
-        }catch (e){
-            console.log(e);
-        }
+        //try{
+        //    initializeDots();
+        //}catch (e){
+        //    console.log(e);
+        //}
 
         $('.nav').velocity({
             backgroundColorAlpha: 0
