@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfe2a494-02f6-4c22-9fdc-aa2f179693d0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/function.js" afterPath="$PROJECT_DIR$/lib/function.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/less/font.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/less/general.less" />
+      <change type="DELETED" beforePath="C:\Users\patrickpu\Desktop\Programming\Friends\client\less\notification.less" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/less/index.less" afterPath="$PROJECT_DIR$/client/less/index.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/template/message.html" afterPath="$PROJECT_DIR$/client/template/message.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/methods.js" afterPath="$PROJECT_DIR$/server/methods.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/template.js" afterPath="$PROJECT_DIR$/client/js/template.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/template/user.html" afterPath="$PROJECT_DIR$/client/template/user.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Friends.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,11 +28,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.less" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/less/index.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5115741">
-              <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+            <state vertical-scroll-proportion="-13.653846">
+              <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="general.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/less/general.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.153846">
+              <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="font.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/less/font.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.038462">
+              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dots.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/less/dots.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.307692">
+              <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="color.less" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/less/color.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.12028302">
+              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -43,16 +83,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-8.423077">
               <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="note.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/note.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="81" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -78,26 +108,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="methods.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/methods.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="function.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/function.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -108,21 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="constant.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/constant.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="template.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/template.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.689655">
-              <caret line="460" column="30" selection-start-line="460" selection-start-column="30" selection-end-line="460" selection-end-column="30" />
+            <state vertical-scroll-proportion="-6.448276">
+              <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -146,8 +146,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/js/server.js" />
-        <option value="$PROJECT_DIR$/client/template/userView.html" />
         <option value="$PROJECT_DIR$/global.js" />
         <option value="$PROJECT_DIR$/client/less/style.less" />
         <option value="$PROJECT_DIR$/client/template/modal.html" />
@@ -194,9 +192,11 @@
         <option value="$PROJECT_DIR$/server/methods.js" />
         <option value="$PROJECT_DIR$/client/template/user.html" />
         <option value="$PROJECT_DIR$/client/template/message.html" />
-        <option value="$PROJECT_DIR$/client/js/template.js" />
         <option value="$PROJECT_DIR$/lib/function.js" />
+        <option value="$PROJECT_DIR$/client/js/template.js" />
+        <option value="$PROJECT_DIR$/client/less/font.less" />
         <option value="$PROJECT_DIR$/client/less/index.less" />
+        <option value="$PROJECT_DIR$/client/less/general.less" />
       </list>
     </option>
   </component>
@@ -208,10 +208,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="x" value="552" />
+    <option name="y" value="20" />
+    <option name="width" value="1081" />
+    <option name="height" value="1010" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -309,10 +309,6 @@
               <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="template" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -363,7 +359,7 @@
     <property name="js.meteor.project" value="true" />
     <property name="js.meteor.library.was.enabled" value="true" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="SearchEverywhereHistoryKey" value="getUsername&#9;null&#9;null&#10;loginSetup&#9;null&#9;null&#10;'setLocation&#9;null&#9;null&#10;geoc&#9;null&#9;null&#10;getUsernameB&#9;null&#9;null&#10;userData&#9;null&#9;null&#10;otherUserProfile&#9;null&#9;null&#10;otheruser&#9;null&#9;null&#10;OTHERUSER&#9;null&#9;null&#10;S&#9;ACTION&#9;ActivateStructureToolWindow&#10;render&#9;null&#9;null&#10;blaze&#9;null&#9;null&#10;submit&#9;null&#9;null&#10;getUse&#9;null&#9;null&#10;gerUse&#9;null&#9;null&#10;getUser&#9;null&#9;null&#10;fake&#9;null&#9;null&#10;backg&#9;null&#9;null&#10;bac&#9;null&#9;null&#10;user-&#9;null&#9;null&#10;b2&#9;FILE&#9;file://C:/Users/patrickpu/Desktop/Programming/Friends/public/images/b2.jpg&#10;setProfile&#9;null&#9;null&#10;loginTimes&#9;null&#9;null&#10;getmessage&#9;null&#9;null&#10;format&#9;null&#9;null&#10;insert&#9;null&#9;null&#10;warn(&#9;null&#9;null&#10;otherUser&#9;null&#9;null&#10;container-wrapper&#9;null&#9;null&#10;status&#9;null&#9;null&#10;sort&#9;null&#9;null&#10;@btn-warning-color&#9;null&#9;null&#10;getStatus&#9;null&#9;null&#10;online&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/patrickpu/Desktop/Programming/Friends/client/less/index.less&#10;getUsername&#9;null&#9;null&#10;loginSetup&#9;null&#9;null&#10;'setLocation&#9;null&#9;null&#10;geoc&#9;null&#9;null&#10;getUsernameB&#9;null&#9;null&#10;userData&#9;null&#9;null&#10;otherUserProfile&#9;null&#9;null&#10;otheruser&#9;null&#9;null&#10;OTHERUSER&#9;null&#9;null&#10;S&#9;ACTION&#9;ActivateStructureToolWindow&#10;render&#9;null&#9;null&#10;blaze&#9;null&#9;null&#10;submit&#9;null&#9;null&#10;getUse&#9;null&#9;null&#10;gerUse&#9;null&#9;null&#10;getUser&#9;null&#9;null&#10;fake&#9;null&#9;null&#10;backg&#9;null&#9;null&#10;bac&#9;null&#9;null&#10;user-&#9;null&#9;null&#10;b2&#9;FILE&#9;file://C:/Users/patrickpu/Desktop/Programming/Friends/public/images/b2.jpg&#10;setProfile&#9;null&#9;null&#10;loginTimes&#9;null&#9;null&#10;getmessage&#9;null&#9;null&#10;format&#9;null&#9;null&#10;insert&#9;null&#9;null&#10;warn(&#9;null&#9;null&#10;otherUser&#9;null&#9;null&#10;container-wrapper&#9;null&#9;null&#10;status&#9;null&#9;null&#10;sort&#9;null&#9;null&#10;@btn-warning-color&#9;null&#9;null&#10;getStatus&#9;null&#9;null&#10;online&#9;null&#9;null" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
@@ -435,10 +431,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="552" y="20" width="1081" height="1010" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16845238" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2657277" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -482,13 +478,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/less/notification.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -732,30 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/less/color.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/less/notification.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75">
-          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/less/dots.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.5">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/js/route.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -825,16 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/template.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.689655">
-          <caret line="460" column="30" selection-start-line="460" selection-start-column="30" selection-end-line="460" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/function.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -851,10 +806,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/template.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.448276">
+          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/less/index.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5115741">
-          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+        <state vertical-scroll-proportion="-13.653846">
+          <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/less/general.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/less/font.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.038462">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/less/dots.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.307692">
+          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/less/color.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12028302">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
           <folding />
         </state>
       </provider>

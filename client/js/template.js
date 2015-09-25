@@ -29,7 +29,11 @@ if (Meteor.isClient){
 //NAVIGATION
 
     Template.navigation.onRendered(function(){
-        $(".button-collapse").sideNav();
+        $(".button-collapse").sideNav({
+            menuWidth: 240, // Default is 240
+            edge: 'right', // Choose the horizontal origin
+            closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        });
 
         $('.collapsible').collapsible({
             accordion : true // A setting that changes the collapsible behavior to expandable instead of the default accordion style
