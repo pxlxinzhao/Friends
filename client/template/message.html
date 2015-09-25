@@ -1,41 +1,44 @@
 <template name="messages">
 
     <div class="main-container nav-offset">
-        <div class="message-user-link-container">
-            {{#each getMessageSendersForCurrentUser}}
-                <div class="message-user-link" data-id="{{this}}">
-                    <div class="img-holder">
-                        {{> userImage userId=this}}
+        <div class="message-page">
+            <div class="message-user-link-container">
+                {{#each getMessageSendersForCurrentUser}}
+                    <div class="message-user-link" data-id="{{this}}">
+                        <div class="img-holder">
+                            {{> userImage userId=this}}
+                        </div>
+                        <!--{{> simpleUserInfoById userId=this}}-->
+                        <div class="message-text break">
+                            <STRONG>{{getUsername userId=this}}</STRONG>
+                            {{#each getLatestMessageFrom this}}
+                                <small>{{formatTime this.createdTime}}:</small>
+                                <span>{{this.message}}</span>
+                            {{/each}}
+                        </div>
+
                     </div>
-                    <!--{{> simpleUserInfoById userId=this}}-->
-                    <div class="message-text break">
-                        <STRONG>{{getUsername userId=this}}</STRONG>
-                        {{#each getLatestMessageFrom this}}
-                            <small>{{formatTime this.createdTime}}:</small>
-                            <span>{{this.message}}</span>
-                        {{/each}}
+
+                {{/each}}
+            </div>
+
+            <div class="message-area">
+                {{#each getMessage}}
+                    {{> messageEntry message=this}}
+                {{/each}}
+            </div>
+
+            <div class="message-form-area">
+                <form role="form" class="message-form">
+                    <div class="input-field">
+                        <label for="username">Reply:</label>
+                        <input type="text">
                     </div>
-
-                </div>
-
-            {{/each}}
+                    <button type="submit" class="btn btn-default">Send</button>
+                </form>
+            </div>
         </div>
 
-        <div class="message-area">
-            {{#each getMessage}}
-                {{> messageEntry message=this}}
-            {{/each}}
-        </div>
-
-        <div class="message-form-area">
-            <form role="form" class="message-form">
-                <div class="input-field">
-                    <label for="username">Reply:</label>
-                    <input type="text">
-                </div>
-                <button type="submit" class="btn btn-default">Send</button>
-            </form>
-        </div>
     </div>
 
 

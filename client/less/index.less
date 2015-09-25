@@ -234,6 +234,11 @@ footer.page-footer {
   justify-content: center;
 }
 
+.message-page {
+  width: 100%;
+  min-width: 600px;
+  overflow:hidden;
+}
 .message-user-link-container {
   .box-down-shadow;
   //position: absolute;
@@ -247,9 +252,6 @@ footer.page-footer {
   cursor: pointer;
   height: 70px;
   padding:10px 5px 10px 10px;
-  //min-height: 3rem;
-  //padding: 0.5rem 0rem 0rem 0.5rem;
-  //background-color: lighten(@theme-red, 5%);
   border-bottom: 1px solid #dddddd;
 }
 .message-user-link:hover {
@@ -260,6 +262,7 @@ footer.page-footer {
   .box-down-shadow;
   margin-left: 250px;
   max-height: 600px;
+  min-width: 300px;
   overflow-y: scroll;
 }
 .message-container {
@@ -271,6 +274,7 @@ footer.page-footer {
   overflow: hidden;
   word-wrap: break-word;
   margin: 0px;
+  min-width: 80px;
 }
 .message-text span,
 .message-text small,
@@ -291,8 +295,17 @@ footer.page-footer {
 .message-form-area {
   margin-top: 50px;
   margin-left: 250px;
+  min-width: 300px;
 }
 .message-form button {
   float:right;
+  margin-top: 8px;
+}
+.message-form div {
+  margin-right: 100px;
+}
+.message-form div input{
+  width:100%;
+  float: left;
 }
 
