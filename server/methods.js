@@ -32,6 +32,10 @@ Meteor.startup(function () {
             reverseGeoCode({lat: position.latitude, lng: position.longitude})
         },
 
+        likeUser: function (userId) {
+            RELATIONSHIPS.upsert({_id: Meteor.userId()}, {$push: {like: userId}});
+        },
+
 
 //TAGS
         insertTagsForCurrentUser: function (tags) {

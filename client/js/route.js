@@ -36,6 +36,8 @@ Router.map(function () {
             var templateData = {
                 user: user
             };
+            console.log(id);
+            console.log(templateData);
             return templateData;
         }
     });

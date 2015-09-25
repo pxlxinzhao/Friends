@@ -1,5 +1,10 @@
 @import url('color.less');
 
+small p {
+  margin: 0px;
+  padding: 0px;
+}
+
 // general
 body {
   display: flex;
@@ -9,6 +14,7 @@ body {
 }
 main {
   flex: 1 0 auto;
+  min-heigth: 600px;
   //background-color: white;
 }
 .box-up-shadow {
@@ -16,6 +22,9 @@ main {
 }
 .box-down-shadow {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.theme-red {
+  color: @theme-red;
 }
 
 @font-face {
@@ -132,6 +141,7 @@ main {
 // nav
 .nav-offset {
   padding-top: 90px;
+  padding-bottom: 60px;
 }
 .nav {
   position: fixed;
@@ -307,46 +317,59 @@ footer.page-footer {
 }
 
 //--message
-.message-area {
+.message-user-link-container {
   .box-down-shadow;
-}
-.message-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  //position: absolute;
+  //left:0px;
+  float: left;
+  width: 200px;
 }
 .message-user-link {
   display: flex;
   align-items: center;
-  //justify-content: center;
   cursor: pointer;
-  min-height: 3rem;
-  padding: 0 1rem;
-  background-color: lighten(@theme-red, 5%);
-  border-bottom: 1px solid @theme-green;
+  height: 70px;
+  padding:10px 5px 10px 10px;
+  //min-height: 3rem;
+  //padding: 0.5rem 0rem 0rem 0.5rem;
+  //background-color: lighten(@theme-red, 5%);
+  border-bottom: 1px solid #dddddd;
 }
 .message-user-link:hover {
   background-color: @theme-red;
-  background-color: #7b4480;
-  //border-bottom: 1px solid #ddd;
 }
-.message-user-link:hover {
-  background-color: darken(#7b4480, 5%);
+
+.message-area {
+  .box-down-shadow;
+  //position: absolute;
+  margin-left: 250px;
+  //right: 50px;
+}
+.message-container {
+  overflow: hidden;
+  border-bottom: 1px solid #dddddd;
+}
+.message-text {
+  padding: 0px 5px;
+  overflow: hidden;
+  word-wrap: break-word;
+  margin: 0px;
+}
+.message-text span,
+.message-text small,
+.message-text strong{
+  display:block;
+  padding: 1px 5px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+.img-holder{
+  padding: 5px 10px;
+  float: left;
+  width:60px;
 }
 .userImage-holder {
-  align-self: flex-start;
-}
-.userImage-holder:hover {
-  //background-color: @red-accent-2;
-}
-.userImage-holder img {
-  margin-top: 0.4rem;
-}
-.mesasge-text {
-  max-width: 100%;
-}
-.message-text p {
-  max-width: 100%;
-  word-wrap: break-word;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

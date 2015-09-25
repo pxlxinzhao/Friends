@@ -17,6 +17,7 @@ if (Meteor.isClient){
         getCity: getCity,
         getStatus: getStatus,
         getUserById: getUserById,
+        getUsernameById: getUsernameById,
         getDialogMessage: getDialogMessage,
         getLoginTime: getLoginTime
     }
@@ -135,10 +136,10 @@ if (Meteor.isClient){
         Session.set('userOffset', 10);
         Session.set('keyword', '');
 
-        Deps.autorun(function(){
-            console.log('keyword', Session.get('keyword'));
-            Meteor.subscribe('userData', Session.get('userOffset'), Session.get('keyword'));
-        });
+        //Deps.autorun(function(){
+        //    console.log('keyword', Session.get('keyword'));
+        //    Meteor.subscribe('userData', Session.get('userOffset'), Session.get('keyword'));
+        //});
     }
 
     Template.explore.helpers({
@@ -264,14 +265,26 @@ if (Meteor.isClient){
                 Meteor.call('insertMessageForCurrentUser', receiverId, message);
                 $input.val('');
             }
+        },
+        "click #user-like": function (event) {
+            event.preventDefault();
+            var userId = event.target.getAttribute('data-id');
+            if (userId){
+                Meteor.call('likeUser', userId);
+            }
+
+
+            //console.log(userId, event.target, $(event.target).attr('data-id'));
+
         }
     });
 
     Template.userImage.helpers({
         getPhotoUrlById: function(id){
             var user =  getUserById(id);
-            if (user)
-            return user;
+            if (user){
+                return user.photoUrl;
+            }
         }
     });
 

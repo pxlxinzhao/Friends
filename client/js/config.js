@@ -30,6 +30,33 @@ if (Meteor.isClient) {
         }
     });
 
+    var pwd = AccountsTemplates.removeField('password');
+    AccountsTemplates.removeField('email');
+    AccountsTemplates.addFields([
+        {
+            _id: "username",
+            type: "text",
+            displayName: "username",
+            required: true,
+            minLength: 5,
+        },
+        {
+            _id: 'email',
+            type: 'email',
+            required: true,
+            displayName: "email",
+            re: /.+@(.+){2,}\.(.+){2,}/,
+            errStr: 'Invalid email',
+        },
+        {
+            _id: 'username_and_email',
+            type: 'text',
+            required: true,
+            displayName: "Login",
+        },
+        pwd
+    ]);
+
     Avatar.options = {
         fallbackType: "initials",
         defaultImageUrl: "images/user.png",
@@ -52,33 +79,6 @@ if (Meteor.isClient) {
 
 }
 
-
-//Accounts.ui.config({
-//    requestPermissions: {
-//        facebook: ['user_likes'],
-//        github: ['user', 'repo']
-//    },
-//    requestOfflineToken: {
-//        google: true
-//    },
-//    passwordSignupFields: 'USERNAME_AND_OPTIONAL_EMAIL'
-//});
-//
-//Accounts.onLogin(function(){
-//
-//    Meteor.call('loginSetup');
-//
-//    navigator.geolocation.getCurrentPosition(function(position) {
-//        var c = {};
-//        c.timestamp = position.timestamp;
-//        for (var key in position.coords){
-//            c[key] = position.coords[key];
-//        }
-//
-//        Meteor.call('setLocation', c);
-//    });
-//
-//});
 
 
 

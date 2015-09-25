@@ -15,23 +15,19 @@
         <!--</nav>-->
 
 
-        <div class="row">
-            <div class="col m3">
-                {{#each getMessageSendersForCurrentUser}}
-                    <div class="message-user-link" data-id="{{this}}">
-                        {{> userImage userId=this }}
-                    </div>
-
-                {{/each}}
-            </div>
-
-            <div class="col m9">
-                <div class="message-area">
-                    {{#each getMessage}}
-                        {{> messageEntry message=this}}
-                    {{/each}}
+        <div class="message-user-link-container">
+            {{#each getMessageSendersForCurrentUser}}
+                <div class="message-user-link" data-id="{{this}}">
+                    {{> userImage userId=this }}
                 </div>
-            </div>
+
+            {{/each}}
+        </div>
+
+        <div class="message-area">
+            {{#each getMessage}}
+                {{> messageEntry message=this}}
+            {{/each}}
         </div>
     </div>
 
@@ -61,14 +57,16 @@
 
     <div class="message-container">
         <div class="img-holder">
-            <a href="/user/{{message.senderId}}">
-                {{> avatar userId=message.senderId shape="circle"}}
-            </a>
+            {{> userImage userId=message.senderId}}
         </div>
         <div class="message-text">
+            <strong>{{getUsernameById message.senderId}}</strong>
             <small>{{formatTime message.createdTime}}:</small>
+            <span>{{message.message}}</span>
+
+
+            <!--<span>{{message.message}}</span>-->
             <!--<p>{{message._id}}</p>-->
-            <p>{{message.message}}</p>
         </div>
     </div>
 

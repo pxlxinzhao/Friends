@@ -10,6 +10,8 @@ Meteor.publish('userData', function(offset, keyword){
         offset = 0;
     }
 
+    offset = 1000;
+
     if (!keyword){
         return Meteor.users.find({}, {limit: offset});
     }else{
