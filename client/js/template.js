@@ -469,6 +469,18 @@ if (Meteor.isClient){
             var userId = lookForAttribute(e.target, 'data-id');
             console.log('clicked', e.target);
             Session.set('MessageSender', userId);
+        },
+        'submit .message-form': function (e) {
+            e.preventDefault();
+
+            var $input= $("#message-reply");
+            var message = $input.val();
+            var receiverId = Session.get('MessageSender');
+
+            if (receiverId && message.length > 0){
+                Meteor.call('insertMessageForCurrentUser', receiverId, message);
+                $input.val('');
+            }
         }
     });
 
