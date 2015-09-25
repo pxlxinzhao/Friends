@@ -12,19 +12,27 @@ if (Meteor.isClient) {
     AccountsTemplates.configure({
         onSubmitHook: function(err, state){
             if(!err) {
+
+                Meteor.call('loginSetup');
+
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var c = {};
+                    c.timestamp = position.timestamp;
+                    for (var key in position.coords){
+                        c[key] = position.coords[key];
+                    }
+
+                    Meteor.call('setLocation', c);
+                });
+
                 var $modal = $('#modal1');
                 $modal.closeModal();
                 $modal.find('.at-error').hide();
-                //console.log('state', state);
                 if (state === 'signIn'){
                     var $nav = $('.nav');
                     $nav.velocity({
                         backgroundColorAlpha: 1
                     }, 0);
-                    //Router.go('explore');
-                    //var url = window.location.host;
-                    //console.log('redirecting: ','http://'+url);
-                    //window.location.replace('http://localhost:3000');
                 }
             }
         }
@@ -67,6 +75,10 @@ if (Meteor.isClient) {
     $.cloudinary.config({
         cloud_name:"dfmztowxz"
     });
+
+    //$.cloudinary.delete_all_resources();
+
+
 
     //Transitioner.transition({
     //    fromRoute: 'home',
