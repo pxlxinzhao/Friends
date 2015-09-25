@@ -1,24 +1,12 @@
 <template name="messages">
 
     <div class="main-container nav-offset">
-
-        <!--<nav>-->
-            <!--<ul class="right hide-on-med-and-down">-->
-                <!--<li><a href="#!">First Sidebar Link</a></li>-->
-                <!--<li><a href="#!">Second Sidebar Link</a></li>-->
-            <!--</ul>-->
-            <!--<ul id="slide-out" class="side-nav">-->
-                <!--<li><a href="#!">First Sidebar Link</a></li>-->
-                <!--<li><a href="#!">Second Sidebar Link</a></li>-->
-            <!--</ul>-->
-            <!--<a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>-->
-        <!--</nav>-->
-
-
         <div class="message-user-link-container">
             {{#each getMessageSendersForCurrentUser}}
                 <div class="message-user-link" data-id="{{this}}">
-                    {{> userImage userId=this }}
+                    <div class="img-holder">
+                        {{> userImage userId=this}}
+                    </div>
                     <!--{{> simpleUserInfoById userId=this}}-->
                     <div class="message-text break">
                         <STRONG>{{getUsername userId=this}}</STRONG>
@@ -37,6 +25,16 @@
             {{#each getMessage}}
                 {{> messageEntry message=this}}
             {{/each}}
+        </div>
+
+        <div class="message-form-area">
+            <form role="form" class="message-form">
+                <div class="input-field">
+                    <label for="username">Reply:</label>
+                    <input type="text">
+                </div>
+                <button type="submit" class="btn btn-default">Send</button>
+            </form>
         </div>
     </div>
 
@@ -70,10 +68,6 @@
             <strong>{{getUsernameById message.senderId}}</strong>
             <small>{{formatTime message.createdTime}}:</small>
             <span>{{message.message}}</span>
-
-
-            <!--<span>{{message.message}}</span>-->
-            <!--<p>{{message._id}}</p>-->
         </div>
     </div>
 

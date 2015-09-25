@@ -223,6 +223,17 @@ footer.page-footer {
 }
 
 //--message
+.img-holder{
+  padding: 5px 10px;
+  float: left;
+  width:60px;
+}
+.userImage-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .message-user-link-container {
   .box-down-shadow;
   //position: absolute;
@@ -247,9 +258,9 @@ footer.page-footer {
 
 .message-area {
   .box-down-shadow;
-  //position: absolute;
   margin-left: 250px;
-  //right: 50px;
+  max-height: 600px;
+  overflow-y: scroll;
 }
 .message-container {
   overflow: hidden;
@@ -276,13 +287,12 @@ footer.page-footer {
 .message-text.break span{
   text-overflow: ellipsis;
 }
-.img-holder{
-  padding: 5px 10px;
-  float: left;
-  width:60px;
+
+.message-form-area {
+  margin-top: 50px;
+  margin-left: 250px;
 }
-.userImage-holder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.message-form button {
+  float:right;
 }
+
