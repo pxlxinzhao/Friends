@@ -14,14 +14,14 @@ Meteor.startup(function () {
 
 //USER
         loginSetup: function(position){
+            if (Meteor.user()){
+                var times = Meteor.user().loginTimes;
+                var logintTimes = times ? times + 1 : 1;
+                var time = moment().valueOf();
 
-            var times = Meteor.user().loginTimes;
-            var logintTimes = times ? times + 1 : 1;
-            var time = moment().valueOf();
-
-            //console.log('set up time: ', logintTimes, time);
-            Meteor.users.upsert({_id: Meteor.userId()}, {$set: {loginTimes: logintTimes, lastLoginTime: time}});
-
+                //console.log('set up time: ', logintTimes, time);
+                Meteor.users.upsert({_id: Meteor.userId()}, {$set: {loginTimes: logintTimes, lastLoginTime: time}});
+            }
         },
 
         setLocation: function(position){

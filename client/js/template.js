@@ -10,10 +10,10 @@ if (Meteor.isClient){
 //-- Register global helpers
 
     var helpers = {
+        formatTime: formatTime,
         getUsername: getUsername,
         getCurrentUserId: getCurrentUserId,
         getEmail: getEmail,
-        //getCurrentUser: getCurrentUser,
         getCity: getCity,
         getStatus: getStatus,
         getUserById: getUserById,
@@ -452,26 +452,25 @@ if (Meteor.isClient){
             }
             //console.log('uniqueResult',uniqueResult);
             return uniqueResult;
+        },
+        getLatestMessageFrom: function(id){
+            return MESSAGES.find({receiverId: Meteor.userId(), senderId: id}, {sort: {createdTime: -1}, limit: 1});
         }
     })
 
     Template.messages.events({
         "click .message-user-link": function(e){
             e.preventDefault();
-            //console.log(e.target.getAttribute('data-id'));
 
-            var userId = e.target.getAttribute('data-id');
+            var userId = lookForAttribute(e.target, 'data-id');
+            console.log('clicked', e.target);
             Session.set('MessageSender', userId);
         }
     });
 
-    Template.messageEntry.helpers({
-        formatTime: function(str){
-            var result = moment(str).format('YYYY-MM-DD HH:mm:ss');
-            //console.log('resutl', str);
-            return result;
-        }
-    });
+    //Template.messageEntry.helpers({
+    //
+    //});
 }
 
 
@@ -666,4 +665,17 @@ function initializeDots() {
         .velocity('reverse')
         .appendTo($container);
 
+}
+
+function lookForAttribute(target, attr){
+    var $this = $(target);
+    if ($this.attr(attr)){
+        return $this.attr(attr);
+    }else{
+        if ($this.parent()){
+            return lookForAttribute($this.parent(), attr)
+        }else{
+            return null;
+        }
+    }
 }

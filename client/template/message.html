@@ -19,6 +19,15 @@
             {{#each getMessageSendersForCurrentUser}}
                 <div class="message-user-link" data-id="{{this}}">
                     {{> userImage userId=this }}
+                    <!--{{> simpleUserInfoById userId=this}}-->
+                    <div class="message-text break">
+                        <STRONG>{{getUsername userId=this}}</STRONG>
+                        {{#each getLatestMessageFrom this}}
+                            <small>{{formatTime this.createdTime}}:</small>
+                            <span>{{this.message}}</span>
+                        {{/each}}
+                    </div>
+
                 </div>
 
             {{/each}}
@@ -46,8 +55,6 @@
                 {{/if}}
             </div>
         </a>
-
-        {{> simpleUserInfoById userId}}
     </div>
 </template>
 
