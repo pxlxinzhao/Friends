@@ -247,6 +247,8 @@ footer.page-footer {
   //left:0px;
   float: left;
   width: 200px;
+  overflow: hidden;
+  .border-radius;
 }
 .message-user-link {
   display: flex;
@@ -259,27 +261,43 @@ footer.page-footer {
 .message-user-link:hover {
   background-color: #dddddd;
 }
+.message-user-active {
+  background-color: @theme-green;
+  color: #fff;
+}
 
 .message-area {
   .box-down-shadow;
-  //position:relative;
-  padding-top:50px;
+  margin-left: 250px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+.message-body {
+  //padding-top:50px;
   display: flex;
   flex-direction: column-reverse;
-  margin-left: 250px;
-  height: 400px;
+  -ms-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  max-height: 400px;
   min-width: 300px;
   overflow-y: scroll;
-  border-left: 1px solid @theme-green;
+  //border-left: 1px solid @theme-green;
+  position: relative;
 }
 .message-title {
   background-color: @theme-green;
   color: white;
   height: 50px;
-  position: absolute;
-  top: @top-padding;
   width: 100%;
   z-index: 1040;
+}
+.message-title strong{
+  margin-left: 20px;
+  font-size: 1.5rem;
+  line-height: 50px;
 }
 .message-container {
   flex: 1 0 auto;
@@ -326,7 +344,7 @@ footer.page-footer {
   float: left;
 }
 .dummy-message{
-  height: 50px;
+  min-height: 50px;
   width: 100%;
 }
 

@@ -4,12 +4,12 @@
         <div class="message-page">
             <div class="message-user-link-container">
                 {{#each getMessageSendersForCurrentUser}}
-                    <div class="message-user-link" data-id="{{this}}">
+                    <div class="message-user-link {{#if checkActive this}}message-user-active{{/if}}" data-id="{{this}}">
                         <div class="img-holder">
                             {{> userImage userId=this}}
                         </div>
                         <!--{{> simpleUserInfoById userId=this}}-->
-                        <div class="message-text break">
+                        <div class="message-text break ">
                             <STRONG>{{getUsername userId=this}}</STRONG>
                             {{#each getLatestMessageFrom this}}
                                 <small>{{formatTime this.createdTime}}:</small>
@@ -24,13 +24,15 @@
 
             <div id="message-container" class="message-area">
                 <div class="message-title">
-                    Messages
+                    <strong>Messages</strong>
                 </div>
-                {{#each getMessage}}
-                    {{> messageEntry message=this}}
-                {{/each}}
-                <div class="dummy-message">
+                <div class="message-body">
+                    {{#each getMessage}}
+                        {{> messageEntry message=this}}
+                    {{/each}}
                 </div>
+
+                <!--<div class="dummy-message">-->
             </div>
 
             <div class="message-form-area">

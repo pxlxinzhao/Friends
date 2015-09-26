@@ -406,7 +406,7 @@ if (Meteor.isClient){
 //-- MESSAGES
     Template.messages.onRendered(function () {
         var $messageContainer =  $("#message-container");
-        console.log($messageContainer.height());
+        //console.log($messageContainer.height());
         $messageContainer.scrollTop($messageContainer.height());
     });
 
@@ -430,19 +430,44 @@ if (Meteor.isClient){
             ).fetch();
         },
         getMessageSendersForCurrentUser: function(){
-            var result = MESSAGES.find({receiverId: Meteor.userId()}, {sort: {createdTime: -1}, fields: {"senderId": 1}}).fetch();
-            var uniqueResult =  _.uniq(result.map(function(x) {
+            var result1 = MESSAGES.find(
+                    {receiverId: Meteor.userId()},
+                    {sort: {createdTime: -1}, fields: {"senderId": 1}}
+                ).fetch();
+
+            var result2 = MESSAGES.find(
+                {senderId: Meteor.userId()},
+                {sort: {createdTime: -1}, fields: {"receiverId": 1}}
+            ).fetch();
+
+            var senders = result1.map(function(x) {
                 return x.senderId;
-            }), true)
+            });
+            var receivers = result2.map(function (x) {
+                return x.receiverId;
+            });
+
+            var mostRecentContact =
+                result1[0].createdTime > result2[0].createdTime
+                    ? result1[0].senderId : result2[0].receiverId;
+
+            var uniqueResult =  _.uniq(senders.concat(receivers));
 
             if (uniqueResult.length > 0){
                 Session.set('MessageSender', uniqueResult[0]);
             }
-            //console.log('uniqueResult',uniqueResult);
+            console.log('uniqueResult',uniqueResult);
             return uniqueResult;
         },
         getLatestMessageFrom: function(id){
             return MESSAGES.find({receiverId: Meteor.userId(), senderId: id}, {sort: {createdTime: -1}, limit: 1});
+        },
+        checkActive: function (id) {
+            if (id == Session.get('MessageSender')){
+                return true;
+            }else{
+                return false;
+            }
         }
     })
 
