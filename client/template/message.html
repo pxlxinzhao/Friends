@@ -23,9 +23,14 @@
             </div>
 
             <div id="message-container" class="message-area">
+                <div class="message-title">
+                    Messages
+                </div>
                 {{#each getMessage}}
                     {{> messageEntry message=this}}
                 {{/each}}
+                <div class="dummy-message">
+                </div>
             </div>
 
             <div class="message-form-area">

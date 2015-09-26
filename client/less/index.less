@@ -2,6 +2,8 @@
 @import url('font.less');
 @import url('general.less');
 
+@top-padding: 90px;
+
 .theme-red {
   color: @theme-red;
 }
@@ -49,12 +51,12 @@
 
 // nav
 .nav-offset {
-  padding-top: 90px;
+  padding-top: @top-padding;
   padding-bottom: 60px;
 }
 .nav {
   position: fixed;
-  z-index: 1002;
+  z-index: 1050;
   //background-color: #606c88;
 }
 .nav-wrapper {
@@ -255,22 +257,34 @@ footer.page-footer {
   border-bottom: 1px solid #dddddd;
 }
 .message-user-link:hover {
-  background-color: @theme-red;
+  background-color: #dddddd;
 }
 
 .message-area {
   .box-down-shadow;
+  //position:relative;
+  padding-top:50px;
   display: flex;
   flex-direction: column-reverse;
   margin-left: 250px;
   height: 400px;
   min-width: 300px;
   overflow-y: scroll;
+  border-left: 1px solid @theme-green;
+}
+.message-title {
+  background-color: @theme-green;
+  color: white;
+  height: 50px;
+  position: absolute;
+  top: @top-padding;
+  width: 100%;
+  z-index: 1040;
 }
 .message-container {
   flex: 1 0 auto;
   overflow: hidden;
-  border-bottom: 1px solid #dddddd;
+  //border-bottom: 1px solid #dddddd;
 }
 .message-text {
   padding: 0px 5px;
@@ -310,5 +324,9 @@ footer.page-footer {
 .message-form div input{
   width:100%;
   float: left;
+}
+.dummy-message{
+  height: 50px;
+  width: 100%;
 }
 
