@@ -13,6 +13,7 @@ blaze-tools@1.0.3
 boilerplate-generator@1.0.3
 callback-hook@1.0.3
 check@1.0.5
+clipo:darkroomjs@0.1.1
 coffeescript@1.0.6
 ddp@1.1.0
 deps@1.0.7
@@ -72,6 +73,7 @@ reactive-var@1.0.5
 reload@1.1.3
 retry@1.0.3
 routepolicy@1.0.5
+ryanswapp:fabricjs@0.1.1
 service-configuration@1.0.4
 session@1.1.0
 sha@1.0.3

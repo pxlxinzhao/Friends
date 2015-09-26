@@ -192,6 +192,44 @@ if (Meteor.isClient){
             //removeNotification(i);
         }
     });
+    
+    Template.photos.onRendered(function () {
+        new Darkroom('#photo-logo', {
+            // Size options for the canvas
+            minWidth: 100,
+            minHeight: 100,
+            maxWidth: 1000,
+            maxHeight: 1000,
+            //ratio: 4/3, // fix the canvas ratio, comment this line to use the image's ratio
+            backgroundColor: '#000',
+
+            // Plugins options
+            //plugins: {
+            //    history: true, // enable undo/redo?
+            //    save: true, // enable save?
+            //    crop: { // options for crop
+            //        quickCropKey: 67, //key "c"
+            //        minHeight: 50,
+            //        minWidth: 50,
+            //        ratio: 1 // fix ratio for cropping
+            //    }
+            //},
+
+            // This is called after initialization
+            initialize: function() {
+                var cropPlugin = this.plugins['crop'];
+
+                // Active crop selection
+                cropPlugin.requireFocus();
+
+                // set default selection
+                //cropPlugin.selectZone(x1, y1, x2, y2);
+
+                // Add custom listener
+                this.addEventListener('core:transformation', function() { /* ... */ });
+            }
+        });
+    });
 
     Template.photoUpdate.events({
 
