@@ -48,15 +48,13 @@ if (Meteor.isClient){
                 belowOrigin: false
             }
         );
-
-        //$('.modal-trigger').leanModal();
     });
 
     Template.navigation.events({
         'click .logout-btn': function(e){
             //e.preventDefault();
             AccountsTemplates.logout();
-            window.location.replace('http://localhost:3000');
+            Route.go('home');
         },
         'click .modal-trigger': function () {
             $('#modal1').openModal();
@@ -66,29 +64,8 @@ if (Meteor.isClient){
             var value = $("#search").val();
             Session.set('userOffset', 10);
             Session.set('keyword', value);
-            //Meteor.subscribe('filteredUserData', value);
-            //Blaze.render('explore');
         }
     });
-
-//LOGIN
-//    Template.login.events({
-//        'click #facebook-login': function(event) {
-//            Meteor.loginWithFacebook({}, function(err){
-//                if (err) {
-//                    throw new Meteor.Error("Facebook login failed");
-//                }
-//            });
-//        },
-//
-//        'click #logout': function(event) {
-//            Meteor.logout(function(err){
-//                if (err) {
-//                    throw new Meteor.Error("Logout failed");
-//                }
-//            })
-//        }
-//    });
 
 //Welcome
     Template.welcome.onRendered(function () {
@@ -432,18 +409,29 @@ if (Meteor.isClient){
 
 //-- MESSAGES
     Template.messages.onRendered(function () {
-        //$('.button-collapse').sideNav({
-        //        menuWidth: 300, // Default is 240
-        //        edge: 'right', // Choose the horizontal origin
-        //        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-        //    }
-        //);
+        var $messageContainer =  $("#message-container");
+        console.log($messageContainer.height());
+        $messageContainer.scrollTop($messageContainer.height());
     });
 
     Template.messages.helpers({
         getMessage: function(){
             //console.log('Session messaggSender: ',Session.get('MessageSender'));
-            return MESSAGES.find({receiverId: Meteor.userId(), senderId: Session.get('MessageSender')}, {sort: {createdTime: -1}}).fetch();
+            return MESSAGES.find({
+                $or:[
+                    {
+                        receiverId: Meteor.userId(),
+                        senderId: Session.get('MessageSender')
+                    },
+                    {
+                        senderId: Meteor.userId(),
+                        receiverId: Session.get('MessageSender')
+                    }
+
+                ]}
+                ,
+                {sort: {createdTime: -1}}
+            ).fetch();
         },
         getMessageSendersForCurrentUser: function(){
             var result = MESSAGES.find({receiverId: Meteor.userId()}, {sort: {createdTime: -1}, fields: {"senderId": 1}}).fetch();
@@ -467,7 +455,7 @@ if (Meteor.isClient){
             e.preventDefault();
 
             var userId = lookForAttribute(e.target, 'data-id');
-            console.log('clicked', e.target);
+            //console.log('clicked', e.target);
             Session.set('MessageSender', userId);
         },
         'submit .message-form': function (e) {

@@ -260,12 +260,15 @@ footer.page-footer {
 
 .message-area {
   .box-down-shadow;
+  display: flex;
+  flex-direction: column-reverse;
   margin-left: 250px;
-  max-height: 400px;
+  height: 400px;
   min-width: 300px;
   overflow-y: scroll;
 }
 .message-container {
+  flex: 1 0 auto;
   overflow: hidden;
   border-bottom: 1px solid #dddddd;
 }
