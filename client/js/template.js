@@ -7,8 +7,8 @@ var files = null;
 
 if (Meteor.isClient){
 
-//-- Register global helpers
 
+//-- Register global helpers
     var helpers = {
         formatTime: formatTime,
         getUsername: getUsername,
@@ -26,8 +26,8 @@ if (Meteor.isClient){
         Template.registerHelper(key, helpers[key]);
     }
 
-//NAVIGATION
 
+//NAVIGATION
     Template.navigation.onRendered(function(){
         $(".button-collapse").sideNav({
             menuWidth: 240, // Default is 240
@@ -62,19 +62,16 @@ if (Meteor.isClient){
         'submit #search-form': function (event) {
             event.preventDefault();
             var value = $("#search").val();
-            Session.set('userOffset', 10);
+            //Session.set('userOffset', 10);
             Session.set('keyword', value);
         }
     });
 
+
 //Welcome
     Template.welcome.onRendered(function () {
 
-        //try{
         //    initializeDots();
-        //}catch (e){
-        //    console.log(e);
-        //}
 
         $('.nav').velocity({
             backgroundColorAlpha: 0
@@ -82,26 +79,6 @@ if (Meteor.isClient){
         $('footer').velocity({
             opacity: 0
         }, 0);
-
-        //$('#fullpage').fullpage({
-        //    verticalCentered: false,
-        //    scrollOverflow: false,
-        //    navigationTooltips: ['firstSlide', 'secondSlide'],
-        //    slidesNavigation: true,
-        //    onLeave: function(index, nextIndex, direction){
-        //        var leavingSection = $(this);
-        //        if(index == 1 && direction =='down'){
-        //            $nav.velocity({
-        //                backgroundColorAlpha: 1
-        //            });
-        //        }
-        //        else if(index == 2 && direction == 'up'){
-        //            $nav.velocity({
-        //                backgroundColorAlpha: 0
-        //            });
-        //        }
-        //    }
-        //});
 
         $(".fullpage-title").children()
             .velocity("transition.slideLeftIn", { stagger: 1800 }, 1000)
@@ -114,18 +91,20 @@ if (Meteor.isClient){
 
 //EXPLORE RELATED
     Template.explore.created = function(){
-        Session.set('userOffset', 10);
-        Session.set('keyword', '');
+
+        //Session.set('userOffset', 10);
+        if (!Session.get('keyword')){
+            Session.set('keyword', '');
+        }
 
         //Deps.autorun(function(){
-        //    console.log('keyword', Session.get('keyword'));
         //    Meteor.subscribe('userData', Session.get('userOffset'), Session.get('keyword'));
         //});
     }
 
     Template.explore.helpers({
         getUsersByLastLogin: function () {
-            var users = Meteor.users.find({_id: {$ne: Meteor.userId()}}, {profile: 1, limit: 1000}).fetch();
+            var users = Meteor.users.find({_id: {$ne: Meteor.userId()}, username: new RegExp(Session.get('keyword'), 'i')}, {profile: 1, limit: 1000}).fetch();
             users.sort(sortByLastLogin);
 
             //console.log('explore users', users);
@@ -167,8 +146,6 @@ if (Meteor.isClient){
             }
         });
     }
-
-
 
 
 //-- PROFILE RELATED
@@ -236,6 +213,19 @@ if (Meteor.isClient){
         }
     })
 
+    Template.otherUserProfile.helpers({
+        checkLike: function (id) {
+            var relationship = RELATIONSHIPS.findOne({_id: Meteor.userId()});
+            if (relationship){
+                var like = relationship.like;
+                if(like){
+                    return $.inArray(id, like) > -1;
+                }
+            }
+            return false;
+        }
+    });
+
     Template.otherUserProfile.events({
         "click #send-message": function(){
             var $input = $("#message-input");
@@ -251,7 +241,15 @@ if (Meteor.isClient){
             event.preventDefault();
             var userId = event.target.getAttribute('data-id');
             if (userId){
-                Meteor.call('likeUser', userId);
+
+                console.log(1);
+                console.log(lookForAttribute(event.target, 'data-like'));
+                console.log(2);
+                if(lookForAttribute(event.target, 'data-like') == 'true'){
+                    Meteor.call('cancelLike', userId);
+                }else{
+                    Meteor.call('likeUser', userId);
+                }
             }
 
 
@@ -268,7 +266,6 @@ if (Meteor.isClient){
             }
         }
     });
-
 
 
 //--TAGS RELATED
@@ -361,7 +358,6 @@ if (Meteor.isClient){
             Meteor.call('updateTagsForCurrentUser', tags);
         }
     });
-
 
 
 //-- PHOTO RELATED
@@ -471,10 +467,6 @@ if (Meteor.isClient){
             }
         }
     });
-
-    //Template.messageEntry.helpers({
-    //
-    //});
 }
 
 
@@ -488,6 +480,34 @@ function isEditMode(){
         }else{
             //console.log('none');
             return 'none';
+        }
+    }
+}
+
+function convertHex(hex,opacity){
+    hex = hex.replace('#','');
+    r = parseInt(hex.substring(0,2), 16);
+    g = parseInt(hex.substring(2,4), 16);
+    b = parseInt(hex.substring(4,6), 16);
+
+    result = 'rgba('+r+','+g+','+b+','+opacity/100+')';
+    return result;
+}
+
+function lookForAttribute(target, attr, maxTimes){
+    !maxTimes ? maxTimes = 5 : '';
+    var $this = $(target);
+    if ($this.attr(attr)){
+        return $this.attr(attr);
+    }else{
+        if ($this.parent()){
+            if (--maxTimes > 0){
+                return lookForAttribute($this.parent(), attr, maxTimes)
+            }else{
+                return null;
+            }
+        }else{
+            return null;
         }
     }
 }
@@ -557,129 +577,109 @@ function SortByLoginTimes(a, b){
 
 }
 
-function convertHex(hex,opacity){
-    hex = hex.replace('#','');
-    r = parseInt(hex.substring(0,2), 16);
-    g = parseInt(hex.substring(2,4), 16);
-    b = parseInt(hex.substring(4,6), 16);
 
-    result = 'rgba('+r+','+g+','+b+','+opacity/100+')';
-    return result;
-}
+//fancy stuff goes down
 
-function initializeDots() {
-    // Velocity demo
-
-    var isWebkit = /Webkit/i.test(navigator.userAgent),
-        isChrome = /Chrome/i.test(navigator.userAgent),
-        isMobile = !!("ontouchstart" in window),
-        isAndroid = /Android/i.test(navigator.userAgent);
-
-    $.fn.velocity.defaults.easing = "easeInOutSine";
-
-    function r (min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
-    /* Dots
-     */
-
-    var dotsCount = isMobile ? (isAndroid ? 40 : 50) : (isChrome ? 130 : 80),
-        dotsHtml = "",
-        $count = $("#count"),
-        $dots;
-    //randomGalaxy;
-
-    for (var i = 0; i < dotsCount; i++) {
-        //randomGalaxy = "g" + r(1,16);
-        dotsHtml += '<div class="dot"><img src="images/130/' + (i+1) + '.jpg"></div>';
-    }
-
-    $dots = $(dotsHtml);
-
-    $count.html(dotsCount);
-
-    /*Animation
-     */
-
-    var $container = $("#container"),
-        $description = $("#description"),
-
-        screenWidth = window.screen.availWidth,
-        screenHeight = window.screen.availHeight,
-        chromeHeight = screenHeight - document.documentElement.clientHeight,
-
-        translateZMin = -300,
-        translateZMax = 600;
-
-    $container.css(
-        {
-            //"perspective-origin": screenWidth/2 + "px " + ((screenHeight * 0.45) - chromeHeight) + "px"
-            "perspective-origin": screenWidth * 0.33 + "px " + ((screenHeight * 0.5) - chromeHeight) + "px"
-        }).velocity({
-            perspective: [300,75],
-            opacity: [0.55, 0.35]
-            //rotateZ: [5, 0]
-        },
-        {
-            duration: 1600,
-            loop: true,
-            delay: 4000
-        });
-
-
-    $dots.velocity({
-            translateX: [
-                function () {
-                    return "+=" + r(-screenWidth/2.5, screenWidth/2.5)
-                },
-                function () {
-                    return r(0, screenWidth)
-                }
-            ],
-            translateY: [
-                function () {
-                    return "+=" + r(-screenWidth/2.5, screenWidth/2.5)
-                },
-                function () {
-                    return r(0, screenHeight)
-                }
-            ],
-            translateZ: [
-                function () {
-                    return "+=" + r(translateZMin, translateZMax)
-                },
-                function () {
-                    return r(translateZMin, translateZMax)
-                }
-            ],
-            opacity: [
-                function () {
-                    return Math.random()
-                },
-                function () {
-                    return Math.random() + 0.1
-                }
-            ]},
-        {
-            duration: 30000,
-            loop: true,
-            delay: 0
-        })
-        .velocity('reverse')
-        .appendTo($container);
-
-}
-
-function lookForAttribute(target, attr){
-    var $this = $(target);
-    if ($this.attr(attr)){
-        return $this.attr(attr);
-    }else{
-        if ($this.parent()){
-            return lookForAttribute($this.parent(), attr)
-        }else{
-            return null;
-        }
-    }
-}
+//function initializeDots() {
+//    // Velocity demo
+//
+//    var isWebkit = /Webkit/i.test(navigator.userAgent),
+//        isChrome = /Chrome/i.test(navigator.userAgent),
+//        isMobile = !!("ontouchstart" in window),
+//        isAndroid = /Android/i.test(navigator.userAgent);
+//
+//    $.fn.velocity.defaults.easing = "easeInOutSine";
+//
+//    function r (min, max) {
+//        return Math.floor(Math.random() * (max - min + 1)) + min;
+//    }
+//
+//    /* Dots
+//     */
+//
+//    var dotsCount = isMobile ? (isAndroid ? 40 : 50) : (isChrome ? 130 : 80),
+//        dotsHtml = "",
+//        $count = $("#count"),
+//        $dots;
+//    //randomGalaxy;
+//
+//    for (var i = 0; i < dotsCount; i++) {
+//        //randomGalaxy = "g" + r(1,16);
+//        dotsHtml += '<div class="dot"><img src="images/130/' + (i+1) + '.jpg"></div>';
+//    }
+//
+//    $dots = $(dotsHtml);
+//
+//    $count.html(dotsCount);
+//
+//    /*Animation
+//     */
+//
+//    var $container = $("#container"),
+//        $description = $("#description"),
+//
+//        screenWidth = window.screen.availWidth,
+//        screenHeight = window.screen.availHeight,
+//        chromeHeight = screenHeight - document.documentElement.clientHeight,
+//
+//        translateZMin = -300,
+//        translateZMax = 600;
+//
+//    $container.css(
+//        {
+//            //"perspective-origin": screenWidth/2 + "px " + ((screenHeight * 0.45) - chromeHeight) + "px"
+//            "perspective-origin": screenWidth * 0.33 + "px " + ((screenHeight * 0.5) - chromeHeight) + "px"
+//        }).velocity({
+//            perspective: [300,75],
+//            opacity: [0.55, 0.35]
+//            //rotateZ: [5, 0]
+//        },
+//        {
+//            duration: 1600,
+//            loop: true,
+//            delay: 4000
+//        });
+//
+//
+//    $dots.velocity({
+//            translateX: [
+//                function () {
+//                    return "+=" + r(-screenWidth/2.5, screenWidth/2.5)
+//                },
+//                function () {
+//                    return r(0, screenWidth)
+//                }
+//            ],
+//            translateY: [
+//                function () {
+//                    return "+=" + r(-screenWidth/2.5, screenWidth/2.5)
+//                },
+//                function () {
+//                    return r(0, screenHeight)
+//                }
+//            ],
+//            translateZ: [
+//                function () {
+//                    return "+=" + r(translateZMin, translateZMax)
+//                },
+//                function () {
+//                    return r(translateZMin, translateZMax)
+//                }
+//            ],
+//            opacity: [
+//                function () {
+//                    return Math.random()
+//                },
+//                function () {
+//                    return Math.random() + 0.1
+//                }
+//            ]},
+//        {
+//            duration: 30000,
+//            loop: true,
+//            delay: 0
+//        })
+//        .velocity('reverse')
+//        .appendTo($container);
+//
+//}

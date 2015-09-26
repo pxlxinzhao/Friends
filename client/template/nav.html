@@ -6,7 +6,7 @@
             <div class="nav-wrapper">
                 <form id="search-form">
                     <div class="input-field">
-                        <input id="search" type="search" required>
+                        <input id="search" type="search">
                         <label for="search"><i class="fa fa-search"></i></label>
                         <!--<i class="fa fa-times">close</i>-->
                     </div>
@@ -47,8 +47,6 @@
             <ul class="right hide-on-med-and-down">
                 <!--<li><i class="fa fa-search"></i><input type="text"></li>-->
 
-
-
                 {{#if currentUser}}
                 <li><a class="waves-effect waves-light waves-teal" href="/explore">Explore</a></li>
                 <li><a class="waves-effect waves-light waves-teal" href="/messages">Message</a></li>
@@ -80,88 +78,14 @@
     <!-- Modal Structure -->
     <div id="modal1" class="modal login-modal">
         <div class="modal-content">
-            <!--<h4>Modal Header</h4>-->
             {{> atForm}}
         </div>
-        <!--<div class="modal-footer">-->
-            <!--&lt;!&ndash;<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>&ndash;&gt;-->
-        <!--</div>-->
     </div>
 
 </template>
 
 
-<!-- Modal Trigger -->
-<!--<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>-->
-
-<!-- Modal Structure -->
-<!--<div id="modal1" class="modal">-->
-    <!--<div class="modal-content">-->
-        <!--<h4>Modal Header</h4>-->
-        <!--<p>A bunch of text</p>-->
-    <!--</div>-->
-    <!--<div class="modal-footer">-->
-        <!--<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>-->
-    <!--</div>-->
-<!--</div>-->
-
-    <!--<div class="login-container">-->
-        <!--{{> atForm}}-->
-    <!--</div>-->
 
 
 
 
-
-
-	<!--&lt;!&ndash; nav bar &ndash;&gt;-->
-	<!--<div class="header-wrapper">-->
-        <!--&lt;!&ndash; ******HEADER****** &ndash;&gt; -->
-        <!--<header id="header" class="header navbar-fixed-top customize-header">  -->
-            <!--<div class="container">-->
-
-                <!--{{> notifications}}-->
-
-                <!--<nav class="main-nav" role="navigation">-->
-                    <!--<div class="navbar-header">-->
-                        <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">-->
-                            <!--<span class="icon-bar"></span>-->
-                            <!--<span class="icon-bar"></span>-->
-                            <!--<span class="icon-bar"></span>-->
-                        <!--</button>-->
-                        <!--<h1 class="logo">-->
-                            <!--<a href="/"><span class="highlight">Friends</span>Studio</a>-->
-                        <!--</h1>&lt;!&ndash;//logo&ndash;&gt;-->
-                    <!--</div>-->
-                    <!--<div id="navbar-collapse" class="navbar-collapse collapse navbar-right">-->
-                        <!--<ul class="nav navbar-nav">-->
-                            <!--{{#if currentUser}}-->
-                            <!--<li class="nav-item"><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>-->
-                            <!--&lt;!&ndash;<li class="nav-item"><a href="/profile"><span class="glyphicon glyphicon-user"></span></a></li>&ndash;&gt;-->
-                            <!--<li class="nav-item"><a href="/messages"><span class="glyphicon glyphicon-envelope"></span></a></li>-->
-                            <!--<li role="presentation" class="nav-item dropdown">-->
-                                <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">-->
-                                    <!--<span class="glyphicon glyphicon-user"></span>-->
-                                    <!--&lt;!&ndash;<span class="caret"></span>&ndash;&gt;-->
-                                <!--</a>-->
-                                <!--<ul class="dropdown-menu">-->
-                                    <!--<li><a href="/profile">Profile</a></li>-->
-                                    <!--<li><a href="/tag">Tags</a></li>-->
-                                    <!--<li><a href="/photos">Photos</a></li>-->
-                                    <!--&lt;!&ndash;<li><a href="case-study-2.html">Single Case Study 2</a></li>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<li><a href="blog-post.html">Single Blog Post</a></li>&ndash;&gt;-->
-                                <!--</ul>-->
-                            <!--</li>-->
-                            <!--{{/if}}-->
-                            <!--<li class="nav-item">-->
-                                <!--<div class="login-wrapper">-->
-                                    <!--{{> loginButtons}}-->
-                                <!--</div>-->
-                            <!--</li>-->
-                        <!--</ul>&lt;!&ndash;//nav&ndash;&gt;-->
-                    <!--</div>&lt;!&ndash;//navabr-collapse&ndash;&gt;-->
-                <!--</nav>&lt;!&ndash;//main-nav&ndash;&gt;-->
-
-            <!--</div>&lt;!&ndash;//container&ndash;&gt;-->
-        <!--</header>&lt;!&ndash;//header&ndash;&gt;   -->
-    <!--</div>-->

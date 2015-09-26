@@ -33,7 +33,11 @@ Meteor.startup(function () {
         },
 
         likeUser: function (userId) {
-            RELATIONSHIPS.upsert({_id: Meteor.userId()}, {$push: {like: userId}});
+            RELATIONSHIPS.upsert({_id: Meteor.userId()}, {$addToSet: {like: userId}});
+        },
+        
+        cancelLike: function (userId) {
+            RELATIONSHIPS.update({_id: Meteor.userId()}, {$pull: {like: userId}});
         },
 
 

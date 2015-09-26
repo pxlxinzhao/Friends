@@ -41,14 +41,17 @@
 
                 {{> smallerUserView user=user}}
 
-                <!--<div class="col-lg-12 btn btn-cta-primary small-top-margin">-->
-                    <!--&lt;!&ndash;<a class="">Flirt</a>&ndash;&gt;-->
-                    <!--Flirt-->
-                <!--</div>-->
-
-                <div id="user-like" data-id="{{user._id}}" class="col l12 btn small-top-margin">
+                <div id="user-like" data-id="{{user._id}}" data-like="{{checkLike user._id}}" class="col l12 btn small-top-margin">
                     <span class="hide">{{user._id}}</span>
-                    Like <span class="theme-red" data-id="{{user._id}}"><i class="fa fa-heart"  data-id="{{user._id}}"></i></span>
+                    {{#if checkLike user._id}}
+                        Cancel Like
+                    {{else}}
+                        Like
+                        <span class="theme-red" data-id="{{user._id}}">
+                            <i class="fa fa-heart"  data-id="{{user._id}}"></i>
+                        </span>
+                    {{/if}}
+
                 </div>
 
                 <div class="small-top-margin left">
