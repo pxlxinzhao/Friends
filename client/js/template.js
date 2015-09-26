@@ -54,7 +54,7 @@ if (Meteor.isClient){
         'click .logout-btn': function(e){
             //e.preventDefault();
             AccountsTemplates.logout();
-            Route.go('home');
+            Router.go('home');
         },
         'click .modal-trigger': function () {
             $('#modal1').openModal();
@@ -485,16 +485,28 @@ if (Meteor.isClient){
                 return x.receiverId;
             });
 
-            var mostRecentContact =
-                result1[0].createdTime > result2[0].createdTime
+
+
+            var mostRecentContact;
+
+            if (result1.length>0 && result2.length>0){
+                mostRecentContact=result1[0].createdTime > result2[0].createdTime
                     ? result1[0].senderId : result2[0].receiverId;
+            }else if(result1.length===0 && result2.length===0){
+                mostRecentContact= null;
+            }else if(result1.length>0){
+                mostRecentContact= result1[0].senderId;
+            }else{
+                mostRecentContact= result2[0].receiverId;
+            }
+
 
             var uniqueResult =  _.uniq(senders.concat(receivers));
 
             if (uniqueResult.length > 0){
-                Session.set('MessageSender', uniqueResult[0]);
+                Session.set('MessageSender', mostRecentContact);
             }
-            console.log('uniqueResult',uniqueResult);
+            //console.log('uniqueResult',uniqueResult);
             return uniqueResult;
         },
         getLatestMessageFrom: function(id){

@@ -12,16 +12,10 @@ Router.map(function () {
         template: 'welcome',
         onBeforeAction: function () {
             if (! Meteor.userId()) {
-                //var notificationId = Notifications.warn('Please login first');
-                //removeNotification(notificationId);
+                hideNavAndFooter();
                 this.render('welcome');
             } else {
-                $('.nav').velocity({
-                    backgroundColorAlpha: 1
-                }, 0);
-                $('footer').velocity({
-                    opacity: 1
-                }, 0);
+                showNavAndFooter();
                 this.render('explore');
             }
         }
@@ -61,21 +55,31 @@ Router.map(function () {
 });
 
 
-//
-//
-//
-//Router.onBeforeAction(function() {
-//    if (! Meteor.userId()) {
-//        //var notificationId = Notifications.warn('Please login first');
-//        //removeNotification(notificationId);
-//        this.render('welcome');
-//    } else {
-//        $('.nav').velocity({
-//            backgroundColorAlpha: 1
-//        }, 0);
-//        $('footer').velocity({
-//            opacity: 1
-//        }, 0);
-//        this.next();
-//    }
-//});
+Router.onBeforeAction(function () {
+    if(Meteor.user()){
+        showNavAndFooter();
+        this.next();
+    }else{
+        hideNavAndFooter();
+        this.render('welcome');
+    }
+}, {except: ['home']} );
+
+
+function showNavAndFooter(){
+    $('.nav').velocity({
+        backgroundColorAlpha: 1
+    }, 0);
+    $('footer').velocity({
+        opacity: 1
+    }, 0);
+}
+
+function hideNavAndFooter(){
+    $('.nav').velocity({
+        backgroundColorAlpha: 0
+    }, 0);
+    $('footer').velocity({
+        opacity: 0
+    }, 0);
+}
