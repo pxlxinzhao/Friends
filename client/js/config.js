@@ -46,7 +46,7 @@ if (Meteor.isClient) {
             type: "text",
             displayName: "username",
             required: true,
-            minLength: 5,
+            minLength: 5
         },
         {
             _id: 'email',
@@ -54,13 +54,13 @@ if (Meteor.isClient) {
             required: true,
             displayName: "email",
             re: /.+@(.+){2,}\.(.+){2,}/,
-            errStr: 'Invalid email',
+            errStr: 'Invalid email'
         },
         {
             _id: 'username_and_email',
             type: 'text',
             required: true,
-            displayName: "Login",
+            displayName: "Login"
         },
         pwd
     ]);

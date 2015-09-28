@@ -19,7 +19,8 @@ if (Meteor.isClient){
         getUserById: getUserById,
         getUsernameById: getUsernameById,
         getDialogMessage: getDialogMessage,
-        getLoginTime: getLoginTime
+        getLoginTime: getLoginTime,
+        getFacebookPhotoUrl: getFacebookPhotoUrl
     }
 
     for (var key in helpers){
@@ -424,18 +425,17 @@ if (Meteor.isClient){
             e.preventDefault();
 
             //console.log($(this));
-            var photo = $(this)[0];
-            if (photo){
-                Meteor.call('updatePhotoUrl', photo, function(err){
-                    if (err){
-                        console.error(err);
-                    }else{
-                        var nId = Notifications.success('updated profile picture');
-                        removeNotification(nId);
-                    }
-                });
-            }
-
+            //var photo = $(this)[0];
+            //if (photo){
+            //    Meteor.call('updatePhotoUrl', photo, function(err){
+            //        if (err){
+            //            console.error(err);
+            //        }else{
+            //            var nId = Notifications.success('updated profile picture');
+            //            removeNotification(nId);
+            //        }
+            //    });
+            //}
         }
 
     });

@@ -33,7 +33,15 @@
 <template name="photoUpdate">
 
     <div class="photo-update-wrapper top-margin">
-        <input type="file"/>
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>File</span>
+                <input type="file" multiple>
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Files">
+            </div>
+        </div>
         <div id="photo-update-btn" class="col l12 btn">
             Upload
         </div>

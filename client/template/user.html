@@ -7,7 +7,11 @@
                             {{#if user.photoUrl}}
                                 <img class="avatar-image" src="{{user.photoUrl}}" alt="avatar">
                             {{else}}
-                                <img class="avatar-image" src="{{identicon user._id}}" alt="avatar">
+                                {{#if getFacebookPhotoUrl user._id}}
+                                    <img class="avatar-image" src="{{getFacebookPhotoUrl user._id}}" alt="avatar">
+                                {{else}}
+                                    <img class="avatar-image" src="{{identicon user._id}}" alt="avatar">
+                                {{/if}}
                             {{/if}}
                         </div>
                     </a>
@@ -32,7 +36,11 @@
                         {{#if user.photoUrl}}
                             <img class="avatar-image" src="{{user.photoUrl}}" alt="avatar">
                         {{else}}
-                            <img class="avatar-image" src="{{identicon user._id}}" alt="avatar">
+                            {{#if getFacebookPhotoUrl user._id}}
+                                <img class="avatar-image" src="{{getFacebookPhotoUrl user._id}}" alt="avatar">
+                            {{else}}
+                                <img class="avatar-image" src="{{identicon user._id}}" alt="avatar">
+                            {{/if}}
                         {{/if}}
                     </div>
                 </a>
@@ -47,25 +55,10 @@
 <!--user-info-part-->
 <template name="userInfo">
     <p class="tiny-bot-margin">
-        <STRONG>{{getUsername user=user}}</STRONG>
-        <span class="glyphicon glyphicon-tint {{getStatus user=user}}"></span>
+        <STRONG>{{getUsername user._id}}</STRONG>
+        <span class="glyphicon glyphicon-tint {{getStatus user._id}}"></span>
     </p>
-    <span class="tiny-top-margin">{{getCity user=user}}</span>
-    <p class="tiny-top-margin">{{getLoginTime user=user}}</p>
+    <span class="tiny-top-margin">{{getCity user._id}}</span>
+    <p class="tiny-top-margin">{{getLoginTime user._id}}</p>
 </template>
 
-<template name="userInfoById">
-    <p class="tiny-bot-margin">
-        <STRONG>{{getUsername userId=userId}}</STRONG>
-        <span class="glyphicon glyphicon-tint {{getStatus userId=userId}}"></span>
-    </p>
-    <span class="tiny-top-margin">{{getCity userId=userId}}</span>
-    <p class="tiny-top-margin">{{getLoginTime userId=userId}}</p>
-</template>
-
-<template name="simpleUserInfoById">
-    <p>
-        <STRONG>{{getUsername userId=userId}}</STRONG>
-        <!--<span class="glyphicon glyphicon-tint {{getStatus userId=userId}}"></span>-->
-    </p>
-</template>
