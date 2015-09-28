@@ -195,6 +195,9 @@ if (Meteor.isClient){
     });
     
     Template.photos.onRendered(function () {
+
+        $('.materialboxed').materialbox();
+
         new Darkroom('#photo-logo', {
             // Size options for the canvas
             minWidth: 100,
@@ -232,10 +235,27 @@ if (Meteor.isClient){
         });
     });
 
+    Template.photos.helpers({
+        //initializeSlider: function () {
+        //    $('.slider').slider();
+        //    //{full_width: true}
+        //}
+        //initializeMaterialbox: function () {
+        //    console.log('oops');
+        //    $('.materialboxed').materialbox();
+        //}
+    })
+
     Template.photoUpdate.events({
 
         'change input[type="file"]': function(e){
             files = e.currentTarget.files;
+            var names = [];
+            for (var i=0; i<files.length; i++){
+                console.log(files[i]);
+                names.push(files[i].name);
+            }
+            console.log(names.join(', '));
         },
         'click #photo-update-btn': function(){
             //console.log('clicked', files);

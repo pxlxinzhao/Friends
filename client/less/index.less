@@ -166,20 +166,19 @@ footer.page-footer {
 }
 
 //-- photo
-
+.photo-container {
+  column-count: 2;
+}
 .photo-wrapper {
   .big-top-margin;
 }
-
 .gallery-item {
-  //max-width: 100px;
+  max-width: 45%;
   position: relative;
 }
-
 .photo-remove-marker{
   display:none;
 }
-
 .gallery-item:hover >
 .photo-remove-marker {
   display:block;
@@ -188,36 +187,30 @@ footer.page-footer {
   right: 0px;
   //color: @theme-pink;
 }
-
 .photo-fit {
   object-fit: cover;
   object-position: 0 0;
 }
-
 .photo-normal{
   .photo-fit;
   width: 50px;
   height: 50px;
 }
-
 .photo-large{
   .photo-fit;
   width: 80px;
   height: 80px;
 }
-
 .photo-item {
   .photo-fit;
   width: 100%;
   heigth: auto;
 }
-
 .flexbox-container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
-
 .flexbox-container > div {
   width: 50%;
   height: auto;
