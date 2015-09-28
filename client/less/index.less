@@ -167,14 +167,33 @@ footer.page-footer {
 
 //-- photo
 .photo-container {
-  column-count: 2;
+  //column-count: 2;
+  //display: flex;
+  //flex-direction: row;
+  //align-items: flex-start;
+  //height: 500px;
+  //flex-wrap: wrap;
 }
 .photo-wrapper {
   .big-top-margin;
 }
 .gallery-item {
-  max-width: 45%;
-  position: relative;
+  //max-width: 100%;
+  //max-height: 200px;
+  padding:10px;
+  //justify-content: center;
+}
+.gallery-item img{
+  .photo-fit;
+  width: auto;
+  height: 200px;
+}
+//when hover, structure replaced by materialbox
+
+.material-placeholder img{
+  //.photo-fit;
+  //width: auto;
+  //height: 200px;
 }
 .photo-remove-marker{
   display:none;
@@ -189,7 +208,7 @@ footer.page-footer {
 }
 .photo-fit {
   object-fit: cover;
-  object-position: 0 0;
+  object-position: 50% 0;
 }
 .photo-normal{
   .photo-fit;

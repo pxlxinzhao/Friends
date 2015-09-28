@@ -196,7 +196,7 @@ if (Meteor.isClient){
     
     Template.photos.onRendered(function () {
 
-        $('.materialboxed').materialbox();
+
 
         new Darkroom('#photo-logo', {
             // Size options for the canvas
@@ -271,6 +271,10 @@ if (Meteor.isClient){
             }
         }
     })
+
+    Template.galleryItem.onRendered(function () {
+        $('.materialboxed').materialbox();
+    });
 
     Template.otherUserProfile.helpers({
         checkLike: function (id) {

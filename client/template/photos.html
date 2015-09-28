@@ -26,14 +26,7 @@
 
                         {{#each getCurrentUserPhotos}}
                             <!--<div class="col l6">-->
-                            <div class="gallery-item inline">
-                                <!--<a href="{{this.c.url}}" class="thumbnail">-->
-                                    <img src="{{this.c.url}}" class="img-responsive photo-item materialboxed">
-                                <!--</a>-->
-                                <div class="photo-remove-marker">
-                                    <span class="glyphicon glyphicon-remove"></span>
-                                </div>
-                            </div>
+                                {{> galleryItem photo=this}}
                             <!--</div>-->
                         {{/each}}
                         <!--{{initializeMaterialbox}}-->
@@ -71,6 +64,18 @@
         </form>
     </div>
 
+</template>
+
+
+<template name="galleryItem">
+    <div class="gallery-item inline">
+        <!--<a href="{{photo.c.url}}" class="thumbnail">-->
+        <img src="{{photo.c.url}}" class="img-responsive photo-item materialboxed">
+        <!--</a>-->
+        <div class="photo-remove-marker">
+            <span class="glyphicon glyphicon-remove"></span>
+        </div>
+    </div>
 </template>
 
 
