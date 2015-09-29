@@ -235,16 +235,12 @@ if (Meteor.isClient){
         });
     });
 
-    Template.photos.helpers({
-        //initializeSlider: function () {
-        //    $('.slider').slider();
-        //    //{full_width: true}
-        //}
-        //initializeMaterialbox: function () {
-        //    console.log('oops');
-        //    $('.materialboxed').materialbox();
-        //}
-    })
+    Template.photoUpdate.onRendered(function () {
+        var $prepare = $("#upload-prepare");
+        var $progress = $("#upload-progress");
+
+        $progress.hide();
+    });
 
     Template.photoUpdate.events({
 
@@ -259,7 +255,13 @@ if (Meteor.isClient){
         },
         'click #photo-update-btn': function(){
             //console.log('clicked', files);
-
+            var $prepare = $("#upload-prepare");
+            var $progress = $("#upload-progress");
+            var $update = $("#photo-update-btn");
+            $prepare.hide();
+            $progress.show();
+            $update.prop('disabled', true);
+            $update.addClass('disabled');
             if (files){
                 Cloudinary.upload(files, null, function(err, res){
                     console.log('success', res);
@@ -267,8 +269,17 @@ if (Meteor.isClient){
                     if (res){
                         Meteor.call('updatePhotoForCurrentUser', res);
                     }
+                    $prepare.show();
+                    $progress.hide();
+                    $update.prop('disabled', false);
+                    $update.removeClass('disabled');
                 });
             }
+        },
+        'click #avatar-update-btn': function (e) {
+            console.log(e.target);
+            $(e.target).addClass('disabled');
+
         }
     })
 
