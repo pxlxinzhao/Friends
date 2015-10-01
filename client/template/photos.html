@@ -6,33 +6,13 @@
                 {{> photoUpdate }}
             </div>
             <div class="col l6 offset-l1">
-                <!--<div class="row">-->
                     <div class="photo-container">
 
-                        <!--<img class="materialboxed" width="650" src="images/b1.jpg">-->
-
-                        <!--<div class="slider">-->
-                            <!--<ul class="slides">-->
-                                <!--{{#each getCurrentUserPhotos}}-->
-                                    <!--<li>-->
-                                        <!--<a href="{{this.c.url}}" class="thumbnail">-->
-                                            <!--<img src="{{this.c.url}}" class="img-responsive photo-item">-->
-                                        <!--</a>-->
-                                    <!--</li>-->
-                                <!--{{/each}}-->
-                                <!--{{initializeSlider}}-->
-                            <!--</ul>-->
-                        <!--</div>-->
-
                         {{#each getCurrentUserPhotos}}
-                            <!--<div class="col l6">-->
                                 {{> galleryItem photo=this}}
-                            <!--</div>-->
                         {{/each}}
-                        <!--{{initializeMaterialbox}}-->
+
                     </div>
-                    <!--<img id="photo-logo" src="images/logo.png" alt=""/>-->
-                <!--</div>-->
             </div>
         </div>
     </div>
@@ -44,16 +24,6 @@
 
     <div class="photo-update-wrapper top-margin">
         <form action="#">
-            <!--<div class="file-field input-field">-->
-                <!--<div class="btn">-->
-                    <!--<span>File</span>-->
-                    <!--<input id="photo-upload" type="file" multiple>-->
-                <!--</div>-->
-                <!--<div class="file-path-wrapper">-->
-                    <!--<input id="photo-upload-text" class="file-path validate" type="text" placeholder="Upload files">-->
-                <!--</div>-->
-            <!--</div>-->
-
             <input id="photo-upload" type="file" multiple>
 
             <div id="upload-prepare" class="progress">
@@ -89,35 +59,3 @@
         </div>
     </div>
 </template>
-
-
-
-
-<!--<li>-->
-    <!--<img src="http://lorempixel.com/580/250/nature/1"> &lt;!&ndash; random image &ndash;&gt;-->
-    <!--<div class="caption center-align">-->
-        <!--<h3>This is our big Tagline!</h3>-->
-        <!--<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>-->
-    <!--</div>-->
-<!--</li>-->
-<!--<li>-->
-    <!--<img src="http://lorempixel.com/580/250/nature/2"> &lt;!&ndash; random image &ndash;&gt;-->
-    <!--<div class="caption left-align">-->
-        <!--<h3>Left Aligned Caption</h3>-->
-        <!--<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>-->
-    <!--</div>-->
-<!--</li>-->
-<!--<li>-->
-    <!--<img src="http://lorempixel.com/580/250/nature/3"> &lt;!&ndash; random image &ndash;&gt;-->
-    <!--<div class="caption right-align">-->
-        <!--<h3>Right Aligned Caption</h3>-->
-        <!--<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>-->
-    <!--</div>-->
-<!--</li>-->
-<!--<li>-->
-    <!--<img src="http://lorempixel.com/580/250/nature/4"> &lt;!&ndash; random image &ndash;&gt;-->
-    <!--<div class="caption center-align">-->
-        <!--<h3>This is our big Tagline!</h3>-->
-        <!--<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>-->
-    <!--</div>-->
-<!--</li>-->
